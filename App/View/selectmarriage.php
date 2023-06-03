@@ -41,9 +41,9 @@
       var marriageType = document.querySelector('input[name="marriageType"]:checked');
       if (marriageType) {
         if (marriageType.value === "withinCountry") {
-          location.href = "marriage_within_country.html";
+          location.href = "marriage_within_country.php";
         } else if (marriageType.value === "voluntary") {
-          location.href = "voluntary_marriage.html";
+          location.href = "voluntary_marriage.php";
         }
       } else {
         alert("Please select type of marriage");

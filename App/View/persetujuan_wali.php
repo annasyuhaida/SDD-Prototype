@@ -82,8 +82,8 @@
 
   <button class="button" onclick="saveData()">Save</button>
   <button class="button" onclick="editData()">Edit</button>
-  <button class="button" onclick="location.href='marriage_within_country.html'">Back</button>
-  <button class="button" onclick="location.href='wakalah_wali.html'">Continue</button>
+  <button class="button" onclick="location.href='marriage_within_country.php'">Back</button>
+  <button class="button" onclick="location.href='wakalah_wali.php'">Continue</button>
   <script>
     function saveData() {
       var form = document.getElementById("agreementForm");

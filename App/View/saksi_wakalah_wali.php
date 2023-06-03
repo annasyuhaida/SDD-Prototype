@@ -86,8 +86,8 @@
 
   <button class="button" onclick="saveData()">Save</button>
   <button class="button" onclick="editData()">Edit</button>
-  <button class="button" onclick="location.href='wakalah_wali.html'">Back</button>
-  <button class="button" onclick="location.href='pengesahan_wakalah_wali.html'">Continue</button>
+  <button class="button" onclick="location.href='wakalah_wali.php'">Back</button>
+  <button class="button" onclick="location.href='pengesahan_wakalah_wali.php'">Continue</button>
   <script>
     function saveData() {
       var form = document.getElementById("agreementForm");

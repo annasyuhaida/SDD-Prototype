@@ -57,8 +57,8 @@
 
   <button class="button" onclick="saveData()">Save</button>
   <button class="button" onclick="editData()">Edit</button>
-  <button class="button" onclick="location.href='saksi_wakalah_wali.html'">Back</button>
-  <button class="button" onclick="location.href='marriage_within_country.html'">Continue</button>
+  <button class="button" onclick="location.href='saksi_wakalah_wali.php'">Back</button>
+  <button class="button" onclick="location.href='marriage_within_country.php'">Continue</button>
   <button class="button" onclick="printForm('agreementForm')">Print</button>
 
   <script>
