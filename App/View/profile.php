@@ -208,7 +208,7 @@
 		footer{
 			color: red;
 			text-align: right;
-			margin-top: 550px;
+			margin-top: 630px;
 			margin-right: 10px;
 			color: white;
 			}
