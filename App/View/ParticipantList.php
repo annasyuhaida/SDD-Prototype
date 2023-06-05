@@ -12,33 +12,7 @@
 <link href="../../plugins/bootstrap-datepicker/bootstrap-datepicker.min.css" rel="stylesheet">
 
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<style>
-  .image-background {
-    background-image: url('path/to/your/image.jpg');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    height: 100%; /* Adjust the height as needed */
-    /* Add any additional styling for the image background */
-  }
 
-  .box {
-            width: 400px;
-            height: 200px;
-            border: 1px solid black;
-            text-align: center;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 20px;
-            border-radius: 10px;
-            background-color: lightgrey;
-        }
-
-        .regstatus {
-            color: darkblue;
-        }
-</style>
 
 
   <!--*******************
@@ -54,23 +28,59 @@
     <!--*******************
         Preloader end
     ********************-->
-
+    
     
     <!--**********************************
         Main wrapper start
     ***********************************-->
     <div id="main-wrapper">
-  
+        
         <!--**********************************
             Nav header start
         ***********************************-->
         <div class="nav-header">
-           
+            <div class="brand-logo">
+                <a href="index.html">
+                    <b class="logo-abbr"><img src="images/logo.png" alt=""> </b>
+                    <span class="logo-compact"><img src="./images/logo-compact.png" alt=""></span>
+                    <span class="brand-title">
+                        <img src="images/logo-text.png" alt="">
+                    </span>
+                </a>
+            </div>
         </div>
         <!--**********************************
             Nav header end
         ***********************************-->
 
+        <!--**********************************
+            Header start
+        ***********************************-->
+        <div class="header">    
+            <div class="header-content clearfix">
+                
+                
+                <div class="header-left">
+                    <div class="input-group icons">
+                        <div class="input-group-prepend">
+                        <span ><img class="logo-nav" src="../../images/navheadlogo.png" alt="" style=""></span>
+                        </div>
+                        <div style="padding-left:25px">
+                            <h3>E-MUNAKAHAT</h3>
+                            <a href="">HOME</a>
+                            <a style="margin-left:10px" href="">LOGOUT</a>
+                        </div>
+                        
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--**********************************
+            Header end ti-comment-alt
+        ***********************************-->
+
+      
         <!--**********************************
             Sidebar start
         ***********************************-->
@@ -86,9 +96,13 @@
                         </a>
                     </li>
                     <li>
-                        <a class="has-arrow" href="#">
+                        <a class="has-arrow" href="javascript:void()" aria-expanded="false">
                         <span class="nav-text">Marriage Preparation Course</span>
                         </a>
+                        <ul aria-expanded="false">
+                            <li><a href="./PreMarriageCourseList.php">Register Marriage Preparation Course</a></li>
+                        </ul>
+
                     </li>
                     <li>
                         <a class="has-arrow" href="#">
@@ -139,15 +153,49 @@
 
         <div class="container-fluid">
             <div class="row justify-content-md-center">
-                <div class="col-md-6">            
-
-                    <!-- Content within the div with image background -->
-                    <h1 class="w3-container w3-text-white">My Page</h1>
-
-                  <div class="box">
-                        MARRIAGE REGISTRATION STATUS OF APPROVAL<br><br><span class="regstatus">NEWLY SUBMITTED</span>
-                  </div>
-                </div>  
+                    <div class="col-lg-12">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="card-title">
+                                    <h4>Participant List</h4>
+                                </div>
+                                <div class="row">
+                                <input type="search" class="form-control col-md-3" placeholder="Search " aria-label="Search Dashboard">
+                                <button type="submit" class="btn btn-secondary ml-2">Search</button>
+                                </div>
+                                <div class="table-responsive">
+                                    <table class="table">
+                                        <thead>
+                                            <tr>
+                                                <th>NO.</th>
+                                                <th>APPLY DATE</th>
+                                                <th>PARTICIPANT NAME</th>
+                                                <th>ID NUMBER</th>
+                                                <th>BRIEFING SERIES</th>
+                                                <th>STATUS</th>
+                                                <th>ACTION</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <th>1</th>
+                                                <td>29/09/2022</td>
+                                                <td>Nurul Qalbi Binti Abbas</td>
+                                                <td>010519-06-0081</td>
+                                                <td>BTG/0008/2022</td>
+                                                <td>SUCCESS</td>
+                                                <td><span>
+                                                        <a href="./PreMarriageCourseRegForm.php" title="Edit"><i class="fa fa-edit color-muted m-r-5"></i></a>
+                                                        <a href="./PreMarriageCourseRegForm.php" title="Print"><i class="fa fa-print color-muted m-r-5"></i></a>
+                                                    </span>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
             </div>
         </div>
 

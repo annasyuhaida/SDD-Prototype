@@ -54,23 +54,59 @@
     <!--*******************
         Preloader end
     ********************-->
-
+    
     
     <!--**********************************
         Main wrapper start
     ***********************************-->
     <div id="main-wrapper">
-  
+        
         <!--**********************************
             Nav header start
         ***********************************-->
         <div class="nav-header">
-           
+            <div class="brand-logo">
+                <a href="index.html">
+                    <b class="logo-abbr"><img src="images/logo.png" alt=""> </b>
+                    <span class="logo-compact"><img src="./images/logo-compact.png" alt=""></span>
+                    <span class="brand-title">
+                        <img src="images/logo-text.png" alt="">
+                    </span>
+                </a>
+            </div>
         </div>
         <!--**********************************
             Nav header end
         ***********************************-->
 
+        <!--**********************************
+            Header start
+        ***********************************-->
+        <div class="header">    
+            <div class="header-content clearfix">
+                
+                
+                <div class="header-left">
+                    <div class="input-group icons">
+                        <div class="input-group-prepend">
+                        <span ><img class="logo-nav" src="../../images/navheadlogo.png" alt="" style=""></span>
+                        </div>
+                        <div style="padding-left:25px">
+                            <h3>E-MUNAKAHAT</h3>
+                            <a href="">HOME</a>
+                            <a style="margin-left:10px" href="">LOGOUT</a>
+                        </div>
+                        
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--**********************************
+            Header end ti-comment-alt
+        ***********************************-->
+
+      
         <!--**********************************
             Sidebar start
         ***********************************-->
@@ -86,9 +122,13 @@
                         </a>
                     </li>
                     <li>
-                        <a class="has-arrow" href="#">
+                        <a class="has-arrow" href="javascript:void()" aria-expanded="false">
                         <span class="nav-text">Marriage Preparation Course</span>
                         </a>
+                        <ul aria-expanded="false">
+                            <li><a href="./PreMarriageCourseRegForm.php">Register Marriage Preparation Course</a></li>
+                        </ul>
+
                     </li>
                     <li>
                         <a class="has-arrow" href="#">
@@ -139,15 +179,53 @@
 
         <div class="container-fluid">
             <div class="row justify-content-md-center">
-                <div class="col-md-6">            
+                    <div class="col-lg-12">
+                        <div class="card">
+                            <div class="card-body">
+                                <h4 class="card-title">Register New Marriage Preparation Course</h4>
 
-                    <!-- Content within the div with image background -->
-                    <h1 class="w3-container w3-text-white">My Page</h1>
+                                <form>
+                                        <div class="row form-material">
+                                                <div class="col-md-12">
+                                                    <label class="m-t-20">Organizer:</label>
+                                                    <input type="text" class="form-control input-rounded" placeholder="e.g. Alex">
+                                                </div>
+                                                <div class="col-md-12">
+                                                    <label class="m-t-20">Location:</label>
+                                                    <input type="text" class="form-control input-rounded" placeholder="e.g. No.11 Taman Chempaka">
+                                                    <input type="text" class="form-control input-rounded mt-2" placeholder="e.g. Lorong IM 15/21">
+                                                </div>
+                                                <div class="col-md-6 mt-3">
+                                                    <label class="m-t-20">Date:</label>
+                                                    <input class="form-control input-limit-datepicker input-rounded" type="text" name="daterange" value="06/01/2015 - 06/07/2015">
+                                                </div>
+                                                <div class="col-md-6 mt-3">
+                                                    <label class="m-t-20">Capacity:</label>
+                                                    <input type="text" class="form-control input-rounded" placeholder="e.g. 100">
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <label class="m-t-20">Officer:</label>
+                                                    <input type="text" class="form-control input-rounded" placeholder="e.g. Ustaz Mohd Sobri">
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <label class="m-t-20">Briefing Series:</label>
+                                                    <input type="text" class="form-control input-rounded" placeholder="e.g. BTG/0001/2023">
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <label class="m-t-20">Phone Number:</label>
+                                                    <input type="text" class="form-control input-rounded" placeholder="e.g. +60123456789 ">
+                                                </div>
+                                                <div class="col-md-12 mt-3">
+                                                    <div class="row justify-content-center">
+                                                        <button type="submit" class="btn btn-dark mb-2">Save</button>
+                                                    </div> 
+                                                </div>
 
-                  <div class="box">
-                        MARRIAGE REGISTRATION STATUS OF APPROVAL<br><br><span class="regstatus">NEWLY SUBMITTED</span>
-                  </div>
-                </div>  
+                                        </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
             </div>
         </div>
 
