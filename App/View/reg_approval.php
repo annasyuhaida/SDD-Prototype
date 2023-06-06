@@ -13,6 +13,13 @@
 
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <style>
+     body
+		{
+			background-image: url("bgheader.png");
+			background-size: cover;
+			background-repeat: no-repeat;
+		}
+
   .image-background {
     background-image: url('path/to/your/image.jpg');
     background-size: cover;
@@ -142,7 +149,7 @@
                 <div class="col-md-6">            
 
                     <!-- Content within the div with image background -->
-                    <h1 class="w3-container w3-text-white">My Page</h1>
+                    <h1 class="w3-container w3-text-black">e-Munakahat</h1>
 
                   <div class="box">
                         MARRIAGE REGISTRATION STATUS OF APPROVAL<br><br><span class="regstatus">NEWLY SUBMITTED</span>
