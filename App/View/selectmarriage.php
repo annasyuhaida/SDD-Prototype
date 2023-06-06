@@ -5,30 +5,24 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <!-- Custom Stylesheet -->
-<link href="css/style.css" rel="stylesheet"> 
+<link href="../../css/style.css" rel="stylesheet"> 
 <!-- Custom Stylesheet -->
-<link href="./plugins/bootstrap-material-datetimepicker/css/bootstrap-material-datetimepicker.css" rel="stylesheet">
+<link href="../../plugins/bootstrap-material-datetimepicker/css/bootstrap-material-datetimepicker.css" rel="stylesheet">
 <!-- Date picker plugins css -->
-<link href="./plugins/bootstrap-datepicker/bootstrap-datepicker.min.css" rel="stylesheet">
+<link href="../../plugins/bootstrap-datepicker/bootstrap-datepicker.min.css" rel="stylesheet">
 
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <style>
-  /* .image-background {
-    background-image: url('path/to/your/image.jpg');
+     
+  .image-background {
+    background-image: url('bgheader.png');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    height: 100%;  */
+    height: 100%; 
   }
 
-  /* body
-		{
-			background-image: url("bgheader.png");
-			background-size: cover;
-			background-repeat: no-repeat;
-		} */
-
-    .container {
+  .container {
       border: 2px solid #004080;
       background-color: #004080;
       color: #fff;
@@ -36,12 +30,6 @@
       width: 400px;
       text-align: center;
       box-sizing: border-box;
-      
-    }
-
-    .option {
-      display: block;
-      margin: 10px auto;
     }
 
     .button {
@@ -159,6 +147,7 @@
 
             <div class="row page-titles mx-0">
                 <div class="col p-md-0">
+                <h1 class="w3-container w3-text-black">e-Munakahat</h1>
                     <ol class="breadcrumb">
                         <li class="breadcrumb-item"><a href="javascript:void(0)">Profile</a></li>
                         <li class="breadcrumb-item active"><a href="javascript:void(0)">Home</a></li>
@@ -170,12 +159,8 @@
         <div class="container-fluid">
             <div class="row justify-content-md-center">
                 <div class="col-md-6">            
-
-                    <!-- Content within the div with image background -->
-                    <h1 class="w3-container w3-text-black">e-Munakahat</h1>
-
-                    <div class="container">
-    <h2>Select Type Of Marriage</h2>
+                <div class="container">
+    <h2>Select Type of Marriage</h2>
     <label class="option">
       <input type="radio" name="marriageType" value="withinCountry"> Marriage Within Country
     </label>
@@ -198,32 +183,28 @@
     <!--**********************************
         Scripts
     ***********************************-->
-    <script src="plugins/common/common.min.js"></script>
-    <script src="js/custom.min.js"></script>
-    <script src="js/settings.js"></script>
-    <script src="js/gleek.js"></script>
-    <script src="js/styleSwitcher.js"></script>
+    <script src="../../plugins/common/common.min.js"></script>
+    <script src="../../js/custom.min.js"></script>
+    <script src="../../js/settings.js"></script>
+    <script src="../../js/gleek.js"></script>
+    <script src="../../js/styleSwitcher.js"></script>
 
-    <script src="./plugins/moment/moment.js"></script>
-    <script src="./plugins/bootstrap-material-datetimepicker/js/bootstrap-material-datetimepicker.js"></script>
+    <script src="../../plugins/moment/moment.js"></script>
+    <script src="../../plugins/bootstrap-material-datetimepicker/js/bootstrap-material-datetimepicker.js"></script>
     <!-- Clock Plugin JavaScript -->
-    <script src="./plugins/clockpicker/dist/jquery-clockpicker.min.js"></script>
+    <script src="../../plugins/clockpicker/dist/jquery-clockpicker.min.js"></script>
     <!-- Color Picker Plugin JavaScript -->
-    <script src="./plugins/jquery-asColorPicker-master/libs/jquery-asColor.js"></script>
-    <script src="./plugins/jquery-asColorPicker-master/libs/jquery-asGradient.js"></script>
-    <script src="./plugins/jquery-asColorPicker-master/dist/jquery-asColorPicker.min.js"></script>
+    <script src="../../plugins/jquery-asColorPicker-master/libs/jquery-asColor.js"></script>
+    <script src="../../plugins/jquery-asColorPicker-master/libs/jquery-asGradient.js"></script>
+    <script src="../../plugins/jquery-asColorPicker-master/dist/jquery-asColorPicker.min.js"></script>
     <!-- Date Picker Plugin JavaScript -->
-    <script src="./plugins/bootstrap-datepicker/bootstrap-datepicker.min.js"></script>
+    <script src="../../plugins/bootstrap-datepicker/bootstrap-datepicker.min.js"></script>
     <!-- Date range Plugin JavaScript -->
-    <script src="./plugins/timepicker/bootstrap-timepicker.min.js"></script>
-    <script src="./plugins/bootstrap-daterangepicker/daterangepicker.js"></script>
+    <script src="../../plugins/timepicker/bootstrap-timepicker.min.js"></script>
+    <script src="../../plugins/bootstrap-daterangepicker/daterangepicker.js"></script>
 
-    <script src="./js/plugins-init/form-pickers-init.js"></script>
+    <script src="../../js/plugins-init/form-pickers-init.js"></script>
 
 
 </body>
 </html>
-
-
-
-

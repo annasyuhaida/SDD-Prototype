@@ -13,20 +13,13 @@
 
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <style>
-     body
-		{
-			background-image: url("bgheader.png");
-			background-size: cover;
-			background-repeat: no-repeat;
-		}
-
+     
   .image-background {
-    background-image: url('path/to/your/image.jpg');
+    background-image: url('bgheader.png');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    height: 100%; /* Adjust the height as needed */
-    /* Add any additional styling for the image background */
+    height: 100%; 
   }
 
   .box {
@@ -136,6 +129,7 @@
 
             <div class="row page-titles mx-0">
                 <div class="col p-md-0">
+                <h1 class="w3-container w3-text-black">e-Munakahat</h1>
                     <ol class="breadcrumb">
                         <li class="breadcrumb-item"><a href="javascript:void(0)">Profile</a></li>
                         <li class="breadcrumb-item active"><a href="javascript:void(0)">Home</a></li>
@@ -148,8 +142,8 @@
             <div class="row justify-content-md-center">
                 <div class="col-md-6">            
 
-                    <!-- Content within the div with image background -->
-                    <h1 class="w3-container w3-text-black">e-Munakahat</h1>
+                    <!-- Content within the div with image background 
+                    <h1 class="w3-container w3-text-black">e-Munakahat</h1> -->
 
                   <div class="box">
                         MARRIAGE REGISTRATION STATUS OF APPROVAL<br><br><span class="regstatus">NEWLY SUBMITTED</span>
