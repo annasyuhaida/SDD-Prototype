@@ -13,21 +13,20 @@
 
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <style>
-  .image-background {
+  /* .image-background {
     background-image: url('path/to/your/image.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    height: 100%; /* Adjust the height as needed */
-    /* Add any additional styling for the image background */
+    height: 100%;  */
   }
 
-  body
+  /* body
 		{
 			background-image: url("bgheader.png");
 			background-size: cover;
 			background-repeat: no-repeat;
-		}
+		} */
 
     .container {
       border: 2px solid #004080;
