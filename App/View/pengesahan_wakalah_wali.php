@@ -31,6 +31,16 @@
       display: block;
       margin-bottom: 10px;
     }
+
+    .button {
+      background-color: #ffd700;
+      color: #000;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      margin-right: 10px;
+    }
   </style>
 </head>
 <body>
