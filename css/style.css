@@ -1794,12 +1794,12 @@ fieldset:disabled a.btn {
 
 .btn-primary {
   color: #fff;
-  background-color: #7571f9;
-  border-color: #7571f9; }
+  background-color: #0277bd;
+  border-color: #0277bd; }
   .btn-primary:hover {
     color: #fff;
-    background-color: #514cf7;
-    border-color: #4540f7; }
+    background-color: #25afff;
+    border-color: #25afff; }
   .btn-primary:focus, .btn-primary.focus {
     box-shadow: 0 0 0 0.2rem rgba(117, 113, 249, 0.5); }
   .btn-primary.disabled, .btn-primary:disabled {
@@ -1809,8 +1809,8 @@ fieldset:disabled a.btn {
   .btn-primary:not(:disabled):not(.disabled):active, .btn-primary:not(:disabled):not(.disabled).active,
   .show > .btn-primary.dropdown-toggle {
     color: #fff;
-    background-color: #4540f7;
-    border-color: #3a34f6; }
+    background-color: #25afff;
+    border-color: #25afff; }
     .btn-primary:not(:disabled):not(.disabled):active:focus, .btn-primary:not(:disabled):not(.disabled).active:focus,
     .show > .btn-primary.dropdown-toggle:focus {
       box-shadow: 0 0 0 0.2rem rgba(117, 113, 249, 0.5); }
@@ -7579,6 +7579,10 @@ sub {
   z-index: 999;
   left: auto; }
 
+.logo-nav{
+  height: 5rem;
+}
+
 .nav-header {
   height: 5rem;
   width: 18.1875rem;
@@ -7673,12 +7677,15 @@ sub {
   display: block; }
 
 .header {
-  height: 5rem;
+  height: 8rem;
   z-index: 1;
   position: relative;
   padding: 0 0.9375rem;
-  background: #fff;
-  margin-left: 15.1875rem;
+  background: url("../images/navhead.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  margin-left: 18.1875rem;
   transition: all .2s ease; }
   .header .header-content {
     height: 100%; }
@@ -7732,7 +7739,7 @@ sub {
 
 .header-left {
   float: left;
-  margin-left: 50px;
+  margin-left: 10px;
   height: 100%; }
   .header-left .icons {
     float: left;
@@ -9355,9 +9362,14 @@ Fixing Order => Base + Typography >> General Layout + Grid >> Page Layout + Comp
   float: left;
   padding: 0 20px 20px 10px; }
 
+.button-right-box {
+  width: 240px;
+  float: right;
+  padding: 0 20px 20px 10px; }
+
 .email-right-box {
   margin-left: 250px; }
-
+  
 .email-list {
   display: block;
   padding-left: 0; }
