@@ -1,72 +1,84 @@
 <!DOCTYPE html>
-<!---Coding By CoderGirl | www.codinglabweb.com--->
+
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Login & Registration Form</title>
+  <title>Login</title>
 
   <style>
-        /* Import Google font - Poppins */
+    /* Import Google font - Poppins */
     @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
-    *{
+
+    * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
       font-family: 'Poppins', sans-serif;
     }
-    body{
+
+    body {
       min-height: 100vh;
       width: 100%;
       background-image: url("bgheader.png");
       background-size: cover;
       background-repeat: no-repeat;
     }
-    .container{
+
+    .container {
       position: absolute;
       top: 50%;
       left: 50%;
-      transform: translate(-50%,-50%);
+      transform: translate(-50%, -50%);
       width: 600px;
       background: #D4D3D7;
       border-radius: 20px;
-      box-shadow: 0 5px 10px rgba(0,0,0,0.3);
+      box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
     }
-    .container .registration{
+
+    .container .registration {
       position: absolute;
       top: 50%;
       left: 50%;
-      transform: translate(-50%,-50%);
+      transform: translate(-50%, -50%);
       width: 800px;
       height: 600px;
       background: #D4D3D7;
       border-radius: 20px;
-      box-shadow: 0 5px 10px rgba(0,0,0,0.3);
+      box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
     }
-    .container .registration{
+
+    .container .registration {
       display: none;
     }
-    #check:checked ~ .registration{
+
+    #check:checked~.registration {
       display: block;
     }
-    #check:checked ~ .login{
+
+    #check:checked~.login {
       display: none;
     }
-    #check{
+
+    #check {
       display: none;
     }
-    .container .form{
+
+    .container .form {
       padding: 2rem;
     }
-    .form header{
+
+    .form header {
       font-size: 30px;
       font-weight: 500;
       text-align: center;
       color: #346089;
       border-bottom: 3px solid #346089;
     }
-    .form input{
+
+    .form input {
       height: 40px;
       width: 50%;
       padding: 0 15px;
@@ -79,7 +91,8 @@
       display: block;
       background-color: #959799;
     }
-    .form input.icnumber{
+
+    .form input.icnumber {
       height: 40px;
       width: 65%;
       padding: 0 15px;
@@ -94,7 +107,8 @@
       vertical-align: middle;
       margin-top: 40px;
     }
-    .form input.name{
+
+    .form input.name {
       height: 40px;
       width: 65%;
       padding: 0 15px;
@@ -109,7 +123,8 @@
       vertical-align: middle;
       margin-top: 20px;
     }
-    .form input.phoneno{
+
+    .form input.phoneno {
       height: 40px;
       width: 65%;
       padding: 0 15px;
@@ -124,7 +139,8 @@
       vertical-align: middle;
       margin-top: 20px;
     }
-    .form input.email{
+
+    .form input.email {
       height: 40px;
       width: 65%;
       padding: 0 15px;
@@ -139,7 +155,8 @@
       vertical-align: middle;
       margin-top: 20px;
     }
-    .form input.passnew{
+
+    .form input.passnew {
       height: 40px;
       width: 65%;
       padding: 0 15px;
@@ -153,7 +170,8 @@
       vertical-align: middle;
       margin-top: 20px;
     }
-    .form input.passconfirm{
+
+    .form input.passconfirm {
       height: 40px;
       width: 65%;
       padding: 0 15px;
@@ -167,36 +185,44 @@
       display: inline-block;
       vertical-align: middle;
     }
-    .form input:focus{
-      box-shadow: 0 1px 0 rgba(0,0,0,0.2);
+
+    .form input:focus {
+      box-shadow: 0 1px 0 rgba(0, 0, 0, 0.2);
     }
-    .form a{
+
+    .form a {
       font-size: 16px;
-      color: #009579;
+      color: #346089;
       text-decoration: none;
+      align-items: center;
     }
-    .form a:hover{
+
+    .form a:hover {
       text-decoration: underline;
     }
-    .form input.button{
+
+    .form input.button {
       color: #fff;
       background: #346089;
       font-size: 1.0rem;
       font-weight: 500;
       letter-spacing: 1px;
       margin-top: 1.7rem;
+      margin-bottom: 20px;
       cursor: pointer;
       transition: 0.4s;
       height: 40px;
       width: 30%;
     }
-    .form input.button:hover{
+
+    .form input.button:hover {
       background: #006653;
     }
-    .form select{
+
+    .form select {
       height: 40px;
       width: 50%;
-      text-align: center; 
+      text-align: center;
       padding: 0 15px;
       font-size: 17px;
       margin-bottom: 1.3rem;
@@ -208,9 +234,10 @@
       text-align: center;
       color: black;
       background-color: #959799;
-      
+
     }
-    .form label{
+
+    .form label {
       display: block;
       text-align: center;
       line-height: 50%;
@@ -219,8 +246,9 @@
       margin-top: 30px;
       color: #346089;
     }
-    .form label.icnumber{
-    
+
+    .form label.icnumber {
+
       text-align: center;
       line-height: 50%;
       font-size: 17px;
@@ -231,8 +259,9 @@
       vertical-align: middle;
       text-align: right;
     }
-    .form label.name{
-    
+
+    .form label.name {
+
       text-align: center;
       line-height: 50%;
       font-size: 17px;
@@ -243,8 +272,9 @@
       vertical-align: middle;
       text-align: right;
     }
-    .form label.phoneno{
-    
+
+    .form label.phoneno {
+
       text-align: center;
       line-height: 50%;
       font-size: 17px;
@@ -255,8 +285,9 @@
       vertical-align: middle;
       text-align: right;
     }
-    .form label.email{
-    
+
+    .form label.email {
+
       text-align: center;
       line-height: 50%;
       font-size: 17px;
@@ -267,8 +298,9 @@
       vertical-align: middle;
       text-align: right;
     }
-    .form label.passnew{
-    
+
+    .form label.passnew {
+
       text-align: center;
       line-height: 50%;
       font-size: 17px;
@@ -279,8 +311,9 @@
       vertical-align: middle;
       text-align: right;
     }
-    .form label.passconfirm{
-    
+
+    .form label.passconfirm {
+
       text-align: center;
       line-height: 50%;
       font-size: 17px;
@@ -291,22 +324,26 @@
       vertical-align: middle;
       text-align: right;
     }
-    .signup{
+
+    .signup {
       font-size: 17px;
       text-align: center;
     }
-    .signup label{
+
+    .signup label {
       color: #009579;
       cursor: pointer;
     }
-    .signup label:hover{
+
+    .signup label:hover {
       text-decoration: underline;
     }
-    .registration form
-    {
+
+    .registration form {
       margin-right: 10px;
     }
-    .form input.buttonrgt{
+
+    .form input.buttonrgt {
       color: #fff;
       background: #346089;
       font-size: 1.0rem;
@@ -323,11 +360,9 @@
       bottom: 0;
       right: 0;
     }
-
-
-  
   </style>
 </head>
+
 <body>
   <div class="container">
     <input type="checkbox" id="check">
@@ -348,39 +383,20 @@
         </select>
         <input type="button" class="button" value="LOGIN">
       </form>
-      
-      <div class="signup">
-        <a href="#">Forgot password</a>
-        <span class="signup">
-         <label for="check">NEW REGISTRATION</label>
-        </span>
+
+      <div style="text-align:center">
+        <a href="../View/userRegister.php">NEW REGISTRATION</a>
+        |
+        <a href="../View/change_pass.php">CHANGE PASSWORD</a>
+        |
+        <a href="../View/forgot_pass.php">FORGOT PASSWORD</a>
+
       </div>
+
+
     </div>
-    <div class="registration form">
-      <header>REGISTRATION FORM</header>
-      <form name="register" action="#">
 
-        <label class="icnumber">IDENTITY CARD NUMBER&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp:</label>
-        <input type="text" class="icnumber"><br>
-
-        <label class="name">FULL NAME&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp: </label>
-        <input type="text" class="name" ><br>
-
-        <label class="phoneno">PHONE NUMBER&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp: </label>
-        <input type="number" class="phoneno" ><br>
-
-        <label class="email">EMAIL&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp: </label>
-        <input type="email" class="email" ><br>
-
-        <label class="passnew">NEW PASSWORD&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp: </label>
-        <input type="password" class="passnew" ><br>
-
-        <label class="passconfirm">PASSWORD CONFIRMATION : </label>
-        <input type="password" class="passconfirm"><br>
-
-        <input type="button" class="buttonrgt" value="SUBMIT REGISTRATION">
-      </form>
-    </div>
   </div>
 </body>
+
 </html>
