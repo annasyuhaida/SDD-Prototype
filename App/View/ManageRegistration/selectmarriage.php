@@ -5,11 +5,11 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <!-- Custom Stylesheet -->
-<link href="../../css/style.css" rel="stylesheet"> 
+<link href="../../../css/style.css" rel="stylesheet"> 
 <!-- Custom Stylesheet -->
-<link href="../../plugins/bootstrap-material-datetimepicker/css/bootstrap-material-datetimepicker.css" rel="stylesheet">
+<link href="../../../plugins/bootstrap-material-datetimepicker/css/bootstrap-material-datetimepicker.css" rel="stylesheet">
 <!-- Date picker plugins css -->
-<link href="../../plugins/bootstrap-datepicker/bootstrap-datepicker.min.css" rel="stylesheet">
+<link href="../../../plugins/bootstrap-datepicker/bootstrap-datepicker.min.css" rel="stylesheet">
 
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <style>
@@ -183,27 +183,27 @@
     <!--**********************************
         Scripts
     ***********************************-->
-    <script src="../../plugins/common/common.min.js"></script>
-    <script src="../../js/custom.min.js"></script>
-    <script src="../../js/settings.js"></script>
-    <script src="../../js/gleek.js"></script>
-    <script src="../../js/styleSwitcher.js"></script>
+    <script src="../../../plugins/common/common.min.js"></script>
+    <script src="../../../js/custom.min.js"></script>
+    <script src="../../../js/settings.js"></script>
+    <script src="../../../js/gleek.js"></script>
+    <script src="../../../js/styleSwitcher.js"></script>
 
-    <script src="../../plugins/moment/moment.js"></script>
-    <script src="../../plugins/bootstrap-material-datetimepicker/js/bootstrap-material-datetimepicker.js"></script>
+    <script src="../../../plugins/moment/moment.js"></script>
+    <script src="../../../plugins/bootstrap-material-datetimepicker/js/bootstrap-material-datetimepicker.js"></script>
     <!-- Clock Plugin JavaScript -->
-    <script src="../../plugins/clockpicker/dist/jquery-clockpicker.min.js"></script>
+    <script src="../../../plugins/clockpicker/dist/jquery-clockpicker.min.js"></script>
     <!-- Color Picker Plugin JavaScript -->
-    <script src="../../plugins/jquery-asColorPicker-master/libs/jquery-asColor.js"></script>
-    <script src="../../plugins/jquery-asColorPicker-master/libs/jquery-asGradient.js"></script>
-    <script src="../../plugins/jquery-asColorPicker-master/dist/jquery-asColorPicker.min.js"></script>
+    <script src="../../../plugins/jquery-asColorPicker-master/libs/jquery-asColor.js"></script>
+    <script src="../../../plugins/jquery-asColorPicker-master/libs/jquery-asGradient.js"></script>
+    <script src="../../../plugins/jquery-asColorPicker-master/dist/jquery-asColorPicker.min.js"></script>
     <!-- Date Picker Plugin JavaScript -->
-    <script src="../../plugins/bootstrap-datepicker/bootstrap-datepicker.min.js"></script>
+    <script src="../../../plugins/bootstrap-datepicker/bootstrap-datepicker.min.js"></script>
     <!-- Date range Plugin JavaScript -->
-    <script src="../../plugins/timepicker/bootstrap-timepicker.min.js"></script>
-    <script src="../../plugins/bootstrap-daterangepicker/daterangepicker.js"></script>
+    <script src="../../../plugins/timepicker/bootstrap-timepicker.min.js"></script>
+    <script src="../../../plugins/bootstrap-daterangepicker/daterangepicker.js"></script>
 
-    <script src="../../js/plugins-init/form-pickers-init.js"></script>
+    <script src="../../../js/plugins-init/form-pickers-init.js"></script>
 
 
 </body>
