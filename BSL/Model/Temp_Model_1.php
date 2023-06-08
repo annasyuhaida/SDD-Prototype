@@ -1,6 +1,6 @@
 <?php
 
-require_once '../App/Model/Database.php';
+require_once '../BSL/Model/Database.php';
 
 class Temp_Model_1 {
     private $db;

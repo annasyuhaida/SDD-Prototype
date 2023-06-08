@@ -22,7 +22,7 @@
     body {
       min-height: 100vh;
       width: 100%;
-      background-image: url("bgheader.png");
+      background-image: url('./images/bgheader.php');
       background-size: cover;
       background-repeat: no-repeat;
     }
@@ -385,11 +385,11 @@
       </form>
 
       <div style="text-align:center">
-        <a href="../View/userRegister.php">NEW REGISTRATION</a>
+        <a href="../user_account/userRegister.php">NEW REGISTRATION</a>
         |
-        <a href="../View/change_pass.php">CHANGE PASSWORD</a>
+        <a href="../user_account/change_pass.php">CHANGE PASSWORD</a>
         |
-        <a href="../View/forgot_pass.php">FORGOT PASSWORD</a>
+        <a href="../user_account/forgot_pass.php">FORGOT PASSWORD</a>
 
       </div>
 
