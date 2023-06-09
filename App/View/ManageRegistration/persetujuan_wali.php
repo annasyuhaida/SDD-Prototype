@@ -1,6 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
   <style>
     body {
       padding: 20px;
@@ -49,7 +53,7 @@
   </div>
 
   <div class="dark-blue-box">
-    <form id="agreementForm">
+    <form action="facade.php?action=SaveDoc" method="post" id="agreementForm">
       <label class="form-label">
         Saya
         <input type="text" name="waliname" required>
@@ -80,10 +84,7 @@
     </form>
   </div>
 
-  <form action="facade.php?action=SaveDoc" method="post">
-        <input type="text" name="waliname" id="waliname">
-        <button type="save">Save</button>
-    </form>
+  
   <button class="button" onclick="saveData()">Save</button>
   <button class="button" onclick="editData()">Edit</button>
   <button class="button" onclick="location.href='marriage_within_country.php'">Back</button>
@@ -92,7 +93,7 @@
     function saveData() {
       var form = document.getElementById("agreementForm");
       var formData = new FormData(form);
-      // Process the form data here (e.g., save it to a database)
+      
       console.log("Form data:", formData);
       alert("Data saved successfully!");
     }

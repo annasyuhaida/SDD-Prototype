@@ -9,6 +9,7 @@ require_once '../BSL/Controller/Temp_Controller_2.php';
 require_once '../BSL/Controller/RegistrationController/SaveDoc_ctrl.php';
 require_once '../App/View/Temp_View_1.php';
 require_once '../App/View/Temp_View_2.php';
+require_once '../App/View/ManageRegistration/persetujuan_wali.php';
 
 
 // Check database connection
