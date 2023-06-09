@@ -3,8 +3,10 @@
 require_once '../BSL/Model/Database.php';
 require_once '../BSL/Model/Temp_Model_1.php';
 require_once '../BSL/Model/Temp_Model_2.php';
+require_once '../BSL/Model/SaveDoc_model.php';
 require_once '../BSL/Controller/Temp_Controller_1.php';
 require_once '../BSL/Controller/Temp_Controller_2.php';
+require_once '../BSL/Controller/RegistrationController/SaveDoc_ctrl.php';
 require_once '../App/View/Temp_View_1.php';
 require_once '../App/View/Temp_View_2.php';
 
@@ -23,6 +25,11 @@ $action = isset($_GET['action']) ? $_GET['action'] : 'default';
 
 // Create a new instance of the appropriate controller based on the action
 switch ($action) {
+    case 'SaveDoc':
+        $waliname = $_POST['waliname'];
+        $SaveDoc_ctrl->testinput($waliname);
+        break;
+
     case 'getUsers':
         $controller = new Temp_Controller_1();
         $controller->getUsersAction();

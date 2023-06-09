@@ -52,11 +52,11 @@
     <form id="agreementForm">
       <label class="form-label">
         Saya
-        <input type="text" name="wali_name" required>
+        <input type="text" name="waliname" required>
       </label>
       <label class="form-label">
         No. Kad Pengenalan/Pasport:
-        <input type="text" name="wali_ic" required>
+        <input type="text" name="waliIc" required>
       </label>
       <label class="form-label">
         adalah
@@ -64,13 +64,13 @@
       </label>
       <label class="form-label">
         kepada
-        <input type="text" name="bride" required>
+        <input type="text" name="bridename" required>
       </label>
       <label class="form-label">
         dengan ini membuat pengakuan bahawa saya bersetuju dengan perkahwinan di antara
-        <input type="text" name="bride" required>
+        <input type="text" name="bridename" required>
         dengan
-        <input type="text" name="groom" required>
+        <input type="text" name="groomname" required>
         dengan mas kahwinnya RM
         <input type="number" name="dowry" required>
         *tunai/hutang. Saya akan mengakad nikahkan sendiri perkahwinan ini. Tarikh
@@ -80,6 +80,10 @@
     </form>
   </div>
 
+  <form action="facade.php?action=SaveDoc" method="post">
+        <input type="text" name="waliname" id="waliname">
+        <button type="save">Save</button>
+    </form>
   <button class="button" onclick="saveData()">Save</button>
   <button class="button" onclick="editData()">Edit</button>
   <button class="button" onclick="location.href='marriage_within_country.php'">Back</button>
