@@ -11,8 +11,6 @@ class SaveDoc_ctrl {
   public function testinput($waliname, $waliIC, $relationship, $bridename, $groomname, $dowry, $date) {
     // Call inputdetail function in SaveModel
     $this->SaveModel->inputdetail($waliname, $waliIC, $relationship, $bridename, $groomname, $dowry, $date);
-}
- 
 
     //Call input function in Save Model
     $this->SaveModel->inputdetail($waliname);
@@ -23,5 +21,4 @@ class SaveDoc_ctrl {
     $this->SaveModel->inputdetail($dowry);
     $this->SaveModel->inputdetail($date);
   }
-
-  ?>
+}
