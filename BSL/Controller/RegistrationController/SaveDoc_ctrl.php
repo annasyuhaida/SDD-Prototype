@@ -12,13 +12,8 @@ class SaveDoc_ctrl {
     // Call inputdetail function in SaveModel
     $this->SaveModel->inputdetail($waliname, $waliIC, $relationship, $bridename, $groomname, $dowry, $date);
 
-    //Call input function in Save Model
-    $this->SaveModel->inputdetail($waliname);
-    $this->SaveModel->inputdetail($waliIC);
-    $this->SaveModel->inputdetail($relationship);
-    $this->SaveModel->inputdetail($bridename);
-    $this->SaveModel->inputdetail($groomname);
-    $this->SaveModel->inputdetail($dowry);
-    $this->SaveModel->inputdetail($date);
+    // //Call input function in Save Model
+    // $this->SaveModel->inputdetail($waliname,$waliIC,$relationship,$bridename,$groomname,$dowry,$date);
+  
   }
 }
