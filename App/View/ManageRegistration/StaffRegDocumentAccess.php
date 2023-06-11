@@ -26,13 +26,9 @@ tr:nth-child(even) {
   background-color: #dddddd;
 }
 
-    .image-background {
-      background-image: url('bgheader.png');
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
-      height: 100%;
-    }
+.content-body {
+    padding-left: 20px; /* Adjust the value to move the table further right */
+  }
 
     .container {
       border: 2px solid #004080;
@@ -75,7 +71,7 @@ tr:nth-child(even) {
 
     .search-label {
       margin-left: 20px;
-      color: white;
+      
     }
   </style>
 
@@ -198,13 +194,13 @@ tr:nth-child(even) {
       <!-- row -->
 
       <h3 class="registration-heading"><b>LIST OF REGISTRATION APPLICATION</b></h3>
-
+        <br>
       <form>
         <label class="search-label" for="name"><b>Search applicant:</b></label>
         <input type="text" id="name" placeholder="Enter name" required>
         <button type="button" class="search-button" onclick="searchUser()">Search</button>
       </form>
-
+<br>
       <table>
   <thead>
     <tr>
@@ -221,6 +217,13 @@ tr:nth-child(even) {
       <td>021101-06-0671<br>RIZAL BIN ROMZI</td>
       <td>20/1/2023</td>
       <td>Newly submitted</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>991209-06-0614<br>JUWITA BINTI KHALEED</td>
+      <td>15/1/2023</td>
+      <td>Approved</td>
       <td></td>
     </tr>
   </tbody>
