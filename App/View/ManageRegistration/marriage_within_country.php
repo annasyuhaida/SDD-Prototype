@@ -86,7 +86,7 @@
     }
 
     function confirmSubmission() {
-     location.href = "reg_approval.php";
+     location.href = "ViewRegApprovalStatus.php";
 }
   </script>
 
