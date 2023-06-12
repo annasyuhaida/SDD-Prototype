@@ -5,14 +5,13 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <!-- Custom Stylesheet -->
-<link href="../../css/style.css" rel="stylesheet"> 
+<link href="../../../css/style.css" rel="stylesheet"> 
 <!-- Custom Stylesheet -->
-<link href="../../plugins/bootstrap-material-datetimepicker/css/bootstrap-material-datetimepicker.css" rel="stylesheet">
+<link href="../../../plugins/bootstrap-material-datetimepicker/css/bootstrap-material-datetimepicker.css" rel="stylesheet">
 <!-- Date picker plugins css -->
-<link href="../../plugins/bootstrap-datepicker/bootstrap-datepicker.min.css" rel="stylesheet">
+<link href="../../../plugins/bootstrap-datepicker/bootstrap-datepicker.min.css" rel="stylesheet">
 
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-
 
 
   <!--*******************
@@ -156,33 +155,45 @@
                     <div class="col-lg-12">
                         <div class="card">
                             <div class="card-body">
-                                <div class="card-title">
-                                    <h4>Marriage Preparation Course List</h4>
+                            <div class="button-right-box col-md-2"><a href="PreMarriageCourseList.php" class="btn btn-primary btn-block">Send</a></div>
+                            <div class="button-right-box col-md-2"><a href="PreMarriageCourseList.php" class="btn btn-primary btn-block">Make Payment</a></div>
+                            <div class="button-right-box col-md-2"><a href="PreMarriageCourseList.php" class="btn btn-primary btn-block">+Register New</a></div>
+
+                            <div class="card-title">
+                                    <h4>Marriage Application List</h4>
                                 </div>
+                                
                                 <div class="table-responsive">
                                     <table class="table">
                                         <thead>
                                             <tr>
                                                 <th>NO.</th>
-                                                <th>ORGANIZER</th>
-                                                <th>LOCATION</th>
-                                                <th>DATE</th>
-                                                <th>PARTICIPANT CAPACITY</th>
-                                                <th>VACANCY</th>
+                                                <th>PARTNER NAME/ID</th>
+                                                <th>APPLICATION SLIP NUMBER</th>
+                                                <th>APPLY DATE</th>
+                                                <th>STATUS</th>
                                                 <th>ACTION</th>
                                             </tr>
                                         </thead>
                                         <tbody>
                                             <tr>
                                                 <th>1</th>
-                                                <td>PEJABAT AGAMA ISLAM MUADZAM SHAH</td>
-                                                <td>BILIK SEMINAR PEJABAT AGAMA ISLAM MUADZAM SHAH</td>
-                                                <td>28-29 January 2023</td>
-                                                <td>60</td>
-                                                <td>20</td>
-                                                <td><span>
-                                                        <a href="#" title="Edit"><i class="fa fa-edit color-muted m-r-5"></i></a>
-                                                        <a href="./PreMarriageCourseRegForm.php" title="Register"><i class="fa fa-plus-circle color-muted m-r-5"></i></a>
+                                                <td>
+                                                    <div class="m-t-20">
+                                                     010519-06-0081
+                                                    </div>
+                                                    <div class="m-t-20">
+                                                     Muhammad Aimaan
+                                                    </div>
+                                                </td>
+                                                <td>-</td>
+                                                <td>-</td>
+                                                <td>Not Delivered</td>
+                                                <td>
+                                                    <span>
+                                                        <a href="#" data-toggle="tooltip" data-placement="top" title="Download"><i class="fa fa-download color-muted m-r-5"></i></a>
+                                                        <a href="#" data-toggle="tooltip" data-placement="top" title="Edit"><i class="fa fa-edit color-muted m-r-5"></i></a>
+                                                        <a href="#" data-toggle="tooltip" data-placement="top" title="Delete"><i class="fa fa-trash color-muted m-r-5"></i></a>
                                                     </span>
                                                 </td>
                                             </tr>
@@ -202,30 +213,30 @@
     ***********************************-->
 
 
-    <!--**********************************
+     <!--**********************************
         Scripts
     ***********************************-->
-    <script src="../../plugins/common/common.min.js"></script>
-    <script src="../../js/custom.min.js"></script>
-    <script src="../../js/settings.js"></script>
-    <script src="../../js/gleek.js"></script>
-    <script src="../../js/styleSwitcher.js"></script>
+    <script src="../../../plugins/common/common.min.js"></script>
+    <script src="../../../js/custom.min.js"></script>
+    <script src="../../../js/settings.js"></script>
+    <script src="../../../js/gleek.js"></script>
+    <script src="../../../js/styleSwitcher.js"></script>
 
-    <script src="../../plugins/moment/moment.js"></script>
-    <script src="../../plugins/bootstrap-material-datetimepicker/js/bootstrap-material-datetimepicker.js"></script>
+    <script src="../../../plugins/moment/moment.js"></script>
+    <script src="../../../plugins/bootstrap-material-datetimepicker/js/bootstrap-material-datetimepicker.js"></script>
     <!-- Clock Plugin JavaScript -->
-    <script src="../../plugins/clockpicker/dist/jquery-clockpicker.min.js"></script>
+    <script src="../../../plugins/clockpicker/dist/jquery-clockpicker.min.js"></script>
     <!-- Color Picker Plugin JavaScript -->
-    <script src="../../plugins/jquery-asColorPicker-master/libs/jquery-asColor.js"></script>
-    <script src="../../plugins/jquery-asColorPicker-master/libs/jquery-asGradient.js"></script>
-    <script src="../../plugins/jquery-asColorPicker-master/dist/jquery-asColorPicker.min.js"></script>
+    <script src="../../../plugins/jquery-asColorPicker-master/libs/jquery-asColor.js"></script>
+    <script src="../../../plugins/jquery-asColorPicker-master/libs/jquery-asGradient.js"></script>
+    <script src="../../../plugins/jquery-asColorPicker-master/dist/jquery-asColorPicker.min.js"></script>
     <!-- Date Picker Plugin JavaScript -->
-    <script src="../../plugins/bootstrap-datepicker/bootstrap-datepicker.min.js"></script>
+    <script src="../../../plugins/bootstrap-datepicker/bootstrap-datepicker.min.js"></script>
     <!-- Date range Plugin JavaScript -->
-    <script src="../../plugins/timepicker/bootstrap-timepicker.min.js"></script>
-    <script src="../../plugins/bootstrap-daterangepicker/daterangepicker.js"></script>
+    <script src="../../../plugins/timepicker/bootstrap-timepicker.min.js"></script>
+    <script src="../../../plugins/bootstrap-daterangepicker/daterangepicker.js"></script>
 
-    <script src="../../js/plugins-init/form-pickers-init.js"></script>
+    <script src="../../../js/plugins-init/form-pickers-init.js"></script>
 
 
 </body>

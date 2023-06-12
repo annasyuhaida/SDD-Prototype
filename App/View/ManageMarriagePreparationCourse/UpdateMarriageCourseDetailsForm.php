@@ -5,11 +5,11 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <!-- Custom Stylesheet -->
-<link href="../../css/style.css" rel="stylesheet"> 
+<link href="../../../css/style.css" rel="stylesheet"> 
 <!-- Custom Stylesheet -->
-<link href="../../plugins/bootstrap-material-datetimepicker/css/bootstrap-material-datetimepicker.css" rel="stylesheet">
+<link href="../../../plugins/bootstrap-material-datetimepicker/css/bootstrap-material-datetimepicker.css" rel="stylesheet">
 <!-- Date picker plugins css -->
-<link href="../../plugins/bootstrap-datepicker/bootstrap-datepicker.min.css" rel="stylesheet">
+<link href="../../../plugins/bootstrap-datepicker/bootstrap-datepicker.min.css" rel="stylesheet">
 
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <style>
@@ -182,81 +182,42 @@
                     <div class="col-lg-12">
                         <div class="card">
                             <div class="card-body">
-                                <p class="text-muted m-b-15 f-s-12">Organizer : </p>
-                                <p class="text-muted m-b-15 f-s-12">Location and Date : </p>
-                                <h4 class="card-title">Applicant Information</h4>
+                                <h4 class="card-title">Register New Marriage Preparation Course</h4>
+
                                 <form>
                                         <div class="row form-material">
-                                                <div class="col-md-6">
-                                                    <label class="m-t-20">Name:</label>
+                                                <div class="col-md-12">
+                                                    <label class="m-t-20">Organizer:</label>
                                                     <input type="text" class="form-control input-rounded" placeholder="e.g. Alex">
                                                 </div>
-                                                <div class="col-md-6">
-                                                    <label class="m-t-20">Identity Card Number:</label>
-                                                    <input type="text" class="form-control input-rounded" placeholder="e.g.010719-06-0081 ">
-                                                </div>
-                                                <div class="col-md-6">
-                                                    <label class="m-t-20">Age:</label>
-                                                    <input type="text" class="form-control input-rounded" placeholder="e.g. 26">
-                                                </div>
-                                                <div class="col-md-6">
-                                                    <label class="m-t-20">Email:</label>
-                                                    <input type="text" class="form-control input-rounded" placeholder="e.g. Alex26@gmail.com">
-                                                </div>
-                                                <div class="col-md-6">
-                                                    <label class="m-t-20">Address:</label>
+                                                <div class="col-md-12">
+                                                    <label class="m-t-20">Location:</label>
                                                     <input type="text" class="form-control input-rounded" placeholder="e.g. No.11 Taman Chempaka">
                                                     <input type="text" class="form-control input-rounded mt-2" placeholder="e.g. Lorong IM 15/21">
                                                 </div>
-                                                <div class="col-md-6 "></div>
-                                                <div class="col-md-6 ">
-                                                    <div class="row">
-                                                        <div class="col-md-6">
-                                                            <label class="m-t-20">State:</label>
-                                                            <input type="text" class="form-control input-rounded" placeholder="e.g. Pahang">
-                                                        </div>
-                                                        <div class="col-md-6">
-                                                            <label class="m-t-20">District:</label>
-                                                            <input type="text" class="form-control input-rounded" placeholder="e.g. Gambang">
-                                                        </div>
-
-                                                    </div>
-
+                                                <div class="col-md-6 mt-3">
+                                                    <label class="m-t-20">Date:</label>
+                                                    <input class="form-control input-limit-datepicker input-rounded" type="text" name="daterange" value="06/01/2015 - 06/07/2015">
+                                                </div>
+                                                <div class="col-md-6 mt-3">
+                                                    <label class="m-t-20">Capacity:</label>
+                                                    <input type="text" class="form-control input-rounded" placeholder="e.g. 100">
                                                 </div>
                                                 <div class="col-md-6">
-                                                            <label class="m-t-20">Postcode:</label>
-                                                            <input type="text" class="form-control input-rounded" placeholder="e.g. 25150">
+                                                    <label class="m-t-20">Officer:</label>
+                                                    <input type="text" class="form-control input-rounded" placeholder="e.g. Ustaz Mohd Sobri">
                                                 </div>
                                                 <div class="col-md-6">
-                                                    <label class="m-t-20">Employment:</label>
-                                                    <input type="text" class="form-control input-rounded" placeholder="e.g. Doctor">
-                                                </div>
-                                                <div class="col-md-6">
-                                                    <label class="m-t-20">Education Level:</label>
-                                                    <input type="text" class="form-control input-rounded" placeholder="e.g.PhD ">
-                                                </div>
-                                                <div class="col-md-6">
-                                                    <label class="m-t-20">Gender:</label>
-                                                    <input type="text" class="form-control input-rounded" placeholder="e.g. male">
+                                                    <label class="m-t-20">Briefing Series:</label>
+                                                    <input type="text" class="form-control input-rounded" placeholder="e.g. BTG/0001/2023">
                                                 </div>
                                                 <div class="col-md-6">
                                                     <label class="m-t-20">Phone Number:</label>
-                                                    <input type="text" class="form-control input-rounded" placeholder="e.g. +60123456789">
+                                                    <input type="text" class="form-control input-rounded" placeholder="e.g. +60123456789 ">
                                                 </div>
-                                                <div class="col-md-6">
-                                                <div class="input-group" style="margin-top:20px; margin-bottom:20px;">
-                                                    <label class="m-t-20">Upload Payment:</label>
-                                                    <div class="custom-file">
-                                                        <input type="file" class="custom-file-input">
-                                                        <label class="custom-file-label">Choose file</label>
-                                                    </div>
-                                                    <div class="input-group-append"><span class="input-group-text">Upload</span>
-                                                    </div>
-                                                </div>
-                                                </div>
-                                                <div class="col-md-12">
+                                                <div class="col-md-12 mt-3">
                                                     <div class="row justify-content-center">
-                                                        <button type="submit" class="btn btn-dark mb-2">Submit</button>
+                                                        <button type="submit" class="btn btn-dark mb-2">Save</button>
                                                     </div> 
                                                 </div>
 
@@ -278,27 +239,27 @@
     <!--**********************************
         Scripts
     ***********************************-->
-    <script src="../../plugins/common/common.min.js"></script>
-    <script src="../../js/custom.min.js"></script>
-    <script src="../../js/settings.js"></script>
-    <script src="../../js/gleek.js"></script>
-    <script src="../../js/styleSwitcher.js"></script>
+    <script src="../../../plugins/common/common.min.js"></script>
+    <script src="../../../js/custom.min.js"></script>
+    <script src="../../../js/settings.js"></script>
+    <script src="../../../js/gleek.js"></script>
+    <script src="../../../js/styleSwitcher.js"></script>
 
-    <script src="../../plugins/moment/moment.js"></script>
-    <script src="../../plugins/bootstrap-material-datetimepicker/js/bootstrap-material-datetimepicker.js"></script>
+    <script src="../../../plugins/moment/moment.js"></script>
+    <script src="../../../plugins/bootstrap-material-datetimepicker/js/bootstrap-material-datetimepicker.js"></script>
     <!-- Clock Plugin JavaScript -->
-    <script src="../../plugins/clockpicker/dist/jquery-clockpicker.min.js"></script>
+    <script src="../../../plugins/clockpicker/dist/jquery-clockpicker.min.js"></script>
     <!-- Color Picker Plugin JavaScript -->
-    <script src="../../plugins/jquery-asColorPicker-master/libs/jquery-asColor.js"></script>
-    <script src="../../plugins/jquery-asColorPicker-master/libs/jquery-asGradient.js"></script>
-    <script src="../../plugins/jquery-asColorPicker-master/dist/jquery-asColorPicker.min.js"></script>
+    <script src="../../../plugins/jquery-asColorPicker-master/libs/jquery-asColor.js"></script>
+    <script src="../../../plugins/jquery-asColorPicker-master/libs/jquery-asGradient.js"></script>
+    <script src="../../../plugins/jquery-asColorPicker-master/dist/jquery-asColorPicker.min.js"></script>
     <!-- Date Picker Plugin JavaScript -->
-    <script src="../../plugins/bootstrap-datepicker/bootstrap-datepicker.min.js"></script>
+    <script src="../../../plugins/bootstrap-datepicker/bootstrap-datepicker.min.js"></script>
     <!-- Date range Plugin JavaScript -->
-    <script src="../../plugins/timepicker/bootstrap-timepicker.min.js"></script>
-    <script src="../../plugins/bootstrap-daterangepicker/daterangepicker.js"></script>
+    <script src="../../../plugins/timepicker/bootstrap-timepicker.min.js"></script>
+    <script src="../../../plugins/bootstrap-daterangepicker/daterangepicker.js"></script>
 
-    <script src="../../js/plugins-init/form-pickers-init.js"></script>
+    <script src="../../../js/plugins-init/form-pickers-init.js"></script>
 
 
 </body>

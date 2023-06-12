@@ -5,13 +5,40 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <!-- Custom Stylesheet -->
-<link href="../../css/style.css" rel="stylesheet"> 
+<link href="../../../css/style.css" rel="stylesheet"> 
 <!-- Custom Stylesheet -->
-<link href="../../plugins/bootstrap-material-datetimepicker/css/bootstrap-material-datetimepicker.css" rel="stylesheet">
+<link href="../../../plugins/bootstrap-material-datetimepicker/css/bootstrap-material-datetimepicker.css" rel="stylesheet">
 <!-- Date picker plugins css -->
-<link href="../../plugins/bootstrap-datepicker/bootstrap-datepicker.min.css" rel="stylesheet">
+<link href="../../../plugins/bootstrap-datepicker/bootstrap-datepicker.min.css" rel="stylesheet">
 
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<style>
+  .image-background {
+    background-image: url('path/to/your/image.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100%; /* Adjust the height as needed */
+    /* Add any additional styling for the image background */
+  }
+
+  .box {
+            width: 400px;
+            height: 200px;
+            border: 1px solid black;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            border-radius: 10px;
+            background-color: lightgrey;
+        }
+
+        .regstatus {
+            color: darkblue;
+        }
+</style>
 
 
   <!--*******************
@@ -99,7 +126,7 @@
                         <span class="nav-text">Marriage Preparation Course</span>
                         </a>
                         <ul aria-expanded="false">
-                            <li><a href="./PreMarriageCourseList.php">Register Marriage Preparation Course</a></li>
+                            <li><a href="./PreMarriageCourseRegForm.php">Register Marriage Preparation Course</a></li>
                         </ul>
 
                     </li>
@@ -155,40 +182,30 @@
                     <div class="col-lg-12">
                         <div class="card">
                             <div class="card-body">
-                            <div class="button-right-box col-md-2"><a href="PreMarriageCourseList.php" class="btn btn-primary btn-block">Register New</a></div>
-                                <div class="card-title">
-                                    <h4>Marriage Preparation Course List</h4>
-                                </div>
-                                <div class="row">
-                                <input type="search" class="form-control col-md-3" placeholder="Search " aria-label="Search Dashboard">
-                                <button type="submit" class="btn btn-secondary ml-2">Search</button>
-                                </div>
-                                <div class="table-responsive">
-                                    <table class="table">
-                                        <thead>
-                                            <tr>
-                                                <th>NO.</th>
-                                                <th>ORGANIZER</th>
-                                                <th>LOCATION</th>
-                                                <th>DATE</th>
-                                                <th>PRINT SLIP</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr>
-                                                <th>1</th>
-                                                <td>PEJABAT AGAMA ISLAM MUADZAM SHAH</td>
-                                                <td>BILIK SEMINAR PEJABAT AGAMA ISLAM MUADZAM SHAH</td>
-                                                <td>28-29 January 2023</td>
-                                                <td>
-                                                    <span>
-                                                        <a href="#" data-toggle="tooltip" data-placement="top" title="Print"><i class="fa fa-print color-muted m-r-5"></i></a>
-                                                    </span>
-                                                </td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
+                                <form>
+                                        <div class="row form-material justify-content-center">
+                                               
+                                                <div class="col-md-6">
+                                                <p class="text-muted m-b-15 f-s-12">Please make payment to this third party account number</p>
+                                                <p class="text-muted m-b-15 f-s-12">Maybank : 0158725421586325</p>
+                                                <div class="input-group" style="margin-top:20px; margin-bottom:20px;">
+                                                    <label class="m-t-20">Upload Payment:</label>
+                                                    <div class="custom-file">
+                                                        <input type="file" class="custom-file-input">
+                                                        <label class="custom-file-label">Choose file</label>
+                                                    </div>
+                                                    <div class="input-group-append"><span class="input-group-text">Upload</span>
+                                                    </div>
+                                                </div>
+                                                </div>
+                                                <div class="col-md-12">
+                                                    <div class="row justify-content-center">
+                                                        <button type="submit" class="btn btn-dark mb-2">Submit</button>
+                                                    </div> 
+                                                </div>
+
+                                        </div>
+                                </form>
                             </div>
                         </div>
                     </div>
@@ -202,30 +219,30 @@
     ***********************************-->
 
 
-    <!--**********************************
+     <!--**********************************
         Scripts
     ***********************************-->
-    <script src="../../plugins/common/common.min.js"></script>
-    <script src="../../js/custom.min.js"></script>
-    <script src="../../js/settings.js"></script>
-    <script src="../../js/gleek.js"></script>
-    <script src="../../js/styleSwitcher.js"></script>
+    <script src="../../../plugins/common/common.min.js"></script>
+    <script src="../../../js/custom.min.js"></script>
+    <script src="../../../js/settings.js"></script>
+    <script src="../../../js/gleek.js"></script>
+    <script src="../../../js/styleSwitcher.js"></script>
 
-    <script src="../../plugins/moment/moment.js"></script>
-    <script src="../../plugins/bootstrap-material-datetimepicker/js/bootstrap-material-datetimepicker.js"></script>
+    <script src="../../../plugins/moment/moment.js"></script>
+    <script src="../../../plugins/bootstrap-material-datetimepicker/js/bootstrap-material-datetimepicker.js"></script>
     <!-- Clock Plugin JavaScript -->
-    <script src="../../plugins/clockpicker/dist/jquery-clockpicker.min.js"></script>
+    <script src="../../../plugins/clockpicker/dist/jquery-clockpicker.min.js"></script>
     <!-- Color Picker Plugin JavaScript -->
-    <script src="../../plugins/jquery-asColorPicker-master/libs/jquery-asColor.js"></script>
-    <script src="../../plugins/jquery-asColorPicker-master/libs/jquery-asGradient.js"></script>
-    <script src="../../plugins/jquery-asColorPicker-master/dist/jquery-asColorPicker.min.js"></script>
+    <script src="../../../plugins/jquery-asColorPicker-master/libs/jquery-asColor.js"></script>
+    <script src="../../../plugins/jquery-asColorPicker-master/libs/jquery-asGradient.js"></script>
+    <script src="../../../plugins/jquery-asColorPicker-master/dist/jquery-asColorPicker.min.js"></script>
     <!-- Date Picker Plugin JavaScript -->
-    <script src="../../plugins/bootstrap-datepicker/bootstrap-datepicker.min.js"></script>
+    <script src="../../../plugins/bootstrap-datepicker/bootstrap-datepicker.min.js"></script>
     <!-- Date range Plugin JavaScript -->
-    <script src="../../plugins/timepicker/bootstrap-timepicker.min.js"></script>
-    <script src="../../plugins/bootstrap-daterangepicker/daterangepicker.js"></script>
+    <script src="../../../plugins/timepicker/bootstrap-timepicker.min.js"></script>
+    <script src="../../../plugins/bootstrap-daterangepicker/daterangepicker.js"></script>
 
-    <script src="../../js/plugins-init/form-pickers-init.js"></script>
+    <script src="../../../js/plugins-init/form-pickers-init.js"></script>
 
 
 </body>

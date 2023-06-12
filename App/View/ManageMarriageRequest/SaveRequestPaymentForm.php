@@ -5,11 +5,11 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <!-- Custom Stylesheet -->
-<link href="../../css/style.css" rel="stylesheet"> 
+<link href="../../../css/style.css" rel="stylesheet"> 
 <!-- Custom Stylesheet -->
-<link href="../../plugins/bootstrap-material-datetimepicker/css/bootstrap-material-datetimepicker.css" rel="stylesheet">
+<link href="../../../plugins/bootstrap-material-datetimepicker/css/bootstrap-material-datetimepicker.css" rel="stylesheet">
 <!-- Date picker plugins css -->
-<link href="../../plugins/bootstrap-datepicker/bootstrap-datepicker.min.css" rel="stylesheet">
+<link href="../../../plugins/bootstrap-datepicker/bootstrap-datepicker.min.css" rel="stylesheet">
 
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 
@@ -156,42 +156,83 @@
                     <div class="col-lg-12">
                         <div class="card">
                             <div class="card-body">
+                                
                                 <div class="card-title">
-                                    <h4>Participant List</h4>
-                                </div>
-                                <div class="row">
-                                <input type="search" class="form-control col-md-3" placeholder="Search " aria-label="Search Dashboard">
-                                <button type="submit" class="btn btn-secondary ml-2">Search</button>
+                                    <div class=" row justify-content-center">
+                                        <div class="col-md-4 offset-md-1">
+                                            <h2 class=" fw-bold">Payment Details</h2>
+                                        </div>    
+                                        <div class="col-md-12 offset-md-4">  
+                                            <h2 class="mt-4 fw-bold">Please CHECK details below BEFORE approve payment</h2>
+                                        </div> 
+                                    </div>
                                 </div>
                                 <div class="table-responsive">
                                     <table class="table">
                                         <thead>
                                             <tr>
-                                                <th>NO.</th>
-                                                <th>APPLY DATE</th>
-                                                <th>PARTICIPANT NAME</th>
-                                                <th>ID NUMBER</th>
-                                                <th>BRIEFING SERIES</th>
-                                                <th>STATUS</th>
-                                                <th>ACTION</th>
+                                                <th>APPLICANT</th>
+                                                <th>RESIDENTIIAL</th>
+                                                <th>COURT REFER</th>
+                                                <th>APPLY APPROVAL PLACE</th>
+                                                <th>MARRIAGE PLACE</th>
                                             </tr>
                                         </thead>
                                         <tbody>
                                             <tr>
-                                                <th>1</th>
-                                                <td>29/09/2022</td>
-                                                <td>Nurul Qalbi Binti Abbas</td>
-                                                <td>010519-06-0081</td>
-                                                <td>BTG/0008/2022</td>
-                                                <td>SUCCESS</td>
-                                                <td><span>
-                                                        <a href="./PreMarriageCourseRegForm.php" title="Edit"><i class="fa fa-edit color-muted m-r-5"></i></a>
-                                                        <a href="./PreMarriageCourseRegForm.php" title="Print"><i class="fa fa-print color-muted m-r-5"></i></a>
-                                                    </span>
-                                                </td>
+                                                <th>LELAKI</th>
+                                                <td>YES</td>
+                                                <td>NO</td>
+                                                <td>PEJABAT AGAMA ISLAM ROMPIN</td>
+                                                <td>PEJABAT AGAMA ISLAM BENTONG</td>
+                                                 
                                             </tr>
                                         </tbody>
                                     </table>
+                                    <form action="">
+                                    <div class="row justify-content-center">
+                                        <div class="col-md-3 offset-md-2">
+                                            <label>Proof Of Payment :</label>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <a  href="#">Resit.pdf</a>
+                                        </div>
+                                        <div class="col-md-3 offset-md-2">
+                                            <label>Applicant Name/ID :</label>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <label>MOHAMMAD HISYAM BIN ABU SAID (790222065438)</label>
+                                        </div>
+                                        <div class="col-md-3  offset-md-2">
+                                            <label>Partner Name/ID :</label>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <label>NORHASANAH BINTI JOHAR (870728065990)</label>
+                                        </div>
+                                        <div class="col-md-3  offset-md-2">
+                                            <label>No. Receipt :</label>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <input type="text">
+                                        </div>
+                                        <div class="col-md-3 offset-md-2">
+                                            <label>Total Payment :</label>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <label>RM 15.00 (Basic Application)</label>
+                                        </div>
+                                        <div class="col-md-3 offset-md-2">
+                                            <label>Receipt Date :</label>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <input type="text">
+                                        </div>
+                                        <div class="col-md-3 offset-md-1 mt-4">
+                                            <button type="submit" class="btn btn-dark mb-2">Back</button>
+                                            <button type="submit" class="btn btn-dark mb-2">Submit</button>
+                                        </div>
+                                    </div>
+                                  </form>
                                 </div>
                             </div>
                         </div>
@@ -209,27 +250,27 @@
     <!--**********************************
         Scripts
     ***********************************-->
-    <script src="../../plugins/common/common.min.js"></script>
-    <script src="../../js/custom.min.js"></script>
-    <script src="../../js/settings.js"></script>
-    <script src="../../js/gleek.js"></script>
-    <script src="../../js/styleSwitcher.js"></script>
+    <script src="../../../plugins/common/common.min.js"></script>
+    <script src="../../../js/custom.min.js"></script>
+    <script src="../../../js/settings.js"></script>
+    <script src="../../../js/gleek.js"></script>
+    <script src="../../../js/styleSwitcher.js"></script>
 
-    <script src="../../plugins/moment/moment.js"></script>
-    <script src="../../plugins/bootstrap-material-datetimepicker/js/bootstrap-material-datetimepicker.js"></script>
+    <script src="../../../plugins/moment/moment.js"></script>
+    <script src="../../../plugins/bootstrap-material-datetimepicker/js/bootstrap-material-datetimepicker.js"></script>
     <!-- Clock Plugin JavaScript -->
-    <script src="../../plugins/clockpicker/dist/jquery-clockpicker.min.js"></script>
+    <script src="../../../plugins/clockpicker/dist/jquery-clockpicker.min.js"></script>
     <!-- Color Picker Plugin JavaScript -->
-    <script src="../../plugins/jquery-asColorPicker-master/libs/jquery-asColor.js"></script>
-    <script src="../../plugins/jquery-asColorPicker-master/libs/jquery-asGradient.js"></script>
-    <script src="../../plugins/jquery-asColorPicker-master/dist/jquery-asColorPicker.min.js"></script>
+    <script src="../../../plugins/jquery-asColorPicker-master/libs/jquery-asColor.js"></script>
+    <script src="../../../plugins/jquery-asColorPicker-master/libs/jquery-asGradient.js"></script>
+    <script src="../../../plugins/jquery-asColorPicker-master/dist/jquery-asColorPicker.min.js"></script>
     <!-- Date Picker Plugin JavaScript -->
-    <script src="../../plugins/bootstrap-datepicker/bootstrap-datepicker.min.js"></script>
+    <script src="../../../plugins/bootstrap-datepicker/bootstrap-datepicker.min.js"></script>
     <!-- Date range Plugin JavaScript -->
-    <script src="../../plugins/timepicker/bootstrap-timepicker.min.js"></script>
-    <script src="../../plugins/bootstrap-daterangepicker/daterangepicker.js"></script>
+    <script src="../../../plugins/timepicker/bootstrap-timepicker.min.js"></script>
+    <script src="../../../plugins/bootstrap-daterangepicker/daterangepicker.js"></script>
 
-    <script src="../../js/plugins-init/form-pickers-init.js"></script>
+    <script src="../../../js/plugins-init/form-pickers-init.js"></script>
 
 
 </body>
