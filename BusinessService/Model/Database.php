@@ -2,7 +2,7 @@
 
 class Database {
     private static $host = 'localhost';
-    private static $dbName = 'temp_db';
+    private static $dbName = 'pahang_marriage_system';
     private static $username = 'root';
     private static $password = '';
     private static $connection = null;

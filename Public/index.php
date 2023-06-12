@@ -1,8 +1,8 @@
 <?php
 require_once '../App/View/ManageRegistration/persetujuan_wali.php';
-require_once '../BSL/Model/Database.php';
-require_once '../BSL/Model/SaveDoc_model.php';
-require_once '../BSL/Controller/RegistrationController/SaveDoc_ctrl.php';
+require_once '../BusinessService/Model/Database.php';
+require_once '../BusinessService/Model/SaveDoc_model.php';
+require_once '../BusinessService/Controller/RegistrationController/SaveDoc_ctrl.php';
 
 // Check database connection
 try {
