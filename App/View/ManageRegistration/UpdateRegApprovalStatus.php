@@ -33,10 +33,10 @@ tr:nth-child(even) {
     background-color: darkgrey;
   }
 
-    .container {
+  .container {
       border: 2px solid #004080;
-      background-color: black;
-      color: #fff;
+      background-color: lightblue;
+      color: black;
       padding: 20px;
       width: 400px;
       text-align: center;
@@ -71,16 +71,16 @@ tr:nth-child(even) {
     .view-button {
             background-color: darkblue;
             color: white;
-            padding: 10px 20px;
+            padding: 2px 8px;
             text-decoration: none;
             display: inline-block;
             border-radius: 4px;
         }
 
-    .status-button {
+    .download-button {
             background-color: darkblue;
             color: white;
-            padding: 10px 20px;
+            padding: 2px 8px;
             text-decoration: none;
             display: inline-block;
             border-radius: 4px;
@@ -214,43 +214,29 @@ tr:nth-child(even) {
       </div>
       <!-- row -->
 
-      <h3 class="registration-heading"><b>LIST OF REGISTRATION APPLICATION</b></h3>
+      <h3 class="registration-heading">Applicant Name: RIZAL BIN ROMZI<br>IC Number/ Passport Number: 021101-06-0671</h3>
         <br>
-      <form>
-        <label class="search-label" for="name"><b>Search applicant:</b></label>
-        <input type="text" id="name" placeholder="Enter name" required>
-        <button type="button" class="search-button" onclick="searchUser()">Search</button>
-      </form>
-<br>
-      <table>
-  <thead>
-    <tr>
-      <th>No.</th>
-      <th>Applicant IC number and name</th>
-      <th>Date of submission</th>
-      <th>Approval status</th>
-      <th>Action</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>1</td>
-      <td>021101-06-0671<br>RIZAL BIN ROMZI</td>
-      <td>20/1/2023</td>
-      <td>Newly submitted</td>
-      <td><a href="ApplicantRegDocList.php" class="view-button">View</a> <a href="UpdateRegApprovalStatus.php" class="status-button">Status</a></td>
-    </tr>
-    <tr>
-      <td>2</td>
-      <td>991209-06-0614<br>JUWITA BINTI KHALEED</td>
-      <td>15/1/2023</td>
-      <td>Approved</td>
-      <td><a href="new_interface.php" class="view-button">View</a> <a href="status_interface.php" class="status-button">Status</a></td>
-    </tr>
-  </tbody>
-</table>
-
+      
+        <div class="container-fluid">
+            <div class="row justify-content-md-center">
+                <div class="col-md-6">            
+                    <div class="container">
+                        <h2>Update Status Of Approval</h2>
+                            <label class="option">
+                                <input type="radio" name="status" value="in_process">IN PROCESS
+                            </label><br>
+                            <label class="option">
+                                <input type="radio" name="status" value="approved">APPROVED
+                            </label><br>
+                            <label class="option">
+                                <input type="radio" name="status" value="rejected">REJECTED
+                            </label><br><button class="button">SUBMIT</button>
+                    </div>
+                </div>  
+            </div>
+        </div>
     </div>
+</div>
     <!--**********************************
             Main wrapper end
         ***********************************-->
@@ -285,6 +271,3 @@ tr:nth-child(even) {
 </body>
 
 </html>
-
-
-

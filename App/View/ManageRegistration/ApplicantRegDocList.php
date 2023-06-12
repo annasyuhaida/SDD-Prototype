@@ -71,16 +71,16 @@ tr:nth-child(even) {
     .view-button {
             background-color: darkblue;
             color: white;
-            padding: 10px 20px;
+            padding: 2px 8px;
             text-decoration: none;
             display: inline-block;
             border-radius: 4px;
         }
 
-    .status-button {
+    .download-button {
             background-color: darkblue;
             color: white;
-            padding: 10px 20px;
+            padding: 2px 8px;
             text-decoration: none;
             display: inline-block;
             border-radius: 4px;
@@ -214,41 +214,56 @@ tr:nth-child(even) {
       </div>
       <!-- row -->
 
-      <h3 class="registration-heading"><b>LIST OF REGISTRATION APPLICATION</b></h3>
+      <h3 class="registration-heading">Applicant Name: RIZAL BIN ROMZI<br>IC Number/ Passport Number:021101-06-0671</h3>
         <br>
-      <form>
-        <label class="search-label" for="name"><b>Search applicant:</b></label>
-        <input type="text" id="name" placeholder="Enter name" required>
-        <button type="button" class="search-button" onclick="searchUser()">Search</button>
-      </form>
-<br>
-      <table>
-  <thead>
-    <tr>
-      <th>No.</th>
-      <th>Applicant IC number and name</th>
-      <th>Date of submission</th>
-      <th>Approval status</th>
-      <th>Action</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>1</td>
-      <td>021101-06-0671<br>RIZAL BIN ROMZI</td>
-      <td>20/1/2023</td>
-      <td>Newly submitted</td>
-      <td><a href="ApplicantRegDocList.php" class="view-button">View</a> <a href="UpdateRegApprovalStatus.php" class="status-button">Status</a></td>
-    </tr>
-    <tr>
-      <td>2</td>
-      <td>991209-06-0614<br>JUWITA BINTI KHALEED</td>
-      <td>15/1/2023</td>
-      <td>Approved</td>
-      <td><a href="new_interface.php" class="view-button">View</a> <a href="status_interface.php" class="status-button">Status</a></td>
-    </tr>
-  </tbody>
-</table>
+      
+<table>
+    <thead>
+      <tr>
+        <th>Submitted Documents</th>
+        <th>Task</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Slip Permohonan Online (Pendaftaran Perkahwinan) [P4-01-01]</td>
+        <td><button class="view-button">View</button><button class="download-button">Download</button>
+      </td>
+      </tr>
+      <tr>
+        <td>Borang 3A/3B (Kebenaran Berkahwin)/ Borang 4 (Persetujuan Dan Wakalah Wali) Asal</td>
+        <td>
+        <button class="view-button">View</button><button class="download-button">Download</button>
+        </td>
+      </tr>
+      <tr>
+        <td>Borang 5 (Catatan Akad Nikah) Asal</td>
+        <td><button class="view-button">View</button><button class="download-button">Download</button>
+      </td>
+      </tr>
+      <tr>
+        <td>Gambar Berukuran Passport (Latar Belakang Putih) 1 Keping Bagi Pengantin Lelaki Bersongkok</td>
+        <td><button class="download-button">Download</button>
+      </td>
+      </tr>
+      <tr>
+        <td>Gambar Berukuran Passport (Latar Belakang Putih) 1 Keping Bagi Pengantin Perempuan Bertudung Gelap</td>
+        <td><button class="download-button">Download</button>
+      </td>
+      </tr>
+      <tr>
+        <td>Salinan Kad Pengenalan Saksi-Saksi Perkahwinan</td>
+        <td><button class="download-button">Download</button>
+      </td>
+      </tr>
+      <tr>
+        <td>Bayaran Pendaftaran RM 45.00</td>
+        <td><button class="download-button">Download</button>
+      </td>
+      </tr>
+      
+    </tbody>
+  </table>
 
     </div>
     <!--**********************************
@@ -285,6 +300,3 @@ tr:nth-child(even) {
 </body>
 
 </html>
-
-
-

@@ -22,6 +22,8 @@
     height: 100%; 
   }
 
+  
+
   .container {
       border: 2px solid #004080;
       background-color: #004080;
@@ -159,22 +161,20 @@
         <div class="container-fluid">
             <div class="row justify-content-md-center">
                 <div class="col-md-6">            
-                <div class="container">
-    <h2>Select Type of Marriage</h2>
-    <label class="option">
-      <input type="radio" name="marriageType" value="withinCountry"> Marriage Within Country
-    </label>
-    <label class="option">
-      <input type="radio" name="marriageType" value="voluntary"> Voluntary Marriage
-    </label>
-    <button class="button" onclick="continueClicked()">Continue</button>
-  </div>
+                    <div class="container">
+                        <h2>Select Type of Marriage</h2><br>
+                            <label class="option">
+                                <input type="radio" name="marriageType" value="withinCountry"> Marriage Within Country
+                            </label><br>
+                            <label class="option">
+                                <input type="radio" name="marriageType" value="voluntary"> Voluntary Marriage
+                            </label><br>
+                                <button class="button" onclick="continueClicked()">Continue</button>
+                    </div>
                 </div>  
             </div>
         </div>
-
-
-      </div>
+    </div>
     <!--**********************************
         Main wrapper end
     ***********************************-->
