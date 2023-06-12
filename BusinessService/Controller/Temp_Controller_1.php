@@ -1,6 +1,6 @@
 <?php
 
-require_once '../BSL/Model/Temp_Model_1.php';
+require_once '../BusinessService/Model/Temp_Model_1.php';
 
 class Temp_Controller_1 {
     
