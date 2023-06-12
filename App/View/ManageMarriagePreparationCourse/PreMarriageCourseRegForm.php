@@ -1,3 +1,9 @@
+<?php
+
+class PreMarriageCourseRegForm {
+    public function render($course, $app) {
+ 
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -5,11 +11,11 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <!-- Custom Stylesheet -->
-<link href="../../../css/style.css" rel="stylesheet"> 
+<link href="../css/style.css" rel="stylesheet"> 
 <!-- Custom Stylesheet -->
-<link href="../../../plugins/bootstrap-material-datetimepicker/css/bootstrap-material-datetimepicker.css" rel="stylesheet">
+<link href="../plugins/bootstrap-material-datetimepicker/css/bootstrap-material-datetimepicker.css" rel="stylesheet">
 <!-- Date picker plugins css -->
-<link href="../../../plugins/bootstrap-datepicker/bootstrap-datepicker.min.css" rel="stylesheet">
+<link href="../plugins/bootstrap-datepicker/bootstrap-datepicker.min.css" rel="stylesheet">
 
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <style>
@@ -182,42 +188,42 @@
                     <div class="col-lg-12">
                         <div class="card">
                             <div class="card-body">
-                                <p class="text-muted m-b-15 f-s-12">Organizer : </p>
-                                <p class="text-muted m-b-15 f-s-12">Location and Date : </p>
+                                <p class="text-muted m-b-15 f-s-12">Organizer : <?php echo $course['pre_m_organiser']; ?></p>
+                                <p class="text-muted m-b-15 f-s-12">Location and Date : <?php echo $course['pre_m_venue']; ?> , <?php echo $course['pre_m_date']; ?></p>
                                 <h4 class="card-title">Applicant Information</h4>
-                                <form action="./PaymentForm.php" method="POST">
+                                <form action="index.php?action=ApplyPreMarriage&appID=<?php echo $app['applicantID'] ?>&courseID=<?php echo $course['pre_m_reg_ID']; ?>" method="POST">
                                         <div class="row form-material">
                                                 <div class="col-md-6">
                                                     <label class="m-t-20">Name:</label>
-                                                    <input type="text" class="form-control input-rounded" placeholder="e.g. Alex">
+                                                    <input type="text" class="form-control input-rounded" placeholder="e.g. Alex" name="name">
                                                 </div>
                                                 <div class="col-md-6">
                                                     <label class="m-t-20">Identity Card Number:</label>
-                                                    <input type="text" class="form-control input-rounded" placeholder="e.g.010719-06-0081 ">
+                                                    <input type="text" class="form-control input-rounded" placeholder="e.g.010719-06-0081 " name="IDnum">
                                                 </div>
                                                 <div class="col-md-6">
                                                     <label class="m-t-20">Age:</label>
-                                                    <input type="text" class="form-control input-rounded" placeholder="e.g. 26">
+                                                    <input type="text" class="form-control input-rounded" placeholder="e.g. 26" name="age">
                                                 </div>
                                                 <div class="col-md-6">
                                                     <label class="m-t-20">Email:</label>
-                                                    <input type="text" class="form-control input-rounded" placeholder="e.g. Alex26@gmail.com">
+                                                    <input type="text" class="form-control input-rounded" placeholder="e.g. Alex26@gmail.com" name="email">
                                                 </div>
                                                 <div class="col-md-6">
                                                     <label class="m-t-20">Address:</label>
-                                                    <input type="text" class="form-control input-rounded" placeholder="e.g. No.11 Taman Chempaka">
-                                                    <input type="text" class="form-control input-rounded mt-2" placeholder="e.g. Lorong IM 15/21">
+                                                    <input type="text" class="form-control input-rounded" placeholder="e.g. No.11 Taman Chempaka" name="address1">
+                                                    <input type="text" class="form-control input-rounded mt-2" placeholder="e.g. Lorong IM 15/21"name="address2">
                                                 </div>
                                                 <div class="col-md-6 "></div>
                                                 <div class="col-md-6 ">
                                                     <div class="row">
                                                         <div class="col-md-6">
                                                             <label class="m-t-20">State:</label>
-                                                            <input type="text" class="form-control input-rounded" placeholder="e.g. Pahang">
+                                                            <input type="text" class="form-control input-rounded" placeholder="e.g. Pahang" name="state">
                                                         </div>
                                                         <div class="col-md-6">
                                                             <label class="m-t-20">District:</label>
-                                                            <input type="text" class="form-control input-rounded" placeholder="e.g. Gambang">
+                                                            <input type="text" class="form-control input-rounded" placeholder="e.g. Gambang" name="district">
                                                         </div>
 
                                                     </div>
@@ -225,23 +231,23 @@
                                                 </div>
                                                 <div class="col-md-6">
                                                             <label class="m-t-20">Postcode:</label>
-                                                            <input type="text" class="form-control input-rounded" placeholder="e.g. 25150">
+                                                            <input type="text" class="form-control input-rounded" placeholder="e.g. 25150" name="postcode">
                                                 </div>
                                                 <div class="col-md-6">
                                                     <label class="m-t-20">Employment:</label>
-                                                    <input type="text" class="form-control input-rounded" placeholder="e.g. Doctor">
+                                                    <input type="text" class="form-control input-rounded" placeholder="e.g. Doctor" name="employment">
                                                 </div>
                                                 <div class="col-md-6">
                                                     <label class="m-t-20">Education Level:</label>
-                                                    <input type="text" class="form-control input-rounded" placeholder="e.g.PhD ">
+                                                    <input type="text" class="form-control input-rounded" placeholder="e.g.PhD " name="eduLevel">
                                                 </div>
                                                 <div class="col-md-6">
                                                     <label class="m-t-20">Gender:</label>
-                                                    <input type="text" class="form-control input-rounded" placeholder="e.g. male">
+                                                    <input type="text" class="form-control input-rounded" placeholder="e.g. male" name="gender">
                                                 </div>
                                                 <div class="col-md-6">
                                                     <label class="m-t-20">Phone Number:</label>
-                                                    <input type="text" class="form-control input-rounded" placeholder="e.g. +60123456789">
+                                                    <input type="text" class="form-control input-rounded" placeholder="e.g. +60123456789" name="phoneno">
                                                 </div>
                                                 <div class="col-md-12">
                                                     <div class="row justify-content-center">
@@ -267,29 +273,33 @@
      <!--**********************************
         Scripts
     ***********************************-->
-    <script src="../../../plugins/common/common.min.js"></script>
-    <script src="../../../js/custom.min.js"></script>
-    <script src="../../../js/settings.js"></script>
-    <script src="../../../js/gleek.js"></script>
-    <script src="../../../js/styleSwitcher.js"></script>
+    <script src="../plugins/common/common.min.js"></script>
+    <script src="../js/custom.min.js"></script>
+    <script src="../js/settings.js"></script>
+    <script src="../js/gleek.js"></script>
+    <script src="../js/styleSwitcher.js"></script>
 
-    <script src="../../../plugins/moment/moment.js"></script>
-    <script src="../../../plugins/bootstrap-material-datetimepicker/js/bootstrap-material-datetimepicker.js"></script>
+    <script src="../plugins/moment/moment.js"></script>
+    <script src="../plugins/bootstrap-material-datetimepicker/js/bootstrap-material-datetimepicker.js"></script>
     <!-- Clock Plugin JavaScript -->
-    <script src="../../../plugins/clockpicker/dist/jquery-clockpicker.min.js"></script>
+    <script src="../plugins/clockpicker/dist/jquery-clockpicker.min.js"></script>
     <!-- Color Picker Plugin JavaScript -->
-    <script src="../../../plugins/jquery-asColorPicker-master/libs/jquery-asColor.js"></script>
-    <script src="../../../plugins/jquery-asColorPicker-master/libs/jquery-asGradient.js"></script>
-    <script src="../../../plugins/jquery-asColorPicker-master/dist/jquery-asColorPicker.min.js"></script>
+    <script src="../plugins/jquery-asColorPicker-master/libs/jquery-asColor.js"></script>
+    <script src="../plugins/jquery-asColorPicker-master/libs/jquery-asGradient.js"></script>
+    <script src="../plugins/jquery-asColorPicker-master/dist/jquery-asColorPicker.min.js"></script>
     <!-- Date Picker Plugin JavaScript -->
-    <script src="../../../plugins/bootstrap-datepicker/bootstrap-datepicker.min.js"></script>
+    <script src="../plugins/bootstrap-datepicker/bootstrap-datepicker.min.js"></script>
     <!-- Date range Plugin JavaScript -->
-    <script src="../../../plugins/timepicker/bootstrap-timepicker.min.js"></script>
-    <script src="../../../plugins/bootstrap-daterangepicker/daterangepicker.js"></script>
+    <script src="../plugins/timepicker/bootstrap-timepicker.min.js"></script>
+    <script src="../plugins/bootstrap-daterangepicker/daterangepicker.js"></script>
 
-    <script src="../../../js/plugins-init/form-pickers-init.js"></script>
+    <script src="../js/plugins-init/form-pickers-init.js"></script>
 
 
 </body>
 </html>
 
+<?php
+    }
+}
+        ?>

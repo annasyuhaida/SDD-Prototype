@@ -1,3 +1,9 @@
+<?php
+
+class UpdateMarriageCourseDetailsForm {
+    public function render($course) {
+ 
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -5,11 +11,11 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <!-- Custom Stylesheet -->
-<link href="../../../css/style.css" rel="stylesheet"> 
+<link href="../css/style.css" rel="stylesheet"> 
 <!-- Custom Stylesheet -->
-<link href="../../../plugins/bootstrap-material-datetimepicker/css/bootstrap-material-datetimepicker.css" rel="stylesheet">
+<link href="../plugins/bootstrap-material-datetimepicker/css/bootstrap-material-datetimepicker.css" rel="stylesheet">
 <!-- Date picker plugins css -->
-<link href="../../../plugins/bootstrap-datepicker/bootstrap-datepicker.min.css" rel="stylesheet">
+<link href="../plugins/bootstrap-datepicker/bootstrap-datepicker.min.css" rel="stylesheet">
 
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <style>
@@ -67,7 +73,6 @@
         <div class="nav-header">
             <div class="brand-logo">
                 <a href="index.html">
-                    <b class="logo-abbr"><img src="images/logo.png" alt=""> </b>
                     <span class="logo-compact"><img src="./images/logo-compact.png" alt=""></span>
                     <span class="brand-title">
                         <img src="images/logo-text.png" alt="">
@@ -89,7 +94,7 @@
                 <div class="header-left">
                     <div class="input-group icons">
                         <div class="input-group-prepend">
-                        <span ><img class="logo-nav" src="../../images/navheadlogo.png" alt="" style=""></span>
+                        <span ><img class="logo-nav" src="../images/navheadlogo.png" alt="" style=""></span>
                         </div>
                         <div style="padding-left:25px">
                             <h3>E-MUNAKAHAT</h3>
@@ -184,36 +189,36 @@
                             <div class="card-body">
                                 <h4 class="card-title">Register New Marriage Preparation Course</h4>
 
-                                <form>
+                                <form action="index.php?action=editMarriageCourse&courseID=<?php echo $course['pre_m_reg_ID']; ?>" method="POST">
                                         <div class="row form-material">
                                                 <div class="col-md-12">
                                                     <label class="m-t-20">Organizer:</label>
-                                                    <input type="text" class="form-control input-rounded" placeholder="e.g. Alex">
+                                                    <input type="text"  name="organiser" class="form-control input-rounded" placeholder="e.g. Alex" value="<?php echo $course['pre_m_organiser']; ?>">
                                                 </div>
                                                 <div class="col-md-12">
-                                                    <label class="m-t-20">Location:</label>
-                                                    <input type="text" class="form-control input-rounded" placeholder="e.g. No.11 Taman Chempaka">
-                                                    <input type="text" class="form-control input-rounded mt-2" placeholder="e.g. Lorong IM 15/21">
+                                                    <label class="m-t-20">Venue:</label>
+                                                    <input type="text" name="venue1" class="form-control input-rounded" placeholder="e.g. No.11 Taman Chempaka" value="<?php echo $course['pre_m_venue']; ?>">
+                                                    <input type="text" name="venue2" class="form-control input-rounded mt-2" placeholder="e.g. Lorong IM 15/21">
                                                 </div>
                                                 <div class="col-md-6 mt-3">
                                                     <label class="m-t-20">Date:</label>
-                                                    <input class="form-control input-limit-datepicker input-rounded" type="text" name="daterange" value="06/01/2015 - 06/07/2015">
+                                                    <input name="date" class="form-control input-limit-datepicker input-rounded" type="text" name="daterange" value="<?php echo $course['pre_m_date']; ?>" >
                                                 </div>
                                                 <div class="col-md-6 mt-3">
                                                     <label class="m-t-20">Capacity:</label>
-                                                    <input type="text" class="form-control input-rounded" placeholder="e.g. 100">
+                                                    <input type="text" name="capacity" class="form-control input-rounded" placeholder="e.g. 100" value="<?php echo $course['pre_m_capacity']; ?>">
                                                 </div>
                                                 <div class="col-md-6">
                                                     <label class="m-t-20">Officer:</label>
-                                                    <input type="text" class="form-control input-rounded" placeholder="e.g. Ustaz Mohd Sobri">
+                                                    <input type="text" name="officer" class="form-control input-rounded" placeholder="e.g. Ustaz Mohd Sobri" value="<?php echo $course['pre_m_officer']; ?>">
                                                 </div>
                                                 <div class="col-md-6">
                                                     <label class="m-t-20">Briefing Series:</label>
-                                                    <input type="text" class="form-control input-rounded" placeholder="e.g. BTG/0001/2023">
+                                                    <input type="text" name="series" class="form-control input-rounded" placeholder="e.g. BTG/0001/2023" value="<?php echo $course['pre_m_series']; ?>">
                                                 </div>
                                                 <div class="col-md-6">
                                                     <label class="m-t-20">Phone Number:</label>
-                                                    <input type="text" class="form-control input-rounded" placeholder="e.g. +60123456789 ">
+                                                    <input type="text" name="phoneno" class="form-control input-rounded" placeholder="e.g. +60123456789 " value="<?php echo $course['pre_m_phone']; ?>">
                                                 </div>
                                                 <div class="col-md-12 mt-3">
                                                     <div class="row justify-content-center">
@@ -236,32 +241,35 @@
     ***********************************-->
 
 
-    <!--**********************************
+     <!--**********************************
         Scripts
     ***********************************-->
-    <script src="../../../plugins/common/common.min.js"></script>
-    <script src="../../../js/custom.min.js"></script>
-    <script src="../../../js/settings.js"></script>
-    <script src="../../../js/gleek.js"></script>
-    <script src="../../../js/styleSwitcher.js"></script>
+    <script src="../plugins/common/common.min.js"></script>
+    <script src="../js/custom.min.js"></script>
+    <script src="../js/settings.js"></script>
+    <script src="../js/gleek.js"></script>
+    <script src="../js/styleSwitcher.js"></script>
 
-    <script src="../../../plugins/moment/moment.js"></script>
-    <script src="../../../plugins/bootstrap-material-datetimepicker/js/bootstrap-material-datetimepicker.js"></script>
+    <script src="../plugins/moment/moment.js"></script>
+    <script src="../plugins/bootstrap-material-datetimepicker/js/bootstrap-material-datetimepicker.js"></script>
     <!-- Clock Plugin JavaScript -->
-    <script src="../../../plugins/clockpicker/dist/jquery-clockpicker.min.js"></script>
+    <script src="../plugins/clockpicker/dist/jquery-clockpicker.min.js"></script>
     <!-- Color Picker Plugin JavaScript -->
-    <script src="../../../plugins/jquery-asColorPicker-master/libs/jquery-asColor.js"></script>
-    <script src="../../../plugins/jquery-asColorPicker-master/libs/jquery-asGradient.js"></script>
-    <script src="../../../plugins/jquery-asColorPicker-master/dist/jquery-asColorPicker.min.js"></script>
+    <script src="../plugins/jquery-asColorPicker-master/libs/jquery-asColor.js"></script>
+    <script src="../plugins/jquery-asColorPicker-master/libs/jquery-asGradient.js"></script>
+    <script src="../plugins/jquery-asColorPicker-master/dist/jquery-asColorPicker.min.js"></script>
     <!-- Date Picker Plugin JavaScript -->
-    <script src="../../../plugins/bootstrap-datepicker/bootstrap-datepicker.min.js"></script>
+    <script src="../plugins/bootstrap-datepicker/bootstrap-datepicker.min.js"></script>
     <!-- Date range Plugin JavaScript -->
-    <script src="../../../plugins/timepicker/bootstrap-timepicker.min.js"></script>
-    <script src="../../../plugins/bootstrap-daterangepicker/daterangepicker.js"></script>
+    <script src="../plugins/timepicker/bootstrap-timepicker.min.js"></script>
+    <script src="../plugins/bootstrap-daterangepicker/daterangepicker.js"></script>
 
-    <script src="../../../js/plugins-init/form-pickers-init.js"></script>
-
+    <script src="../js/plugins-init/form-pickers-init.js"></script>
 
 </body>
 </html>
 
+<?php
+    }
+}
+        ?>
