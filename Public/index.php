@@ -4,7 +4,7 @@ require_once '../BusinessService/Model/Database.php';
 
 ///VIEW
 //require_once '../App/View/Temp_View_1.php';
-//require_once '../App/View/ManageRegistration/persetujuan_wali.php';
+require_once '../App/View/ManageRegistration/persetujuan_wali.php';
 
 //Module 1
 require_once '../App/View/user_account/ApplicantRegister.php';
