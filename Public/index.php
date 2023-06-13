@@ -9,6 +9,7 @@ require_once '../BusinessService/Model/Database.php';
 //Module 1
 require_once '../App/View/user_account/ApplicantRegister.php';
 //Module 2
+require_once '../App/View/ManageRegistration/persetujuan_wali.php';
 require_once '../App/View/ManageMarriagePreparationCourse/MarriageCourseDetailsForm.php';
 require_once '../App/View/ManageMarriagePreparationCourse/UpdateMarriageCourseDetailsForm.php';
 require_once '../App/View/ManageMarriagePreparationCourse/PreMarriageCourseRegForm.php';
@@ -31,25 +32,24 @@ require_once '../BusinessService/Controller/userAccount_ctrl/ApplicantRegister_c
 //Module 2
 require_once '../BusinessService/Controller/ManageMarriagePreparationCourseController/Marriage_Course_Details_ctrl.php';
 require_once '../BusinessService/Controller/ManageMarriagePreparationCourseController/Pre_Marriage_Course_ctrl.php';
+require_once '../BusinessService/Controller/ManageMarriagePreparationCourseController/Payment_ctrl.php';
+
 //Module 3
 require_once '../BusinessService/Controller/RegistrationController/SaveDoc_ctrl.php';
 
-// Check database connection
-//try {
-//    $db = Database::connect();
-//    echo "Database connected successfully";
-//} catch (PDOException $e) {
-//    echo "Database connection failed: " . $e->getMessage();
-//    exit;
-//}
+//Check database connection
+try {
+    $db = Database::connect();
+    echo "Database connected successfully";
+} catch (PDOException $e) {
+    echo "Database connection failed: " . $e->getMessage();
+    exit;
+}
+// Instantiate the SaveModel class
+$saveModel = new SaveModel($db);
 
-
-
-//// Instantiate the SaveModel class
-//$saveModel = new SaveModel($db);
-//
-//// Instantiate the SaveDoc_ctrl class and pass the SaveModel instance to the constructor
-//$saveDocCtrl = new SaveDoc_ctrl($saveModel);
+// Instantiate the SaveDoc_ctrl class and pass the SaveModel instance to the constructor
+$saveDocCtrl = new SaveDoc_ctrl($saveModel);
 
 // Parse the action from the URL
 $action = isset($_GET['action']) ? $_GET['action'] : 'default';
@@ -57,16 +57,16 @@ $action = isset($_GET['action']) ? $_GET['action'] : 'default';
 
 // Create a new instance of the appropriate controller based on the action
 switch ($action) {
-    //case 'SaveDoc':
-    //    $waliname = $_POST['waliname'];
-    //    $waliIC = $_POST['waliIc'];
-    //    $relationship = $_POST['relationship'];
-    //    $bridename = $_POST['bridename'];
-    //    $groomname = $_POST['groomname'];
-    //    $dowry = $_POST['dowry'];
-    //    $date = $_POST['date'];
-    //    $saveDocCtrl->testinput($waliname, $waliIC, $relationship, $bridename, $groomname, $dowry, $date);
-    //    break;
+    case 'SaveDoc':
+        $waliname = $_POST['waliname'];
+        $waliIC = $_POST['waliIc'];
+        $relationship = $_POST['relationship'];
+        $bridename = $_POST['bridename'];
+        $groomname = $_POST['groomname'];
+        $dowry = $_POST['dowry'];
+        $date = $_POST['date'];
+        $saveDocCtrl->testinput($waliname, $waliIC, $relationship, $bridename, $groomname, $dowry, $date);
+        break;
 
     //Applicant account registration
     case 'getUsers':
@@ -121,7 +121,40 @@ switch ($action) {
         $controller = new Pre_Marriage_Course_ctrl();
         $controller->ApplyPreMarriage($appID, $courseID);
         break;
+    case 'editPreMarriage':
+        $appID = $_GET['appID'];
+        $courseID = $_GET['courseID'];
+        $controller = new Pre_Marriage_Course_ctrl();
+        $controller->EditPreMarriage($appID, $courseID);
+        break;
+    case 'viewPreMarriage':
+        $appID = $_GET['appID'];
+        $courseID = $_GET['courseID'];
+        $controller = new Pre_Marriage_Course_ctrl();
+        $controller->ViewPreMarriage($appID, $courseID);
+        break;
+    case 'deletePreMarriage':
+        $appID = $_GET['appID'];
+        $courseID = $_GET['courseID'];
+        $controller = new Pre_Marriage_Course_ctrl();
+        $controller->DeletePreMarriage($appID, $courseID);
+        break;
+    
 
+    //ManagePayment
+    case 'paymentForm':
+        $Lid = $_GET['Lid'];
+        $appID = $_GET['appID'];
+        $courseID = $_GET['courseID'];
+        $controller = new Payment_ctrl();
+        $controller->UploadPayment($Lid, $appID, $courseID);
+        break;
+    case 'viewPayment':
+        $appID = $_GET['appID'];
+        $courseID = $_GET['courseID'];
+        $controller = new Payment_ctrl();
+        $controller->ViewPayment($appID, $courseID);
+        break;
 
     //Example    
     case 'getUsers':

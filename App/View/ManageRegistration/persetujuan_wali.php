@@ -1,3 +1,9 @@
+<?php
+
+class persetujuan_wali {
+    public function render() {
+ 
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -109,3 +115,7 @@
   </script>
 </body>
 </html>
+<?php
+    }
+}
+        ?>

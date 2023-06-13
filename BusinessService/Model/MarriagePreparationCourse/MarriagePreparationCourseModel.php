@@ -17,7 +17,7 @@ class MarriagePreparationCourseModel {
     }
 
     public function getCourseById($courseID) {
-        $query = "SELECT * FROM pre_marriage_course WHERE pre_m_reg_id = $courseID";
+        $query = "SELECT * FROM pre_marriage_course WHERE pre_m_reg_ID = $courseID";
         return $this->db->execute($query)[0];
     }
 
@@ -32,7 +32,7 @@ class MarriagePreparationCourseModel {
     }
 
     public function deleteCourse($courseID) {
-        $query = "DELETE FROM pre_marriage_course WHERE pre_m_reg_id = $courseID";
+        $query = "DELETE FROM pre_marriage_course WHERE pre_m_reg_ID = $courseID";
         return $this->db->execute($query);
     }
 
@@ -47,7 +47,24 @@ class MarriagePreparationCourseModel {
         return $this->db->execute($query)[0];
     }
     public function getAppCourseByID($courses) {
-        $query = "SELECT * FROM pre_marriage_course WHERE pre_m_reg_id = $courses";
+        $query = "SELECT * FROM pre_marriage_course WHERE pre_m_reg_ID = $courses";
+        return $this->db->execute($query);
+    }
+
+    public function deletePreMarriage($appId) {
+        $query = $query = "UPDATE applicant SET applicantName = NULL, pre_m_reg_ID = NULL, applicantIC = NULL, applicantAge = NULL, applicantEmail = NULL, applicantAddress = NULL, applicantJob = NULL, applicantEducationalLevel = NULL, applicantGender = NULL, applicantPhoneNo = NULL WHERE applicantID = $appId";
+        return $this->db->execute($query);
+    }
+
+
+    //Manage payment
+    public function uploadPayment($appID, $category, $file) {
+        $query = "INSERT INTO proof_of_payment (applicantID, p_category, p_file) VALUES ('$appID', '$category', '$file')";
+        return $this->db->execute($query);
+    }
+
+    public function getPaymentByID($payID) {
+        $query = "SELECT * FROM proof_of_payment WHERE paymentID = $payID";
         return $this->db->execute($query);
     }
 }

@@ -10,8 +10,8 @@ class Pre_Marriage_Course_ctrl {
         $model = new MarriagePreparationCourseModel();
 
         if($Lid == 0){
-                // Get the users from the model
-                $app = $model->getAppByID($appID);
+            // Get the users from the model
+            $app = $model->getAppByID($appID);
 
             $course = $model->getMarriageCourseList();
 
@@ -35,8 +35,8 @@ class Pre_Marriage_Course_ctrl {
             // Get the user details from the model
             $app = $model->getAppByID($appID);
             $courses = $app['pre_m_reg_ID'];
+
             $course = $model->getAppCourseByID($courses);
-            echo "<script>console.log('Debug Objects: " . $course . "' );</script>";
 
             // Render the view and pass the data
             require_once '../App/View/ManageMarriagePreparationCourse/PreMarriageCourseView.php';
@@ -71,7 +71,7 @@ class Pre_Marriage_Course_ctrl {
             $model->applyPreMarriage($appID, $courseID, $name, $IDnum, $age, $email, $address, $employment, $eduLevel, $gender, $phoneno);
 
             // Redirect to the getUsers action
-            header('Location: index.php?action=PreMarriageList&Lid=2&appID='.$appID.'&courseID=0' );
+            header('Location: index.php?action=paymentForm&Lid=0&appID='.$appID.'&courseID='.$courseID);
             exit;
         }
 
@@ -79,43 +79,46 @@ class Pre_Marriage_Course_ctrl {
         require '../App/View/ManageMarriagePreparationCourse/PreMarriageCourseRegForm.php';
     }
 
-   
+    public function ViewPreMarriage($appID, $courseID) {
+         
+            // Create an instance of the Temp_Model_1
+            $model = new MarriagePreparationCourseModel();
 
+            $app = $model->getAppByID($appID);
+
+            $course = $model->getCourseById($courseID);
+
+            // Render the view and pass the data
+            require_once '../App/View/ManageMarriagePreparationCourse/PreMarriageCourseDetailView.php';
+            $view = new PreMarriageCourseDetailView();
+            $view->render($course, $app);
+    }
     
-    public function EditMarriageCourse($courseID) {
+    public function EditPreMarriage($appID,$courseID) {
         
-        // Create an instance of the Temp_Model_1
-        $model = new MarriagePreparationCourseModel();
+            // Create an instance of the Temp_Model_1
+            $model = new MarriagePreparationCourseModel();
 
-        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            $app = $model->getAppByID($appID);
+            $courses = $app['pre_m_reg_ID'];
 
-            // Get the user data from the form
-            $organiser = $_POST['organiser'];
-            $venue = $_POST['venue1']. $_POST['venue2'];
-            $date = $_POST['date'];
-            $capacity = $_POST['capacity'];
-            $officer = $_POST['officer'];
-            $series = $_POST['series'];
-            $phoneno = $_POST['phoneno'];
+            $course = $model->getAppCourseByID($courses);
 
-            // Perform actions to create a user in the database
-            $model->editMarriageCourse($courseID, $organiser, $venue, $date, $officer, $series, $phoneno, $capacity);
-
-            // Redirect to the getUsers action
-            header('Location: index.php?action=getMarriageCourseList');
-            exit;
-        } 
+            require_once '../plugins/fpdf/generate_pdf.php';
+            $view = new printpdf();
+            $view->render($course, $app);
+         
     }
 
-    public function DeleteMarriageCourse($courseID) {
+    public function DeletePreMarriage($appID, $courseID) {
         // Create an instance of the Temp_Model_1
         $model = new MarriagePreparationCourseModel();
 
         // Perform actions to delete the user from the database
-        $model->deleteCourse($courseID);
+        $model->deletePreMarriage($appID, $courseID);
 
         // Redirect to the getUsers action
-        header('Location: index.php?action=getMarriageCourseList');
+        header('Location: index.php?action=PreMarriageList&Lid=2&appID='.$appID.'&courseID=0');
         exit;
     }
 }

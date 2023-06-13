@@ -189,8 +189,10 @@ class PreMarriageCourseView {
                                                 <td><?php echo $course['pre_m_venue']; ?></td>
                                                 <td><?php echo $course['pre_m_date']; ?></td>
                                                 <td>
+
                                                     <span>
-                                                        <a href="" data-toggle="tooltip" data-placement="top" title="Print"><i class="fa fa-print color-muted m-r-5"></i></a>
+                                                        <a href="index.php?action=editPreMarriage&appID=<?php echo $app['applicantID']; ?>&courseID=<?php echo $course['pre_m_reg_ID']; ?>" data-toggle="tooltip" data-placement="top" title="Print"><i class="fa fa-print color-muted m-r-5"></i></a>
+                                                        <a href="index.php?action=deletePreMarriage&appID=<?php echo $app['applicantID']; ?>&courseID=<?php echo $course['pre_m_reg_ID']; ?>" data-toggle="tooltip" data-placement="top" title="Delete"><i class="fa fa-trash color-muted m-r-5"></i></a>
                                                     </span>
                                                 </td>
                                             </tr>

@@ -190,6 +190,7 @@ class PreMarriageCourseList {
                                                 <td><?php echo $course['pre_m_vacancy']; ?></td>
                                                 <td><span>
                                                         <a href="index.php?action=PreMarriageList&Lid=1&appID=<?php echo $app['applicantID']; ?>&courseID=<?php echo $course['pre_m_reg_ID']; ?>" title="Register"><i class="fa fa-plus-circle color-muted m-r-5"></i></a>
+                                                        <a href="index.php?action=viewPreMarriage&appID=<?php echo $app['applicantID']; ?>&courseID=<?php echo $course['pre_m_reg_ID']; ?>" title="View"><i class="fa fa-eye color-muted m-r-5"></i></a>
                                                     </span>
                                                 </td>
                                             </tr>
