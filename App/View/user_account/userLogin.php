@@ -368,7 +368,7 @@
     <input type="checkbox" id="check">
     <div class="login form">
       <header>LOGIN</header>
-      <form action="#">
+      <form action="index.php?action=userlogin">
         <label>IDENTITY CARD NUMBER</label>
         <input type="text" name="icnumber">
 
@@ -385,7 +385,7 @@
       </form>
 
       <div style="text-align:center">
-        <a href="../user_account/userRegister.php">NEW REGISTRATION</a>
+        <a href="">NEW REGISTRATION</a>
         |
         <a href="../user_account/change_pass.php">CHANGE PASSWORD</a>
         |

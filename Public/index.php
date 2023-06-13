@@ -8,6 +8,7 @@ require_once '../App/View/ManageRegistration/persetujuan_wali.php';
 
 //Module 1
 require_once '../App/View/user_account/ApplicantRegister.php';
+
 //Module 2
 require_once '../App/View/ManageRegistration/persetujuan_wali.php';
 require_once '../App/View/ManageMarriagePreparationCourse/MarriageCourseDetailsForm.php';
@@ -33,7 +34,6 @@ require_once '../BusinessService/Controller/userAccount_ctrl/ApplicantRegister_c
 require_once '../BusinessService/Controller/ManageMarriagePreparationCourseController/Marriage_Course_Details_ctrl.php';
 require_once '../BusinessService/Controller/ManageMarriagePreparationCourseController/Pre_Marriage_Course_ctrl.php';
 require_once '../BusinessService/Controller/ManageMarriagePreparationCourseController/Payment_ctrl.php';
-
 //Module 3
 require_once '../BusinessService/Controller/RegistrationController/SaveDoc_ctrl.php';
 
@@ -46,10 +46,10 @@ try {
     exit;
 }
 // Instantiate the SaveModel class
-$saveModel = new SaveModel($db);
+//$saveModel = new SaveModel($db);
 
 // Instantiate the SaveDoc_ctrl class and pass the SaveModel instance to the constructor
-$saveDocCtrl = new SaveDoc_ctrl($saveModel);
+//$saveDocCtrl = new SaveDoc_ctrl($saveModel);
 
 // Parse the action from the URL
 $action = isset($_GET['action']) ? $_GET['action'] : 'default';
@@ -68,6 +68,7 @@ switch ($action) {
         $saveDocCtrl->testinput($waliname, $waliIC, $relationship, $bridename, $groomname, $dowry, $date);
         break;
 
+    //Module 1//
     //Applicant account registration
     case 'getUsers':
         $controller = new ApplicantRegister_ctrl();
@@ -77,7 +78,8 @@ switch ($action) {
         $controller = new ApplicantRegister_ctrl();
         $controller->createAccountAction();
         break;
-
+    
+    //Module 2//
     //Manage Marriage Course Details(Staff)
     case 'MarriageCourseForm':
         $view = new MarriageCourseDetailsForm();
