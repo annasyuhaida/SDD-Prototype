@@ -13,30 +13,93 @@
 
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <style>
-     
-  .image-background {
-    background-image: url('bgheader.png');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    height: 100%; 
+    .regstatus {
+     color: darkblue;
   }
 
-  .box {
-            width: 400px;
-            height: 200px;
-            border: 1px solid black;
+  .cert-interface-header {
+     color: white;
+     background-color: darkblue;
+     padding: 2px;
+     border: 1px solid black;
+     margin: 10px;
+  }
+
+  td, th {
+  border: 1px solid black;
+  text-align: left;
+  padding: 8px;
+  background-color: lightblue;
+  color: black;
+}
+
+.container {
             text-align: center;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 20px;
-            border-radius: 10px;
-            background-color: lightgrey;
+            margin-top: 200px;
+        }
+        
+        .button {
+            padding: 10px 20px;
+            background-color: yellow;
+            color: black;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        
+        .popup {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #f9f9f9;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 20px;
+            display: none;
+        }
+        
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
         }
 
-        .regstatus {
-            color: darkblue;
+        .upload-btn {
+            display: none;
+        }
+        
+        .upload-label {
+            padding: 10px 20px;
+            background-color: yellow;
+            color: black;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .submit-btn {
+            padding: 10px 20px;
+            background-color: green;
+            color: black;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .delete-btn {
+            padding: 10px 20px;
+            background-color: red;
+            color: black;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        
+        .file-name {
+            margin-top: 10px;
         }
 </style>
 
@@ -96,7 +159,7 @@
                         </a>
                     </li>
                     <li>
-                        <a class="has-arrow" href="#">
+                        <a class="has-arrow" href="ViewRegApprovalStatus.php">
                         <span class="nav-text">Marriage Registration</span>
                         </a>
                     </li>
@@ -142,12 +205,75 @@
             <div class="row justify-content-md-center">
                 <div class="col-md-6">            
 
-                    <!-- Content within the div with image background 
-                    <h1 class="w3-container w3-text-black">e-Munakahat</h1> -->
+                <h4 class="cert-interface-header">MARRIAGE CERTIFICATE AND CARD REQUEST</h4>
+                <br>
+                <table>
+  <thead>
+    <tr>
+      <th>No.</th>
+      <th>Applicant IC number and name</th>
+      <th>Spouse IC number and name</th>
+      <th>Registration date of approval</th>
+      <th>Certificate</th>
+      <th>Card</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1</td>
+      <td>021101-06-0671<br>RIZAL BIN ROMZI</td>
+      <td>021102-06-0614<br>NUREEN BINTI JEFRI</td>
+      <td>21/2/2023</td>
+      <td>
+      <div class="container">
+        <button class="button" onclick="showPopup()">Request</button>
+        <div id="popup" class="popup">
+            <span class="close" onclick="hidePopup()">&times;</span>
+            <p>Your marriage certificate request has been sent!</p>
+        </div>
+    </div>
+      </td>
+      <td>
+      <input type="file" id="file-upload" class="upload-btn" onchange="displayFileName()" accept=".pdf,.doc,.docx">
+            <label for="file-upload" class="upload-label">Upload proof of payment</label>
+            <div id="file-name" class="file-name"></div><button class="submit-btn" onclick="submitRequest()">Submit</button>
+            <br>
+            <button class="delete-btn" onclick="deleteFile()">Delete</button>
+      </td>
+    </tr>
+  </tbody>
+</table>
 
-                  <div class="box">
-                        MARRIAGE REGISTRATION STATUS OF APPROVAL<br><br><span class="regstatus">NEWLY SUBMITTED</span>
-                  </div>
+<script>
+        function showPopup() {
+            var popup = document.getElementById("popup");
+            popup.style.display = "block";
+        }
+        
+        function hidePopup() {
+            var popup = document.getElementById("popup");
+            popup.style.display = "none";
+        }
+
+        function displayFileName() {
+            var fileInput = document.getElementById("file-upload");
+            var fileNameContainer = document.getElementById("file-name");
+            fileNameContainer.textContent = "Selected file: " + fileInput.files[0].name;
+        }
+
+        function submitRequest() {
+            var fileName = document.getElementById("file-upload").files[0].name;
+            alert("Your marriage certificate request with supporting document '" + fileName + "' has been submitted!");
+            hidePopup();
+        }
+
+        function deleteFile() {
+            var fileInput = document.getElementById("file-upload");
+            fileInput.value = ""; // Clear the selected file
+            var fileNameContainer = document.getElementById("file-name");
+            fileNameContainer.textContent = ""; // Clear the displayed file name
+        }
+    </script>
                 </div>  
             </div>
         </div>
@@ -187,4 +313,3 @@
 
 </body>
 </html>
-
