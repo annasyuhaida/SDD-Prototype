@@ -18,7 +18,7 @@ class ApplicantRegister_ctrl {
         $view->render($users);
     }
 
-    public function createUserAction() {
+    public function createAccountAction() {
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             // Create an instance of the Temp_Model_1
             $model = new userAccount_model();
@@ -32,7 +32,7 @@ class ApplicantRegister_ctrl {
             $password = $_POST['password'];
 
             // Perform actions to create a user in the database
-            $model->createUser($icnumber,$name,$gender,$phoneno,$email, $password);
+            $model->createAccount($icnumber,$name,$gender,$phoneno,$email, $password);
 
             // Redirect to the getUsers action
             header('Location: index.php?action=getUsers');

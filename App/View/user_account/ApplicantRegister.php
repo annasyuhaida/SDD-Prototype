@@ -10,7 +10,7 @@ class ApplicantRegister
         <html>
 
         <head>
-            <title>Users</title>
+            <title>Register</title>
         </head>
 
         <body>
@@ -403,7 +403,7 @@ class ApplicantRegister
                 <div class="container">
                     <div class="registration form">
                         <header>REGISTRATION FORM</header>
-                        <form action="index.php?action=createUser" method="POST">
+                        <form action="index.php?action=createAccount" method="POST">
                             <label class="icnumber">IDENTITY CARD NUMBER&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp:</label>
                             <input type="text" class="icnumber" name="icnumber" id="icnumber">
 

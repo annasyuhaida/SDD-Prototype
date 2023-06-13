@@ -73,9 +73,9 @@ switch ($action) {
         $controller = new ApplicantRegister_ctrl();
         $controller->getUsersAction();
         break;
-    case 'createUser':
+    case 'createAccount':
         $controller = new ApplicantRegister_ctrl();
-        $controller->createUserAction();
+        $controller->createAccountAction();
         break;
 
     //Manage Marriage Course Details(Staff)

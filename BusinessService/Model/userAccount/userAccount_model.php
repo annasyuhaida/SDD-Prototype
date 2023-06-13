@@ -20,7 +20,7 @@ class userAccount_model {
         return $this->db->execute($query)[0];
     }
 
-    public function createUser($icnumber,$name,$gender,$phoneno,$email, $password) {
+    public function createAccount($icnumber,$name,$gender,$phoneno,$email, $password) {
         $query = "INSERT INTO applicant (applicantIC, applicantName, applicantGender, applicantphoneNo,applicantEmail, password) VALUES ('$icnumber', '$name', '$gender', '$phoneno','$email', '$password')";
         return $this->db->execute($query);
     }
