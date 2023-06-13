@@ -15,6 +15,7 @@ require_once '../App/View/ManageMarriagePreparationCourse/MarriageCourseDetailsF
 require_once '../App/View/ManageMarriagePreparationCourse/UpdateMarriageCourseDetailsForm.php';
 require_once '../App/View/ManageMarriagePreparationCourse/PreMarriageCourseRegForm.php';
 
+
 ///MODEL
 //require_once '../BusinessService/Model/Temp_Model_1.php';
 
@@ -34,24 +35,28 @@ require_once '../BusinessService/Controller/userAccount_ctrl/ApplicantRegister_c
 require_once '../BusinessService/Controller/ManageMarriagePreparationCourseController/Marriage_Course_Details_ctrl.php';
 require_once '../BusinessService/Controller/ManageMarriagePreparationCourseController/Pre_Marriage_Course_ctrl.php';
 require_once '../BusinessService/Controller/ManageMarriagePreparationCourseController/Payment_ctrl.php';
+require_once '../BusinessService/Controller/ManageMarriagePreparationCourseController/Participant_ctrl.php';
+require_once '../BusinessService/Controller/ManageMarriagePreparationCourseController/Online_Verify_ctrl.php';
+require_once '../BusinessService/Controller/ManageMarriagePreparationCourseController/Attendance_ctrl.php';
+
 //Module 3
 require_once '../BusinessService/Controller/RegistrationController/SaveDoc_ctrl.php';
 
 //Check database connection
-try {
-    $db = Database::connect();
-    echo "Database connected successfully";
-} catch (PDOException $e) {
-    echo "Database connection failed: " . $e->getMessage();
-    exit;
-}
+//try {
+//    $db = Database::connect();
+//    echo "Database connected successfully";
+//} catch (PDOException $e) {
+//    echo "Database connection failed: " . $e->getMessage();
+//    exit;
+//}
 // Instantiate the SaveModel class
 //$saveModel = new SaveModel($db);
 
 // Instantiate the SaveDoc_ctrl class and pass the SaveModel instance to the constructor
 //$saveDocCtrl = new SaveDoc_ctrl($saveModel);
 
-// Parse the action from the URL
+/// Parse the action from the URL
 $action = isset($_GET['action']) ? $_GET['action'] : 'default';
 
 
@@ -157,6 +162,42 @@ switch ($action) {
         $controller = new Payment_ctrl();
         $controller->ViewPayment($appID, $courseID);
         break;
+    
+    //Manage Participant
+    case 'getParticipant':
+        $controller = new Participant_ctrl();
+        $controller->getParticipant();
+        break;
+    case 'approveParticipant':
+        $appID = $_GET['appID'];
+        $courseID = $_GET['courseID'];
+        $controller = new Participant_ctrl();
+        $controller->ApproveParticipant($appID,$courseID);
+        break;
+    
+    //Manage Online Verify
+    case 'getOnlineVerify':
+        $controller = new Online_Verify_ctrl();
+        $controller->getOnlineVerify();
+        break;
+    case 'updateOnlineVerify':
+        $Lid = $_GET['Lid'];
+        $courseID = $_GET['courseID'];
+        $controller = new Online_Verify_ctrl();
+        $controller->updateOnlineVerify($Lid, $courseID);
+        break;
+    
+    //Manage Attendance
+    case 'getApplicant':
+        $Lid = $_GET['Lid'];
+        $controller = new Attendance_ctrl();
+        $controller->getApplicant($Lid);
+        break;
+     case 'updateAttendance':
+         $controller = new Attendance_ctrl();
+         $controller->updateAttendance();
+         break;
+
 
     //Example    
     case 'getUsers':

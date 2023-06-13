@@ -11,6 +11,7 @@ class Marriage_Course_Details_ctrl {
 
         // Get the users from the model
         $course = $model->getMarriageCourseList();
+        //echo "<script>console.log('Debug Objects: " . $course . "' );</script>";
 
         // Render the view and pass the data
         require_once '../App/View/ManageMarriagePreparationCourse/MarriageCourseDetailsList.php';

@@ -251,7 +251,7 @@ class PreMarriageCourseRegForm {
                                                 </div>
                                                 <div class="col-md-12">
                                                     <div class="row justify-content-center">
-                                                        <button  type="submit" class="btn btn-dark mt-3" >Submit</button>
+                                                        <button  type="submit" class="btn btn-dark mt-3"><a  href="index.php?action=approveParticipant&appID=<?php echo $app['applicantID']; ?>&courseID=<?php echo $course['pre_m_reg_ID']; ?>"  >Submit</a></button>
                                                     </div> 
                                                 </div>
 

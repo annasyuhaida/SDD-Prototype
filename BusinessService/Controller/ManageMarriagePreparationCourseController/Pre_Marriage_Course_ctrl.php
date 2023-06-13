@@ -69,6 +69,7 @@ class Pre_Marriage_Course_ctrl {
 
             // Perform actions to create a user in the database
             $model->applyPreMarriage($appID, $courseID, $name, $IDnum, $age, $email, $address, $employment, $eduLevel, $gender, $phoneno);
+            
 
             // Redirect to the getUsers action
             header('Location: index.php?action=paymentForm&Lid=0&appID='.$appID.'&courseID='.$courseID);

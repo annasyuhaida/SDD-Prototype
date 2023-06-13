@@ -1,3 +1,7 @@
+<?php
+class AttendanceList{
+    public function render($participant,$course,$apps){
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -5,11 +9,11 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <!-- Custom Stylesheet -->
-<link href="../../../css/style.css" rel="stylesheet"> 
+<link href="../css/style.css" rel="stylesheet"> 
 <!-- Custom Stylesheet -->
-<link href="../../../plugins/bootstrap-material-datetimepicker/css/bootstrap-material-datetimepicker.css" rel="stylesheet">
+<link href="../plugins/bootstrap-material-datetimepicker/css/bootstrap-material-datetimepicker.css" rel="stylesheet">
 <!-- Date picker plugins css -->
-<link href="../../../plugins/bootstrap-datepicker/bootstrap-datepicker.min.css" rel="stylesheet">
+<link href="../plugins/bootstrap-datepicker/bootstrap-datepicker.min.css" rel="stylesheet">
 
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 
@@ -158,63 +162,74 @@
                         <div class="card">
                             <div class="card-body">
                                 <div class="basic-form">
-                                    <form>
+                                    <form action="index.php?action=getApplicant&Lid=1" method="POST">
                                         <div class="row form-material justify-content-center">
                                             <div class="col-md-3">
                                                 <label class="m-t-20">Organizer:</label>
-                                                <select class="form-control" id="sel1">
-                                                    <option>1</option>
-                                                    <option>2</option>
-                                                    <option>3</option>
-                                                    <option>4</option>
+                                                <select class="form-control" name="sel1">
+                                                    <?php
+                                                        foreach($participant as $participantItem){
+                                                    ?>
+                                                    <option value="<?php echo $participantItem['pre_m_organiser'];?>"><?php echo $participantItem['pre_m_organiser'];?></option>
+                                                    <?php
+                                                        }
+                                                        ?>
                                                 </select>
                                             </div>
-                                            <div class="col-md-3">
-                                                 <label class="m-t-20">Year:</label>
-                                                 <select class="form-control" id="sel1">
-                                                    <option>1</option>
-                                                    <option>2</option>
-                                                    <option>3</option>
-                                                    <option>4</option>
-                                                </select>                                            </div>
+                                          
                                             <div class="col-md-3">
                                                 <label class="m-t-20">Briefing Series:</label>
-                                                <select class="form-control" id="sel1">
-                                                    <option>1</option>
-                                                    <option>2</option>
-                                                    <option>3</option>
-                                                    <option>4</option>
-                                                </select>                                            </div>
+                                                <select class="form-control" name="sel2">
+                                                <?php
+                                                        foreach($participant as $participantItem){
+                                                    ?>
+                                                    <option value="<?php echo $participantItem['pre_m_series'];?>"><?php echo $participantItem['pre_m_series'];?></option>
+                                                    <?php
+                                                        }
+                                                        ?>
+                                                </select>                                           
+                                            </div>
                                             <div class="col-md-3 mt-5">
                                                 <label class="m-t-20"></label>
                                                 <button type="submit" class="btn btn-dark mb-2">Submit</button>
                                             </div>
                                             <div class="col-md-6">
+                                            <?php if (is_array($course)) { ?>
+
                                                 <div class="row">
-                                                    <div class="col-md-6">
-                                                        <label class="m-t-20"  >Organizer:</label>
+                                                    <?php foreach($course as $course_Item){?>
+                                                    <div class="col-md-8">
+                                                        <label class="m-t-20"  >Organizer: <?php echo $course_Item['pre_m_organiser'];?></label>
                                                     </div>
-                                                    <div class="col-md-6">
+                                                    <div class="col-md-8">
                                                     </div>
-                                                    <div class="col-md-6">
-                                                        <label class="m-t-20">Briefing Series:</label>
+                                                    <div class="col-md-8">
+                                                        <label class="m-t-20">Briefing Series: <?php echo $course_Item['pre_m_series'];?></label>
                                                     </div>
-                                                    <div class="col-md-6">
+                                                    <div class="col-md-8">
                                                     </div>
-                                                    <div class="col-md-6">
-                                                        <label class="m-t-20">Date:</label>
+                                                    <div class="col-md-8">
+                                                        <label class="m-t-20">Date: <?php echo $course_Item['pre_m_date'];?></label>
                                                     </div>
-                                                    <div class="col-md-6">
+                                                    <div class="col-md-8">
                                                     </div>
-                                                    <div class="col-md-6">
-                                                        <label class="m-t-20">Venue:</label>
+                                                    <div class="col-md-8">
+                                                        <label class="m-t-20">Venue: <?php echo $course_Item['pre_m_venue'];?></label>
                                                     </div>
-                                                    <div class="col-md-6">
+                                                    <div class="col-md-8">
                                                     </div>
+                                                    <?php
+                                                    }
+                                                    ?>
                                                 </div>
                                             </div>
+                                            <?php } else {
+                                                // Handle the case when $users is not an array
+                                                echo "No users found.";
+                                            } ?>
                                         </div>
                                     </form>
+
                                 </div>
                             </div>
                         </div>
@@ -226,6 +241,9 @@
                                 <div class="card-title">
                                     <h4>Participant List</h4>
                                 </div>
+                              <form action="index.php?action=updateAttendance" method="POST">
+                              <button type="submit" class="button-right-box col-md-2 btn btn-primary btn-block">Save</button>
+
                                 <div class="table-responsive">
                                     <table class="table zero-configuration">
                                         <thead>
@@ -239,25 +257,39 @@
                                             </tr>
                                         </thead>
                                         <tbody>
+                                            <?php if (is_array($apps)) { ?>
+                                            <?php foreach ($apps as $apps) { ?>
                                             <tr>
                                                 <th>1</th>
-                                                <td>Asmira Binti Mat Ruman</td>
-                                                <td>010519-06-0081</td>
-                                                <td>Female</td>
-                                                <td>Present</td>
+                                                <td><?php echo $apps['applicantName']; ?></td>
+                                                <td><?php echo $apps['applicantIC']; ?></</td>
+                                                <td><?php echo $apps['applicantGender']; ?></td>
+                                                <td>
+                                                    <select class="form-control" name="attendance[<?php echo $apps['applicantID']; ?>]">
+                                                        <option value="0">absent</option>
+                                                        <option value="1">present</option>
+                                                    </select>
+                                                </td>
                                                 <td>
                                                     <div class="form-check">
-                                                        <input type="text" class="form-control mb-2" >
+                                                        <input type="text" name="note[<?php echo $apps['applicantID']; ?>]" class="form-control mb-2" >
                                                     </div>
                                                 </td>
                                             </tr>
-                                            
+                                            <?php } ?>
+                                            <?php } else {
+                                                // Handle the case when $users is not an array
+                                                echo "No users found.";
+                                            } ?>
                                         </tbody>
                                     </table>
                                 </div>
+                             </form>
                             </div>
                         </div>
                     </div>
+                
+
             </div>
         </div>
 
@@ -271,31 +303,34 @@
      <!--**********************************
         Scripts
     ***********************************-->
-    <script src="../../../plugins/common/common.min.js"></script>
-    <script src="../../../js/custom.min.js"></script>
-    <script src="../../../js/settings.js"></script>
-    <script src="../../../js/gleek.js"></script>
-    <script src="../../../js/styleSwitcher.js"></script>
+    <script src="../plugins/common/common.min.js"></script>
+    <script src="../js/custom.min.js"></script>
+    <script src="../js/settings.js"></script>
+    <script src="../js/gleek.js"></script>
+    <script src="../js/styleSwitcher.js"></script>
 
-    <script src="../../../plugins/moment/moment.js"></script>
-    <script src="../../../plugins/bootstrap-material-datetimepicker/js/bootstrap-material-datetimepicker.js"></script>
+    <script src="../plugins/moment/moment.js"></script>
+    <script src="../plugins/bootstrap-material-datetimepicker/js/bootstrap-material-datetimepicker.js"></script>
     <!-- Clock Plugin JavaScript -->
-    <script src="../../../plugins/clockpicker/dist/jquery-clockpicker.min.js"></script>
+    <script src="../plugins/clockpicker/dist/jquery-clockpicker.min.js"></script>
     <!-- Color Picker Plugin JavaScript -->
-    <script src="../../../plugins/jquery-asColorPicker-master/libs/jquery-asColor.js"></script>
-    <script src="../../../plugins/jquery-asColorPicker-master/libs/jquery-asGradient.js"></script>
-    <script src="../../../plugins/jquery-asColorPicker-master/dist/jquery-asColorPicker.min.js"></script>
+    <script src="../plugins/jquery-asColorPicker-master/libs/jquery-asColor.js"></script>
+    <script src="../plugins/jquery-asColorPicker-master/libs/jquery-asGradient.js"></script>
+    <script src="../plugins/jquery-asColorPicker-master/dist/jquery-asColorPicker.min.js"></script>
     <!-- Date Picker Plugin JavaScript -->
-    <script src="../../../plugins/bootstrap-datepicker/bootstrap-datepicker.min.js"></script>
+    <script src="../plugins/bootstrap-datepicker/bootstrap-datepicker.min.js"></script>
     <!-- Date range Plugin JavaScript -->
-    <script src="../../../plugins/timepicker/bootstrap-timepicker.min.js"></script>
-    <script src="../../../plugins/bootstrap-daterangepicker/daterangepicker.js"></script>
+    <script src="../plugins/timepicker/bootstrap-timepicker.min.js"></script>
+    <script src="../plugins/bootstrap-daterangepicker/daterangepicker.js"></script>
 
-    <script src="../../../js/plugins-init/form-pickers-init.js"></script>
-    <script src="../../../plugins/tables/js/jquery.dataTables.min.js"></script>
-    <script src="../../../plugins/tables/js/datatable/dataTables.bootstrap4.min.js"></script>
-    <script src="../../../plugins/tables/js/datatable-init/datatable-basic.min.js"></script>
+    <script src="../js/plugins-init/form-pickers-init.js"></script>
+    <script src="../plugins/tables/js/jquery.dataTables.min.js"></script>
+    <script src="../plugins/tables/js/datatable/dataTables.bootstrap4.min.js"></script>
+    <script src="../plugins/tables/js/datatable-init/datatable-basic.min.js"></script>
 
 </body>
 </html>
-
+<?php
+    }
+}
+?>

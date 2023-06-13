@@ -63,8 +63,49 @@ class MarriagePreparationCourseModel {
         return $this->db->execute($query);
     }
 
-    public function getPaymentByID($payID) {
-        $query = "SELECT * FROM proof_of_payment WHERE paymentID = $payID";
+    public function getPaymentByID($applicant) {
+        $query = "SELECT * FROM proof_of_payment WHERE applicantID = $applicant";
         return $this->db->execute($query);
+    }
+
+    //Manage Participant
+    public function getParticipantByCourseID() {
+        $query = "SELECT * FROM applicant JOIN pre_marriage_course ON applicant.pre_m_reg_ID = pre_marriage_course.pre_m_reg_ID";
+        return $this->db->execute($query);
+    }
+
+    public function approveParticipant($courseID,$course) {
+        $query = "UPDATE pre_marriage_course SET pre_m_reg_approval = '$course' WHERE pre_m_reg_ID ='$courseID' ";
+        return $this->db->execute($query);
+    }
+
+    //Manage Attendance
+    public function getCourseByseriesorganiser($organiser,$series) {
+        $query = "SELECT * FROM  pre_marriage_course WHERE pre_m_organiser = '$organiser' AND pre_m_series = '$series'";
+        return $this->db->execute($query)[0];
+    }
+
+    public function getParticipantByID($course) {
+        $query = "SELECT * FROM applicant WHERE pre_m_reg_ID = '$course'";
+        return $this->db->execute($query);
+    }
+
+    public function insertAttendance($attendanceValue, $note) {
+        $query = "INSERT INTO attendance (attendance_status, attendance_note) VALUES ('$attendanceValue', '$note')";
+        return $this->db->execute($query);
+    }
+
+    public function getAttendance() {
+        $query = "SELECT *
+        FROM attendance
+        ORDER BY attendanceID DESC
+        LIMIT 1;";
+        return $this->db->execute($query)[0];
+    }
+
+    public function updateApplicantAttendanceID($applicantID, $getattendanceID) {
+        $query = "UPDATE applicant SET attendanceID = $getattendanceID WHERE applicantID = $applicantID";
+        return $this->db->execute($query);
+    
     }
 }

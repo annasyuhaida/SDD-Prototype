@@ -1,3 +1,8 @@
+<?php
+
+class ParticipantList{
+    public function render($participant) {
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -5,11 +10,11 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <!-- Custom Stylesheet -->
-<link href="../../../css/style.css" rel="stylesheet"> 
+<link href="../css/style.css" rel="stylesheet"> 
 <!-- Custom Stylesheet -->
-<link href="../../../plugins/bootstrap-material-datetimepicker/css/bootstrap-material-datetimepicker.css" rel="stylesheet">
+<link href="../plugins/bootstrap-material-datetimepicker/css/bootstrap-material-datetimepicker.css" rel="stylesheet">
 <!-- Date picker plugins css -->
-<link href="../../../plugins/bootstrap-datepicker/bootstrap-datepicker.min.css" rel="stylesheet">
+<link href="../plugins/bootstrap-datepicker/bootstrap-datepicker.min.css" rel="stylesheet">
 
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 
@@ -156,6 +161,7 @@
                     <div class="col-lg-12">
                         <div class="card">
                             <div class="card-body">
+                            <div class="button-right-box col-md-2"><a href="index.php?action=getOnlineVerify" class="btn btn-primary btn-block">Online Approval</a></div>
                                 <div class="card-title">
                                     <h4>Participant List</h4>
                                 </div>
@@ -177,19 +183,27 @@
                                             </tr>
                                         </thead>
                                         <tbody>
+                                            <?php if (is_array($participant)) { ?>
+                                            <?php foreach ($participant as $participant) { ?>
                                             <tr>
                                                 <th>1</th>
-                                                <td>29/09/2022</td>
-                                                <td>Nurul Qalbi Binti Abbas</td>
-                                                <td>010519-06-0081</td>
-                                                <td>BTG/0008/2022</td>
-                                                <td>SUCCESS</td>
-                                                <td><span>
-                                                        <a href="./PreMarriageCourseRegForm.php" title="Edit"><i class="fa fa-edit color-muted m-r-5"></i></a>
-                                                        <a href="./PreMarriageCourseRegForm.php" title="Print"><i class="fa fa-print color-muted m-r-5"></i></a>
+                                                <td><?php echo $participant['pre_m_reg_date']; ?></td>
+                                                <td><?php echo $participant['applicantName']; ?></td>
+                                                <td><?php echo $participant['applicantIC']; ?></td>
+                                                <td><?php echo $participant['pre_m_series']; ?></td>
+                                                <td><?php echo $participant['pre_m_reg_approval']; ?></td>
+                                                <td>
+                                                    <span>
+                                                        <a href="index.php?action=viewPayment?appID=<?php echo $participant['applicantID']; ?>?courseID=<?php echo $participant['pre_m_reg_ID']; ?>" title="payment"><i class="fa fa-edit color-muted m-r-5"></i></a>
+                                                        <a href="index.php?action=editPreMarriage?appID=<?php echo $participant['applicantID']; ?>?courseID=<?php echo $participant['pre_m_reg_ID']; ?>" title="print"><i class="fa fa-print color-muted m-r-5"></i></a>
                                                     </span>
                                                 </td>
                                             </tr>
+                                            <?php } ?>
+                                            <?php } else {
+                                                // Handle the case when $users is not an array
+                                                echo "No users found.";
+                                            } ?>
                                         </tbody>
                                     </table>
                                 </div>
@@ -209,29 +223,33 @@
      <!--**********************************
         Scripts
     ***********************************-->
-    <script src="../../../plugins/common/common.min.js"></script>
-    <script src="../../../js/custom.min.js"></script>
-    <script src="../../../js/settings.js"></script>
-    <script src="../../../js/gleek.js"></script>
-    <script src="../../../js/styleSwitcher.js"></script>
+    <script src="../plugins/common/common.min.js"></script>
+    <script src="../js/custom.min.js"></script>
+    <script src="../js/settings.js"></script>
+    <script src="../js/gleek.js"></script>
+    <script src="../js/styleSwitcher.js"></script>
 
-    <script src="../../../plugins/moment/moment.js"></script>
-    <script src="../../../plugins/bootstrap-material-datetimepicker/js/bootstrap-material-datetimepicker.js"></script>
+    <script src="../plugins/moment/moment.js"></script>
+    <script src="../plugins/bootstrap-material-datetimepicker/js/bootstrap-material-datetimepicker.js"></script>
     <!-- Clock Plugin JavaScript -->
-    <script src="../../../plugins/clockpicker/dist/jquery-clockpicker.min.js"></script>
+    <script src="../plugins/clockpicker/dist/jquery-clockpicker.min.js"></script>
     <!-- Color Picker Plugin JavaScript -->
-    <script src="../../../plugins/jquery-asColorPicker-master/libs/jquery-asColor.js"></script>
-    <script src="../../../plugins/jquery-asColorPicker-master/libs/jquery-asGradient.js"></script>
-    <script src="../../../plugins/jquery-asColorPicker-master/dist/jquery-asColorPicker.min.js"></script>
+    <script src="../plugins/jquery-asColorPicker-master/libs/jquery-asColor.js"></script>
+    <script src="../plugins/jquery-asColorPicker-master/libs/jquery-asGradient.js"></script>
+    <script src="../plugins/jquery-asColorPicker-master/dist/jquery-asColorPicker.min.js"></script>
     <!-- Date Picker Plugin JavaScript -->
-    <script src="../../../plugins/bootstrap-datepicker/bootstrap-datepicker.min.js"></script>
+    <script src="../plugins/bootstrap-datepicker/bootstrap-datepicker.min.js"></script>
     <!-- Date range Plugin JavaScript -->
-    <script src="../../../plugins/timepicker/bootstrap-timepicker.min.js"></script>
-    <script src="../../../plugins/bootstrap-daterangepicker/daterangepicker.js"></script>
+    <script src="../plugins/timepicker/bootstrap-timepicker.min.js"></script>
+    <script src="../plugins/bootstrap-daterangepicker/daterangepicker.js"></script>
 
-    <script src="../../../js/plugins-init/form-pickers-init.js"></script>
+    <script src="../js/plugins-init/form-pickers-init.js"></script>
 
 
 </body>
 </html>
 
+<?php
+    }
+}
+        ?>

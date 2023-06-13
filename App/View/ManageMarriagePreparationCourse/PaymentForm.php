@@ -198,7 +198,7 @@ class PaymentForm {
                                                 <div class="input-group" style="margin-top:20px; margin-bottom:20px;">
                                                     <label class="m-t-20">Upload Payment:</label>
                                                     <div class="custom-file">
-                                                        <input type="file" class="custom-file-input" name="file">
+                                                        <input type="file" class="custom-file-input" name="file" accept="image/*">
                                                         <label class="custom-file-label">Choose file</label>
                                                     </div>
                                                     <div class="input-group-append"><span class="input-group-text">Upload</span>
