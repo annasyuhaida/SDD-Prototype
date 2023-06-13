@@ -2,23 +2,37 @@
 //DB
 require_once '../BusinessService/Model/Database.php';
 
-//VIEW
+///VIEW
 //require_once '../App/View/Temp_View_1.php';
 //require_once '../App/View/ManageRegistration/persetujuan_wali.php';
+
+//Module 1
+require_once '../App/View/user_account/ApplicantRegister.php';
+//Module 2
 require_once '../App/View/ManageMarriagePreparationCourse/MarriageCourseDetailsForm.php';
 require_once '../App/View/ManageMarriagePreparationCourse/UpdateMarriageCourseDetailsForm.php';
 require_once '../App/View/ManageMarriagePreparationCourse/PreMarriageCourseRegForm.php';
 
-//MODEL
+///MODEL
 //require_once '../BusinessService/Model/Temp_Model_1.php';
-require_once '../BusinessService/Model/SaveDoc_model.php';
+
+//Module 1
+require_once '../BusinessService/Model/userAccount/userAccount_model.php';
+//Module 2
 require_once '../BusinessService/Model/MarriagePreparationCourse/MarriagePreparationCourseModel.php';
+//Module 3
+//require_once '../BusinessService/Model/SaveDoc_model.php';
 
 //CONTROLLER
 //require_once '../BusinessService/Controller/Temp_Controller_1.php';
-require_once '../BusinessService/Controller/RegistrationController/SaveDoc_ctrl.php';
+
+//Module 1
+require_once '../BusinessService/Controller/userAccount_ctrl/ApplicantRegister_ctrl.php';
+//Module 2
 require_once '../BusinessService/Controller/ManageMarriagePreparationCourseController/Marriage_Course_Details_ctrl.php';
 require_once '../BusinessService/Controller/ManageMarriagePreparationCourseController/Pre_Marriage_Course_ctrl.php';
+//Module 3
+require_once '../BusinessService/Controller/RegistrationController/SaveDoc_ctrl.php';
 
 // Check database connection
 //try {
@@ -54,6 +68,15 @@ switch ($action) {
     //    $saveDocCtrl->testinput($waliname, $waliIC, $relationship, $bridename, $groomname, $dowry, $date);
     //    break;
 
+    //Applicant account registration
+    case 'getUsers':
+        $controller = new ApplicantRegister_ctrl();
+        $controller->getUsersAction();
+        break;
+    case 'createUser':
+        $controller = new ApplicantRegister_ctrl();
+        $controller->createUserAction();
+        break;
 
     //Manage Marriage Course Details(Staff)
     case 'MarriageCourseForm':
