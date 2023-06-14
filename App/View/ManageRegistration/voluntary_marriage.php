@@ -187,6 +187,6 @@
     </tbody>
   </table>
   <button class="button" onclick="location.href='selectmarriage.php'">Back</button>
-  <button class="confirm-button" onclick="confirmSubmission()">Confirm Submission</button>
+  <button class="confirm-button" onclick="location.href='ViewRegApprovalStatus.php'">Confirm Submission</button>
 </body>
 </html>
