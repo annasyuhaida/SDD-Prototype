@@ -359,20 +359,54 @@
             width: 27%;
             position: absolute;
             margin-top: 30px;
-            margin-bottom: 30px;
+            margin-bottom: 100px;
             font-weight: 500;
             letter-spacing: 1px;
             cursor: pointer;
             transition: 0.4s;
             height: 40px;
-            margin-right: 40px;
+            right:0;
+            margin-right: 30px;
         }
+
+        
+        a.button {
+            color: #fff;
+        background: #346089;
+  border: none;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 17px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 25px;
+
+    }
+
+    a.buttonsubmit {
+        color: #fff;
+        background: #346089;
+  border: none;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 17px;
+  margin: 4px 2px;
+  cursor: pointer;
+  margin-left: 290px;
+  border-radius: 25px;
+
+    }
     </style>
 </head>
 
 <body>
     <div class="container">
         <div class="change pass form">
+        <header>CHANGE PASSWORD</header>
             <form name="change" action="#">
 
                 <label class="icnumber">IDENTITY CARD NUMBER&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp:</label>
@@ -388,8 +422,8 @@
                 <input type="password" class="passconfirm"><br>
 
 
-                <a href="../user_account/userLogin.php" class="buttonrgt">BACK</a>
-                <input type="button" class="buttonrgt" value="SUBMIT">
+                <a href="../user_account/userLogin.php" class="button">BACK</a>
+                <a href="../user_account/userLogin.php" class="buttonsubmit">SUBMIT</a>
             </form>
         </div>
     </div>

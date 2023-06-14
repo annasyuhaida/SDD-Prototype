@@ -168,19 +168,52 @@
             bottom: 0;
             right: 0;
         }
+
+        a.button {
+            color: #fff;
+            background: #346089;
+            border: none;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 17px;
+            margin: 4px 2px;
+            cursor: pointer;
+            border-radius: 25px;
+
+        }
+
+        a.buttonsubmit {
+            color: #fff;
+            background: #346089;
+            border: none;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 17px;
+            margin: 4px 2px;
+            margin-top: 5px;
+            cursor: pointer;
+            margin-left: 180px;
+            border-radius: 25px;
+
+        }
     </style>
 </head>
 
 <body>
     <div class="container">
         <div class="forgot pass form">
+        <header>CHANGE PASSWORD</header>
             <form name="forgotpass" action="#">
                 <p>Please enter your email address. Our system will send the temporary password through your email.</p>
                 <input type="password" class="passconfirm"><br>
 
 
-                <a href="../user_account/userLogin.php" class="buttonrgt">BACK</a>
-                <input type="button" class="buttonrgt" value="SUBMIT">
+                <a href="../user_account/userLogin.php" class="button">BACK</a>
+                <a href="../user_account/userLogin.php" class="buttonsubmit">SUBMIT</a>
             </form>
         </div>
     </div>

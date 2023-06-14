@@ -385,7 +385,7 @@
       </form>
 
       <div style="text-align:center">
-        <a href="">NEW REGISTRATION</a>
+        <a href="../user_account/ApplicantRegister.php">NEW REGISTRATION</a>
         |
         <a href="../user_account/change_pass.php">CHANGE PASSWORD</a>
         |

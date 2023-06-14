@@ -16,7 +16,7 @@ class userAccount_model {
     }
 
     public function getUserById($id) {
-        $query = "SELECT * FROM applicant WHERE id = $id";
+        $query = "SELECT * FROM applicant WHERE applicantID = $id";
         return $this->db->execute($query)[0];
     }
 
