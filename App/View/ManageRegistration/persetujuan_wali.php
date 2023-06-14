@@ -59,7 +59,7 @@ class persetujuan_wali {
   </div>
 
   <div class="dark-blue-box">
-    <form action="index.php?action=SaveDoc" method="post" id="agreementForm">
+    <form action="index.php?action=createDoc" method="POST" id="agreementForm">
       <label class="form-label">
         Saya
         <input type="text" name="waliname" required>

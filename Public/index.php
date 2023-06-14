@@ -4,17 +4,19 @@ require_once '../BusinessService/Model/Database.php';
 
 ///VIEW
 //require_once '../App/View/Temp_View_1.php';
-require_once '../App/View/ManageRegistration/persetujuan_wali.php';
+
 
 //Module 1
 require_once '../App/View/user_account/ApplicantRegister.php';
 
 //Module 2
-require_once '../App/View/ManageRegistration/persetujuan_wali.php';
+//require_once '../App/View/ManageRegistration/persetujuan_wali.php';
 require_once '../App/View/ManageMarriagePreparationCourse/MarriageCourseDetailsForm.php';
 require_once '../App/View/ManageMarriagePreparationCourse/UpdateMarriageCourseDetailsForm.php';
 require_once '../App/View/ManageMarriagePreparationCourse/PreMarriageCourseRegForm.php';
 
+//Module 3
+require_once '../App/View/ManageRegistration/persetujuan_wali.php';
 
 ///MODEL
 //require_once '../BusinessService/Model/Temp_Model_1.php';
@@ -24,7 +26,7 @@ require_once '../BusinessService/Model/userAccount/userAccount_model.php';
 //Module 2
 require_once '../BusinessService/Model/MarriagePreparationCourse/MarriagePreparationCourseModel.php';
 //Module 3
-//require_once '../BusinessService/Model/SaveDoc_model.php';
+require_once '../BusinessService/Model/ManageRegistration/RegistrationModel.php';
 
 //CONTROLLER
 //require_once '../BusinessService/Controller/Temp_Controller_1.php';
@@ -62,15 +64,15 @@ $action = isset($_GET['action']) ? $_GET['action'] : 'default';
 
 // Create a new instance of the appropriate controller based on the action
 switch ($action) {
-    case 'SaveDoc':
-        $waliname = $_POST['waliname'];
-        $waliIC = $_POST['waliIc'];
-        $relationship = $_POST['relationship'];
-        $bridename = $_POST['bridename'];
-        $groomname = $_POST['groomname'];
-        $dowry = $_POST['dowry'];
-        $date = $_POST['date'];
-        $saveDocCtrl->testinput($waliname, $waliIC, $relationship, $bridename, $groomname, $dowry, $date);
+    //Module 3//
+    //persetujuan wali document fill up
+    case 'getUsers':
+        $controller = new SaveDoc_ctrl();
+        $controller->getUsersAction();
+        break;
+    case 'createDoc':
+        $controller = new SaveDoc_ctrl();
+        $controller->createDocAction();
         break;
 
     //Module 1//
