@@ -6,10 +6,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <!-- Custom Stylesheet -->
 <link href="../../../css/style.css" rel="stylesheet">
-<!-- Custom Stylesheet -->
-<link href="../../../plugins/bootstrap-material-datetimepicker/css/bootstrap-material-datetimepicker.css" rel="stylesheet">
-<!-- Date picker plugins css -->
-<link href="../../../plugins/bootstrap-datepicker/bootstrap-datepicker.min.css" rel="stylesheet">
+  <!-- Custom Stylesheet -->
+  <link href="../../../plugins/bootstrap-material-datetimepicker/css/bootstrap-material-datetimepicker.css" rel="stylesheet">
+  <!-- Date picker plugins css -->
+  <link href="../../../plugins/bootstrap-datepicker/bootstrap-datepicker.min.css" rel="stylesheet">
 
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <style>
@@ -65,7 +65,6 @@
         box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
         height: 550px;
         margin-top: 50px;
-
     }
 
     .box-container header {
@@ -76,7 +75,7 @@
         margin-top: 20px;
     }
 
-    /* .box-container input.icnumber {
+     .box-container input.icnumber {
         height: 30px;
         width: 57%;
         padding: 0 15px;
@@ -138,7 +137,7 @@
         display: inline-block;
         vertical-align: middle;
         margin-top: 40px;
-    } */
+    } 
 
     .box-container form label.icnumber {
         text-align: center;
@@ -398,22 +397,22 @@
             <!-- Content goes here -->
             <header>APPLICANT PROFILE</header>
             <form name="profile" action="#">
-                <label class="icnumber">IDENTITY CARD NUMBER&nbsp;&nbsp;&nbsp;&nbsp;&nbsp&nbsp;&nbsp;&nbsp: 010106-01-0055 </label>
-                <!-- <input type="text" class="icnumber"><br> --><br>
+                <label class="icnumber">IDENTITY CARD NUMBER&nbsp;&nbsp;&nbsp;&nbsp;&nbsp&nbsp;&nbsp;&nbsp: </label>
+                <input type="text" class="icnumber" value="010106-01-0055"><br>
 
-                <label class="name">FULL NAME&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp: KHOLID BIN WAFI</label>
-                <!-- <input type="text" class="name"><br> --><br>
+                <label class="name">FULL NAME&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp: </label>
+                <input type="text" class="name" value="KHOLID BIN WAFI"><br>
 
-                <label class="name">GENDER&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp: MALE</label>
-                <!-- <input type="text" class="name"><br> --><br>
+                <label class="name">GENDER&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp:</label>
+                <input type="text" class="name" value="MALE"><br>
 
-                <label class="phoneno">PHONE NUMBER&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp: 01498554370 </label>
-                <!-- <input type="number" class="phoneno"><br> --><br>
+                <label class="phoneno">PHONE NUMBER&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp: </label>
+                <input type="number" class="phoneno" value="01498554370"><br>
 
-                <label class="email">EMAIL&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp: kholid@gmail.com </label>
-                <!-- <input type="email" class="email"><br> --><br>
+                <label class="email">EMAIL&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp: </label>
+                <input type="email" class="email" value="kholid@gmail.com"><br>
 
-                <a href="ApplicantEditProfile.php" class="button">EDIT PROFILE</a>
+                <a href="ApplicantProfileList.php" class="button">SUBMIT</a>
             </form>
         </div>
     </div>
@@ -426,26 +425,26 @@
         Scripts
     ***********************************-->
     <script src="../../../plugins/common/common.min.js"></script>
-    <script src="../../../js/custom.min.js"></script>
-    <script src="../../../js/settings.js"></script>
-    <script src="../../../js/gleek.js"></script>
-    <script src="../../../js/styleSwitcher.js"></script>
+  <script src="../../../js/custom.min.js"></script>
+  <script src="../../../js/settings.js"></script>
+  <script src="../../../js/gleek.js"></script>
+  <script src="../../../js/styleSwitcher.js"></script>
 
-    <script src="../../../plugins/moment/moment.js"></script>
-    <script src="../../../plugins/bootstrap-material-datetimepicker/js/bootstrap-material-datetimepicker.js"></script>
-    <!-- Clock Plugin JavaScript -->
-    <script src="../../../plugins/clockpicker/dist/jquery-clockpicker.min.js"></script>
-    <!-- Color Picker Plugin JavaScript -->
-    <script src="../../../plugins/jquery-asColorPicker-master/libs/jquery-asColor.js"></script>
-    <script src="../../../plugins/jquery-asColorPicker-master/libs/jquery-asGradient.js"></script>
-    <script src="../../../plugins/jquery-asColorPicker-master/dist/jquery-asColorPicker.min.js"></script>
-    <!-- Date Picker Plugin JavaScript -->
-    <script src="../../../plugins/bootstrap-datepicker/bootstrap-datepicker.min.js"></script>
-    <!-- Date range Plugin JavaScript -->
-    <script src="../../../plugins/timepicker/bootstrap-timepicker.min.js"></script>
-    <script src="../../../plugins/bootstrap-daterangepicker/daterangepicker.js"></script>
+  <script src="../../../plugins/moment/moment.js"></script>
+  <script src="../../../plugins/bootstrap-material-datetimepicker/js/bootstrap-material-datetimepicker.js"></script>
+  <!-- Clock Plugin JavaScript -->
+  <script src="../../../plugins/clockpicker/dist/jquery-clockpicker.min.js"></script>
+  <!-- Color Picker Plugin JavaScript -->
+  <script src="../../../plugins/jquery-asColorPicker-master/libs/jquery-asColor.js"></script>
+  <script src="../../../plugins/jquery-asColorPicker-master/libs/jquery-asGradient.js"></script>
+  <script src="../../../plugins/jquery-asColorPicker-master/dist/jquery-asColorPicker.min.js"></script>
+  <!-- Date Picker Plugin JavaScript -->
+  <script src="../../../plugins/bootstrap-datepicker/bootstrap-datepicker.min.js"></script>
+  <!-- Date range Plugin JavaScript -->
+  <script src="../../../plugins/timepicker/bootstrap-timepicker.min.js"></script>
+  <script src="../../../plugins/bootstrap-daterangepicker/daterangepicker.js"></script>
 
-    <script src="../../../js/plugins-init/form-pickers-init.js"></script>
+  <script src="../../../js/plugins-init/form-pickers-init.js"></script>
 
 
     </body>

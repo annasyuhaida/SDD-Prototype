@@ -9,6 +9,7 @@ require_once '../BusinessService/Model/Database.php';
 //Module 1
 require_once '../App/View/user_account/ApplicantRegister.php';
 
+
 //Module 2
 //require_once '../App/View/ManageRegistration/persetujuan_wali.php';
 require_once '../App/View/ManageMarriagePreparationCourse/MarriageCourseDetailsForm.php';
@@ -33,6 +34,7 @@ require_once '../BusinessService/Model/ManageRegistration/RegistrationModel.php'
 
 //Module 1
 require_once '../BusinessService/Controller/userAccount_ctrl/ApplicantRegister_ctrl.php';
+
 //Module 2
 require_once '../BusinessService/Controller/ManageMarriagePreparationCourseController/Marriage_Course_Details_ctrl.php';
 require_once '../BusinessService/Controller/ManageMarriagePreparationCourseController/Pre_Marriage_Course_ctrl.php';
@@ -85,7 +87,7 @@ switch ($action) {
         $controller = new ApplicantRegister_ctrl();
         $controller->createAccountAction();
         break;
-    
+
     //Module 2//
     //Manage Marriage Course Details(Staff)
     case 'MarriageCourseForm':
