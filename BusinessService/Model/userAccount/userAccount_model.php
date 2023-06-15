@@ -10,7 +10,7 @@ class userAccount_model {
         $this->db = new Database();
     }
 
-    public function getUsers() {
+    public function getApplicant() {
         $query = "SELECT * FROM applicant";
         return $this->db->execute($query);
     }

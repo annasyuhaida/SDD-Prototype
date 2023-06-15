@@ -21,7 +21,7 @@
         body {
             min-height: 100vh;
             width: 100%;
-            background-image: url("bgheader.png");
+            background-image: url("./background.png");
             background-size: cover;
             background-repeat: no-repeat;
         }
@@ -206,7 +206,7 @@
 <body>
     <div class="container">
         <div class="forgot pass form">
-        <header>CHANGE PASSWORD</header>
+        <header>FORGOT PASSWORD</header>
             <form name="forgotpass" action="#">
                 <p>Please enter your email address. Our system will send the temporary password through your email.</p>
                 <input type="password" class="passconfirm"><br>

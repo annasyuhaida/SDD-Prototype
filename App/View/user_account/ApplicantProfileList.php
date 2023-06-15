@@ -24,7 +24,7 @@
     }
 
     body {
-        background-image: url(' ');
+        background-image: url('./background.png');
         background-size: cover;
         background-repeat: no-repeat;
     }
@@ -316,7 +316,7 @@
             <div class="header-left">
                 <div class="input-group icons">
                     <div class="input-group-prepend">
-                        <span><img class="logo-nav" src="../../images/navheadlogo.png" alt="" style=""></span>
+                        <span><img class="logo-nav" src="../../images/navheadlogo.png" alt=""></span>
                     </div>
                     <div style="padding-left:25px">
                         <h3>E-MUNAKAHAT</h3>

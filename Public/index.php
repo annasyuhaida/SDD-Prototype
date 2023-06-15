@@ -79,7 +79,7 @@ switch ($action) {
 
     //Module 1//
     //Applicant account registration
-    case 'getUsers':
+    case 'getApplicant':
         $controller = new ApplicantRegister_ctrl();
         $controller->getUsersAction();
         break;

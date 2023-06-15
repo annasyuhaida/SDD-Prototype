@@ -38,7 +38,7 @@ class ApplicantRegister
                     body {
                         min-height: 100vh;
                         width: 100%;
-                        background-image: url("bgheader.png");
+                        background-image: url("./background.png");
                         background-size: cover;
                         background-repeat: no-repeat;
                     }

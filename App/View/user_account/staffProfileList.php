@@ -24,7 +24,7 @@
     }
 
     body {
-        background-image: url(' ');
+        background-image: url('./background.png');
         background-size: cover;
         background-repeat: no-repeat;
     }

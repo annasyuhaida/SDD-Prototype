@@ -22,7 +22,7 @@
     body {
       min-height: 100vh;
       width: 100%;
-      background-image: url('./images/bgheader.php');
+      background-image: url('./background.png');
       background-size: cover;
       background-repeat: no-repeat;
     }

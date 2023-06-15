@@ -10,7 +10,7 @@ class ApplicantRegister_ctrl {
         $model = new userAccount_model();
 
         // Get the users from the model
-        $users = $model->getUsers();
+        $users = $model->getApplicant();
 
         // Render the view and pass the data
         require_once '../App/View/user_account/ApplicantRegister.php';
@@ -35,7 +35,7 @@ class ApplicantRegister_ctrl {
             $model->createAccount($icnumber,$name,$gender,$phoneno,$email, $password);
 
             // Redirect to the getUsers action
-            header('Location: index.php?action=getUsers');
+            header('Location: index.php?action=getApplicant');
             exit;
         }
 
