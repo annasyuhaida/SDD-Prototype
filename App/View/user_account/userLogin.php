@@ -368,7 +368,7 @@
     <input type="checkbox" id="check">
     <div class="login form">
       <header>LOGIN</header>
-      <form action="index.php?action=userlogin" name="userlogin">
+      <form action="./systemAuthentication.php" name="userlogin">
         <label>IDENTITY CARD NUMBER</label>
         <input type="text" name="icnumber">
 
