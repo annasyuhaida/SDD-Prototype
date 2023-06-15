@@ -209,7 +209,7 @@
         <header>FORGOT PASSWORD</header>
             <form name="forgotpass" action="#">
                 <p>Please enter your email address. Our system will send the temporary password through your email.</p>
-                <input type="password" class="passconfirm"><br>
+                <input type="email" class="passconfirm"><br>
 
 
                 <a href="../user_account/userLogin.php" class="button">BACK</a>
