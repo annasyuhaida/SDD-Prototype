@@ -211,7 +211,7 @@ class persetujuan_wali {
       </label>
 
                             
-                            <input type="save" class="button" value="save">
+                            <input type="button" class="save" value="save">
                         </form>
                     </div>
                 </div>
