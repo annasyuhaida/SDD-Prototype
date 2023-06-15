@@ -68,16 +68,7 @@ $action = isset($_GET['action']) ? $_GET['action'] : 'default';
 
 // Create a new instance of the appropriate controller based on the action
 switch ($action) {
-    //Module 3//
-    //persetujuan wali document fill up
-    case 'getUsers':
-        $controller = new SaveDoc_ctrl();
-        $controller->getUsersAction();
-        break;
-    case 'createDoc':
-        $controller = new SaveDoc_ctrl();
-        $controller->createDocAction();
-        break;
+    
 
     //Module 1//
     //Applicant account registration
@@ -203,6 +194,17 @@ switch ($action) {
          $controller = new Attendance_ctrl();
          $controller->updateAttendance();
          break;
+
+         //Module 3//
+    //persetujuan wali document fill up
+    case 'getUsers':
+        $controller = new SaveDoc_ctrl();
+        $controller->getUsersAction();
+        break;
+    case 'createDoc':
+        $controller = new SaveDoc_ctrl();
+        $controller->createDocAction();
+        break;
 
 
     //Example    
