@@ -38,7 +38,7 @@ class ApplicantRegister
                     body {
                         min-height: 100vh;
                         width: 100%;
-                        background-image: url("./background.png");
+                        background-image: url("background.png");
                         background-size: cover;
                         background-repeat: no-repeat;
                     }
@@ -428,7 +428,7 @@ class ApplicantRegister
 
                             <label class="passconfirm">PASSWORD CONFIRMATION : </label>
                             <input type="password" class="passconfirm" name="passconfirm" id="passconfirm"><br>
-                            
+
                             <input type="submit" class="buttonrgt" value="SUBMIT REGISTRATION">
                         </form>
                     </div>

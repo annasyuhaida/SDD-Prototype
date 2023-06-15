@@ -8,6 +8,7 @@ require_once '../BusinessService/Model/Database.php';
 
 //Module 1
 require_once '../App/View/user_account/ApplicantRegister.php';
+require_once '../App/View/user_account/userLogin.php';
 
 
 //Module 2
@@ -34,6 +35,7 @@ require_once '../BusinessService/Model/ManageRegistration/RegistrationModel.php'
 
 //Module 1
 require_once '../BusinessService/Controller/userAccount_ctrl/ApplicantRegister_ctrl.php';
+require_once '../BusinessService/Controller/userAccount_ctrl/userLogin_ctrl.php';
 
 //Module 2
 require_once '../BusinessService/Controller/ManageMarriagePreparationCourseController/Marriage_Course_Details_ctrl.php';
