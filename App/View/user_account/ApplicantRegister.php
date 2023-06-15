@@ -428,8 +428,7 @@ class ApplicantRegister
 
                             <label class="passconfirm">PASSWORD CONFIRMATION : </label>
                             <input type="password" class="passconfirm" name="passconfirm" id="passconfirm"><br>
-
-                            <p>Already have an account?<a href="index.php?action=createProducts"> Login here.</a></p>
+                            
                             <input type="submit" class="buttonrgt" value="SUBMIT REGISTRATION">
                         </form>
                     </div>
