@@ -368,7 +368,7 @@
     <input type="checkbox" id="check">
     <div class="login form">
       <header>LOGIN</header>
-      <form action="index.php?action=userlogin">
+      <form action="index.php?action=userlogin" name="userlogin">
         <label>IDENTITY CARD NUMBER</label>
         <input type="text" name="icnumber">
 
@@ -381,7 +381,7 @@
           <option value="applicant">APPLICANT</option>
           <option value="staff">STAFF</option>
         </select>
-        <input type="button" class="button" value="LOGIN">
+        <input type="button" class="button" value="LOGIN" onclick="login()">
       </form>
 
       <div style="text-align:center">
@@ -397,6 +397,20 @@
     </div>
 
   </div>
+
+  <script>
+
+function login()   
+{
+    role = document.userlogin.role.value;
+    if((role == "admin"))
+    {window.location = "adminProfileList.php";}
+    else if((role == "staff"))
+    {window.location = "staffProfileList.php"}
+    else{window.location = "ApplicantProfileList.php";}
+}
+
+    </script>
 </body>
 
 </html>
