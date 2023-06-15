@@ -15,10 +15,10 @@ class RegistrationModel {
         return $this->db->execute($query);
     }
 
-    public function getUserById($id) {
-        $query = "SELECT * FROM registration WHERE id = $id";
-        return $this->db->execute($query)[0];
-    }
+    //public function getUserById($id) {
+    //    $query = "SELECT * FROM registration WHERE id = $id";
+      //  return $this->db->execute($query)[0];
+    //}
 
     public function createDoc($waliname,$waliIC,$relationship,$bridename,$groomname, $dowry, $date) {
         $query = "INSERT INTO registration (waliname, waliIC, relationship, bridename, groomname, dowry, date) VALUES ('$waliname', '$waliIC', '$relationship', '$bridename','$groomname', '$dowry', '$date')";
