@@ -385,7 +385,7 @@
       </form>
 
       <div style="text-align:center">
-        <a href="http://localhost/SDD-prototype/Public/index.php?action=getApplicant">NEW REGISTRATION</a>
+        <a href=" ">NEW REGISTRATION</a>
         |
         <a href="../user_account/change_pass.php">CHANGE PASSWORD</a>
         |
