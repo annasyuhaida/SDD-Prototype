@@ -1,6 +1,7 @@
 (function($) {
     "use strict"
 
+    
     //smartwizard1 initialization
 
     // Step show event
@@ -8,14 +9,23 @@
         //alert("You are on step "+stepNumber+" now");
         if(stepPosition === 'first'){
             $("#prev-btn").addClass('disabled');
+            $("#next-btn").attr('type', 'submit');
         }else if(stepPosition === 'final'){
             $("#next-btn").addClass('disabled');
+
         }else{
             $("#prev-btn").removeClass('disabled');
             $("#next-btn").removeClass('disabled');
+
         }
     });
 
+    // Submit form on next button click
+    $("#next-btn").on("click", function() {
+
+        var form = $("form"); // Get the form element
+        form.submit(); // Submit the form
+    });
     // Toolbar extra buttons
     var btnFinish = $('<button></button>').text('Finish').addClass('btn btn-info').on('click', function(){
          alert('Thanks for submiting!'); 
@@ -51,6 +61,8 @@
 
     $("#next-btn").on("click", function() {
         // Navigate next
+        console.log("Next button clicked"); // Add this line
+
         $('#smartwizard1').smartWizard("next");
         return true;
     });

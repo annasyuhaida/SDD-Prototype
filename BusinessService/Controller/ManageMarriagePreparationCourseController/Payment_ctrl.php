@@ -7,46 +7,52 @@ class Payment_ctrl {
     public function UploadPayment($Lid, $appID, $courseID) {
         // Create an instance of the MarriagePreparationCourseModel
         $model = new MarriagePreparationCourseModel();
-
-        if($Lid == 0){
-            // Get the users from the model
+    
+        if ($Lid == 0) {
+            // Get the user and course data
             $app = $appID;
-
             $course = $courseID;
-
+    
             // Render the view and pass the data
             require_once '../App/View/ManageMarriagePreparationCourse/PaymentForm.php';
             $view = new PaymentForm();
             $view->render($course, $app);
-        }
-        if($Lid == 1){
-            if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    
-                // Get the user data from the form
-                $image = $_FILES['file']['tmp_name'];
-                $file = addslashes(file_get_contents($image));
+        } elseif ($Lid == 1 && $_SERVER['REQUEST_METHOD'] === 'POST') {
+            // Check if a file was uploaded
+            if (!empty($_FILES['file']['tmp_name'])) {
+                $file = $_FILES['file']['tmp_name'];
+                $fileExtension = strtolower(pathinfo($_FILES['file']['name'], PATHINFO_EXTENSION));
                 $category = "Pre Marriage Course";
-                // Perform actions to create a user in the database
+    
+                // Perform actions to create a payment entry in the database
                 $model->uploadPayment($appID, $category, $file);
     
-                // Redirect to the getUsers action
-                header('Location: index.php?action=PreMarriageList&Lid=2&appID='.$appID.'&courseID=0');
+                // Redirect to the appropriate page
+                header('Location: index.php?action=PreMarriageList&Lid=2&appID=' . $appID . '&courseID=0');
                 exit;
             }
         }
     }
-
+    
     public function ViewPayment($appID, $courseID) {
         // Create an instance of the MarriagePreparationCourseModel
         $model = new MarriagePreparationCourseModel();
     
         $app = $model->getAppByID($appID);
-        $applicant = $app['pre_m_reg_ID'];
+        $applicant = $app['applicantID'];
     
         $payment = $model->getPaymentByID($applicant);
-        foreach($payment as $payment){
-            
+    
+        foreach ($payment as $payment) {
             $filePath = $payment['p_file'];
+    
+            // Check if the file exists
+            if (!file_exists($filePath)) {
+                echo 'File not found';
+                return;
+            }
+    
+            // Get the file extension
             $fileExtension = strtolower(pathinfo($filePath, PATHINFO_EXTENSION));
     
             // Set the appropriate content type header
@@ -64,8 +70,11 @@ class Payment_ctrl {
     
             // Read the file and output its contents
             readfile($filePath);
+            exit;
         }
     }
+    
+    
     
  
 }

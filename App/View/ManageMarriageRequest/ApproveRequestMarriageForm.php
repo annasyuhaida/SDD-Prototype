@@ -1,3 +1,7 @@
+<?php
+class ApproveRequestMarriageForm{
+    public function render($request){
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -5,11 +9,11 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <!-- Custom Stylesheet -->
-<link href="../../../css/style.css" rel="stylesheet"> 
-<!-- Custom Stylesheet -->
-<link href="../../../plugins/bootstrap-material-datetimepicker/css/bootstrap-material-datetimepicker.css" rel="stylesheet">
-<!-- Date picker plugins css -->
-<link href="../../../plugins/bootstrap-datepicker/bootstrap-datepicker.min.css" rel="stylesheet">
+<link href="../css/style.css" rel="stylesheet"> 
+<!-- Custom heet -->
+<link href="../plugins/bootstrap-material-datetimepicker/css/bootstrap-material-datetimepicker.css" rel="stylesheet">
+<!-- Date pilugins css -->
+<link href="../plugins/bootstrap-datepicker/bootstrap-datepicker.min.css" rel="stylesheet">
 
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 
@@ -100,13 +104,25 @@
                         <span class="nav-text">Marriage Preparation Course</span>
                         </a>
                         <ul aria-expanded="false">
-                            <li><a href="./PreMarriageCourseList.php">Register Marriage Preparation Course</a></li>
+                            <li><a href="index.php?action=getMarriageCourseList">Register Marriage Preparation Course</a></li>
+                            <li><a href="index.php?action=PreMarriageList&Lid=2&appID=123&courseID=0">Apply Marriage Preparation Course</a></li>
+                            <li><a href="index.php?action=getParticipant">Participant</a></li>
+                            <li><a href="index.php?action=getApplicant&Lid=0">Attendance</a></li>
+                            <li><a href="index.php?action=getOnlineVerify">Online Verify</a></li>
+
                         </ul>
 
                     </li>
                     <li>
-                        <a class="has-arrow" href="#">
+                        <a class="has-arrow" href="javascript:void()" aria-expanded="false">
                         <span class="nav-text">Marriage Request</span>
+                        </a>
+                        <ul aria-expanded="false">
+                            <li><a href="index.php?action=requestMarriageList&appID=123">Marriage Application Request</a></li>
+                            <li><a href="index.php?action=requestMarriageListStaff">Marriage Application List</a></li>
+                            <li><a href="index.php?action=getOnlineVerify">Online Verify</a></li>
+
+                        </ul>   
                         </a>
                     </li>
                     <li>
@@ -187,33 +203,41 @@
                                             </tr>
                                         </thead>
                                         <tbody>
+                                        <?php if (is_array($request)) { ?>
+                                            <?php foreach ($request as $request) { ?>
+
                                             <tr>
                                                 <th>1</th>
                                                 <td>
                                                     <div class="m-t-20">
-                                                     010519-06-0081
-                                                    </div>
+                                                    <?php echo $request['applicantIC']; ?>                                                    </div>
                                                     <div class="m-t-20">
-                                                     Muhammad Aimaan
-                                                    </div>
+                                                    <?php echo $request['applicantName']; ?>                                                    </div>
                                                 </td>
                                                 <td>
                                                     <div class="m-t-20">
-                                                     990323-06-0048
-                                                    </div>
+                                                    <?php echo $request['partnerIC']; ?>                                                    </div>
                                                     <div class="m-t-20">
-                                                     Nur Famizah
-                                                    </div>
+                                                    <?php echo $request['partnerName']; ?>                                                    </div>
                                                 </td>
                                                 <td>
-                                                    pending
+                                                <?php if($request['rm_req_approval'] == NULL){
+                                                    ?>PENDING<?php
+                                                }else{
+                                                     echo $request['partnerIC']; 
+                                                } ?>
                                                 </td>
                                                 <td><span>
-                                                        <a href="./PreMarriageCourseRegForm.php" title="Print"><i class="fa fa-print color-muted m-r-5"></i></a>
-                                                        <a href="./PreMarriageCourseRegForm.php" title="Approve"><i class="fa fa-check-square-o color-muted m-r-5"></i></a>
+                                                        <a href="index.php?action=viewRequestMarriage&appID=123 " title="Print"><i class="fa fa-print color-muted m-r-5"></i></a>
+                                                        <a href="index.php?action=updateStatus&appID=123 " title="Approve"><i class="fa fa-check-square-o color-muted m-r-5"></i></a>
                                                     </span>
                                                 </td>
                                             </tr>
+                                            <?php } ?>
+                                            <?php } else {
+                                                // Handle the case when $users is not an array
+                                                echo "No users found.";
+                                            } ?>
                                         </tbody>
                                     </table>
                                 </div>
@@ -233,29 +257,33 @@
     <!--**********************************
         Scripts
     ***********************************-->
-    <script src="../../../plugins/common/common.min.js"></script>
-    <script src="../../../js/custom.min.js"></script>
-    <script src="../../../js/settings.js"></script>
-    <script src="../../../js/gleek.js"></script>
-    <script src="../../../js/styleSwitcher.js"></script>
+    <script src="../plugins/common/common.min.js"></script>
+    <script src="../js/custom.min.js"></script>
+    <script src="../js/settings.js"></script>
+    <script src="../js/gleek.js"></script>
+    <script src="../js/styleSwitcher.js"></script>
 
-    <script src="../../../plugins/moment/moment.js"></script>
-    <script src="../../../plugins/bootstrap-material-datetimepicker/js/bootstrap-material-datetimepicker.js"></script>
-    <!-- Clock Plugin JavaScript -->
-    <script src="../../../plugins/clockpicker/dist/jquery-clockpicker.min.js"></script>
-    <!-- Color Picker Plugin JavaScript -->
-    <script src="../../../plugins/jquery-asColorPicker-master/libs/jquery-asColor.js"></script>
-    <script src="../../../plugins/jquery-asColorPicker-master/libs/jquery-asGradient.js"></script>
-    <script src="../../../plugins/jquery-asColorPicker-master/dist/jquery-asColorPicker.min.js"></script>
-    <!-- Date Picker Plugin JavaScript -->
-    <script src="../../../plugins/bootstrap-datepicker/bootstrap-datepicker.min.js"></script>
-    <!-- Date range Plugin JavaScript -->
-    <script src="../../../plugins/timepicker/bootstrap-timepicker.min.js"></script>
-    <script src="../../../plugins/bootstrap-daterangepicker/daterangepicker.js"></script>
+    <script src="../plugins/moment/moment.js"></script>
+    <script src="../plugins/bootstrap-material-datetimepicker/js/bootstrap-material-datetimepicker.js"></script>
+    <!-- Clock PlavaScript -->
+    <script src="../plugins/clockpicker/dist/jquery-clockpicker.min.js"></script>
+    <!-- Color Pilugin JavaScript -->
+    <script src="../plugins/jquery-asColorPicker-master/libs/jquery-asColor.js"></script>
+    <script src="../plugins/jquery-asColorPicker-master/libs/jquery-asGradient.js"></script>
+    <script src="../plugins/jquery-asColorPicker-master/dist/jquery-asColorPicker.min.js"></script>
+    <!-- Date Picugin JavaScript -->
+    <script src="../plugins/bootstrap-datepicker/bootstrap-datepicker.min.js"></script>
+    <!-- Date rangin JavaScript -->
+    <script src="../plugins/timepicker/bootstrap-timepicker.min.js"></script>
+    <script src="../plugins/bootstrap-daterangepicker/daterangepicker.js"></script>
 
-    <script src="../../../js/plugins-init/form-pickers-init.js"></script>
+    <script src="../js/plugins-init/form-pickers-init.js"></script>
 
 
 </body>
 </html>
 
+<?php
+    }
+}
+?>

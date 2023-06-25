@@ -1,3 +1,10 @@
+<?php
+
+class RequestMarriagePaymentForm {
+    public function render( $app) {
+ 
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -5,11 +12,11 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <!-- Custom Stylesheet -->
-<link href="../../../css/style.css" rel="stylesheet"> 
+<link href="../css/style.css" rel="stylesheet"> 
 <!-- Custom Stylesheet -->
-<link href="../../../plugins/bootstrap-material-datetimepicker/css/bootstrap-material-datetimepicker.css" rel="stylesheet">
+<link href="../plugins/bootstrap-material-datetimepicker/css/bootstrap-material-datetimepicker.css" rel="stylesheet">
 <!-- Date picker plugins css -->
-<link href="../../../plugins/bootstrap-datepicker/bootstrap-datepicker.min.css" rel="stylesheet">
+<link href="../plugins/bootstrap-datepicker/bootstrap-datepicker.min.css" rel="stylesheet">
 
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <style>
@@ -126,13 +133,25 @@
                         <span class="nav-text">Marriage Preparation Course</span>
                         </a>
                         <ul aria-expanded="false">
-                            <li><a href="./PreMarriageCourseRegForm.php">Register Marriage Preparation Course</a></li>
+                            <li><a href="index.php?action=getMarriageCourseList">Register Marriage Preparation Course</a></li>
+                            <li><a href="index.php?action=PreMarriageList&Lid=2&appID=123&courseID=0">Apply Marriage Preparation Course</a></li>
+                            <li><a href="index.php?action=getParticipant">Participant</a></li>
+                            <li><a href="index.php?action=getApplicant&Lid=0">Attendance</a></li>
+                            <li><a href="index.php?action=getOnlineVerify">Online Verify</a></li>
+
                         </ul>
 
                     </li>
                     <li>
-                        <a class="has-arrow" href="#">
+                        <a class="has-arrow" href="javascript:void()" aria-expanded="false">
                         <span class="nav-text">Marriage Request</span>
+                        </a>
+                        <ul aria-expanded="false">
+                            <li><a href="index.php?action=requestMarriageList&appID=123">Marriage Application Request</a></li>
+                            <li><a href="index.php?action=requestMarriageListStaff">Marriage Application List</a></li>
+                            <li><a href="index.php?action=getOnlineVerify">Online Verify</a></li>
+
+                        </ul>   
                         </a>
                     </li>
                     <li>
@@ -182,7 +201,7 @@
                     <div class="col-lg-12">
                         <div class="card">
                             <div class="card-body">
-                                <form>
+                                <form action="index.php?action=paymentForm&Lid=1&appID=<?php echo $app?>" method="POST" enctype="multipart/form-data">
                                         <div class="row form-material justify-content-center">
                                                
                                                 <div class="col-md-6">
@@ -191,7 +210,7 @@
                                                 <div class="input-group" style="margin-top:20px; margin-bottom:20px;">
                                                     <label class="m-t-20">Upload Payment:</label>
                                                     <div class="custom-file">
-                                                        <input type="file" class="custom-file-input">
+                                                        <input type="file" class="custom-file-input" name="file" accept="image/*">
                                                         <label class="custom-file-label">Choose file</label>
                                                     </div>
                                                     <div class="input-group-append"><span class="input-group-text">Upload</span>
@@ -222,29 +241,33 @@
      <!--**********************************
         Scripts
     ***********************************-->
-    <script src="../../../plugins/common/common.min.js"></script>
-    <script src="../../../js/custom.min.js"></script>
-    <script src="../../../js/settings.js"></script>
-    <script src="../../../js/gleek.js"></script>
-    <script src="../../../js/styleSwitcher.js"></script>
+    <script src="../plugins/common/common.min.js"></script>
+    <script src="../js/custom.min.js"></script>
+    <script src="../js/settings.js"></script>
+    <script src="../js/gleek.js"></script>
+    <script src="../js/styleSwitcher.js"></script>
 
-    <script src="../../../plugins/moment/moment.js"></script>
-    <script src="../../../plugins/bootstrap-material-datetimepicker/js/bootstrap-material-datetimepicker.js"></script>
+    <script src="../plugins/moment/moment.js"></script>
+    <script src="../plugins/bootstrap-material-datetimepicker/js/bootstrap-material-datetimepicker.js"></script>
     <!-- Clock Plugin JavaScript -->
-    <script src="../../../plugins/clockpicker/dist/jquery-clockpicker.min.js"></script>
+    <script src="../plugins/clockpicker/dist/jquery-clockpicker.min.js"></script>
     <!-- Color Picker Plugin JavaScript -->
-    <script src="../../../plugins/jquery-asColorPicker-master/libs/jquery-asColor.js"></script>
-    <script src="../../../plugins/jquery-asColorPicker-master/libs/jquery-asGradient.js"></script>
-    <script src="../../../plugins/jquery-asColorPicker-master/dist/jquery-asColorPicker.min.js"></script>
+    <script src="../plugins/jquery-asColorPicker-master/libs/jquery-asColor.js"></script>
+    <script src="../plugins/jquery-asColorPicker-master/libs/jquery-asGradient.js"></script>
+    <script src="../plugins/jquery-asColorPicker-master/dist/jquery-asColorPicker.min.js"></script>
     <!-- Date Picker Plugin JavaScript -->
-    <script src="../../../plugins/bootstrap-datepicker/bootstrap-datepicker.min.js"></script>
+    <script src="../plugins/bootstrap-datepicker/bootstrap-datepicker.min.js"></script>
     <!-- Date range Plugin JavaScript -->
-    <script src="../../../plugins/timepicker/bootstrap-timepicker.min.js"></script>
-    <script src="../../../plugins/bootstrap-daterangepicker/daterangepicker.js"></script>
+    <script src="../plugins/timepicker/bootstrap-timepicker.min.js"></script>
+    <script src="../plugins/bootstrap-daterangepicker/daterangepicker.js"></script>
 
-    <script src="../../../js/plugins-init/form-pickers-init.js"></script>
+    <script src="../js/plugins-init/form-pickers-init.js"></script>
 
 
 </body>
 </html>
 
+<?php
+    }
+}
+        ?>

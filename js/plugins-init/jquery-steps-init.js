@@ -8,13 +8,22 @@
         transitionEffect: "slideLeft",
         autoFocus: true, 
         transitionEffect: "slideLeft",
+        enablePagination: false, 
+
         onStepChanging: function (event, currentIndex, newIndex)
         {
+            console.log("Next button clicked"); // Add this line
             form.validate().settings.ignore = ":disabled,:hidden";
             return form.valid();
-        }
+        },
+        
     });
 
+    var buttonNext = $("#next-btn")
+    buttonNext.on("click", function() {
+        
+    });
+    
     var form2 = $("#step-form-tab");
     form2.children('div').steps({
         headerTag: "h4",

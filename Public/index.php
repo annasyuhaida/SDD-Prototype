@@ -15,6 +15,7 @@ require_once '../App/View/user_account/ApplicantRegister.php';
 require_once '../App/View/ManageMarriagePreparationCourse/MarriageCourseDetailsForm.php';
 require_once '../App/View/ManageMarriagePreparationCourse/UpdateMarriageCourseDetailsForm.php';
 require_once '../App/View/ManageMarriagePreparationCourse/PreMarriageCourseRegForm.php';
+require_once '../App/View/ManageMarriageRequest/RequestMarriageForm.php';
 
 //Module 3
 require_once '../App/View/ManageRegistration/persetujuan_wali.php';
@@ -26,6 +27,8 @@ require_once '../App/View/ManageRegistration/persetujuan_wali.php';
 require_once '../BusinessService/Model/userAccount/userAccount_model.php';
 //Module 2
 require_once '../BusinessService/Model/MarriagePreparationCourse/MarriagePreparationCourseModel.php';
+require_once '../BusinessService/Model/ManageMarriageRequest/MarriageRequestModel.php';
+
 //Module 3
 require_once '../BusinessService/Model/ManageRegistration/RegistrationModel.php';
 
@@ -43,6 +46,12 @@ require_once '../BusinessService/Controller/ManageMarriagePreparationCourseContr
 require_once '../BusinessService/Controller/ManageMarriagePreparationCourseController/Participant_ctrl.php';
 require_once '../BusinessService/Controller/ManageMarriagePreparationCourseController/Online_Verify_ctrl.php';
 require_once '../BusinessService/Controller/ManageMarriagePreparationCourseController/Attendance_ctrl.php';
+
+require_once '../BusinessService/Controller/ManageMarriageRequestController/Request_Marriage_ctrl.php';
+require_once '../BusinessService/Controller/ManageMarriageRequestController/Payment_ctrl.php';
+require_once '../BusinessService/Controller/ManageMarriageRequestController/Requested_Marriage_ctrl.php';
+require_once '../BusinessService/Controller/ManageMarriageRequestController/Request_Marriage_Status_ctrl.php';
+require_once '../BusinessService/Controller/ManageMarriageRequestController/Save_Request_Payment_ctrl.php';
 
 //Module 3
 require_once '../BusinessService/Controller/RegistrationController/SaveDoc_ctrl.php';
@@ -118,7 +127,7 @@ switch ($action) {
         $controller = new Pre_Marriage_Course_ctrl();
         $controller->PreMarriageList($Lid, $appID, $courseID);
         break;
-    case 'ApplyPreMarriage':
+    case 'applyPreMarriage':
         $appID = $_GET['appID'];
         $courseID = $_GET['courseID'];
         $controller = new Pre_Marriage_Course_ctrl();
@@ -194,6 +203,7 @@ switch ($action) {
          $controller->updateAttendance();
          break;
 
+<<<<<<< Updated upstream
          //Module 3//
     //persetujuan wali document fill up
     case 'getUsers':
@@ -205,42 +215,101 @@ switch ($action) {
         $controller->createDocAction();
         break;
 
+=======
+    //Manage Marriage Request
+    case 'requestMarriage':
+        $Lid = $_GET['Lid'];
+        $appID = $_GET['appID'];
+        $controller = new Request_Marriage_ctrl();
+        $controller->ApplyMarriageRequest($Lid,$appID);
+       break;
+    case 'requestMarriageList':
+        $appID = $_GET['appID'];
+        $controller = new Request_Marriage_ctrl();
+        $controller->MarriageRequestList($appID);
+       break;
+    case 'editRequestMarriage':
+        $Lid = $_GET['Lid'];
+        $reqID = $_GET['reqID'];
+        $appID = $_GET['appID'];
+        $controller = new Request_Marriage_ctrl();
+        $controller->EditMarriageRequest($Lid,$appID,$reqID);
+       break;
+    case 'viewRequestMarriage':
+        $appID = $_GET['appID'];
+        $controller = new Request_Marriage_ctrl();
+        $controller->ViewMarriageRequest($appID);
+       break;
+    case 'deleteRequestMarriage':
+        $appID = $_GET['appID'];
+        $controller = new Request_Marriage_ctrl();
+        $controller->DeleteMarriageRequest($appID);
+       break;
+    
+    //Manage Marriage Request(Staff)
+    case 'requestMarriageStaff':
+        $Lid = $_GET['Lid'];
+        $appID = $_GET['appID'];
+        $controller = new Requested_Marriage_ctrl();
+        $controller->getApplicant($Lid,$appID);
+       break;
+    case 'requestMarriageListStaff':
+        $controller = new Requested_Marriage_ctrl();
+        $controller->MarriageRequestList($appID);
+       break;
+    case 'editRequestMarriageStaff':
+        $Lid = $_GET['Lid'];
+        $reqID = $_GET['reqID'];
+        $appID = $_GET['appID'];
+        $controller = new Requested_Marriage_ctrl();
+        $controller->EditMarriageRequest($Lid,$appID,$reqID);
+       break;
+    case 'viewRequestMarriageStaffv':
+        $appID = $_GET['appID'];
+        $controller = new Requested_Marriage_ctrl();
+        $controller->ViewMarriageRequest($appID);
+       break;
+    case 'deleteRequestMarriageStaff':
+        $appID = $_GET['appID'];
+        $controller = new Requested_Marriage_ctrl();
+        $controller->DeleteMarriageRequest($appID);
+       break;
+>>>>>>> Stashed changes
 
-    //Example    
-    case 'getUsers':
-        $controller = new Temp_Controller_1();
-        $controller->getUsersAction();
+
+    //ManageRequestPayment
+    case 'paymentFormRequest':
+        $Lid = $_GET['Lid'];
+        $appID = $_GET['appID'];
+        $controller = new Payment_ctrl2();
+        $controller->UploadPayment($Lid, $appID);
         break;
-    case 'createUser':
-        $controller = new Temp_Controller_1();
-        $controller->createUserAction();
+    case 'viewPaymentsRequest':
+        $appID = $_GET['appID'];
+        $controller = new Payment_ctrl2();
+        $controller->ViewPayment($appID);
         break;
-    case 'editUser':
-        $controller = new Temp_Controller_1();
-        $controller->editUserAction();
+
+    //Manage Marriage Approval(Staff)
+    case 'onlineVerify':
+        $controller = new Request_Marriage_Status_ctrl();
+        $controller->getApplicant();
         break;
-    case 'deleteUser':
-        $controller = new Temp_Controller_1();
-        $controller->deleteUserAction();
+    case 'viewRequestMarriage':
+        $appID = $_GET['appID'];
+        $controller = new Request_Marriage_Status_ctrl();
+        $controller->viewRequestMarriage($appID);
         break;
-    case 'getProducts':
-        $controller = new Temp_Controller_2();
-        $controller->getProductsAction();
+    case 'updateStatus':
+        $appID = $_GET['appID'];
+        $controller = new Request_Marriage_Status_ctrl();
+        $controller->updateStatus($appID);
         break;
-    case 'createProduct':
-        $controller = new Temp_Controller_2();
-        $controller->createProductAction();
-        break;
-    case 'editProduct':
-        $controller = new Temp_Controller_2();
-        $controller->editProductAction();
-        break;
-    case 'deleteProduct':
-        $controller = new Temp_Controller_2();
-        $controller->deleteProductAction();
-        break;
-    default:
-        // Handle default action
+
+    case 'savePayment':
+        $appID = $_GET['appID'];
+        $controller = new Request_Marriage_Status_ctrl();
+        $controller->getApplicant();
         break;
 }
 ?>

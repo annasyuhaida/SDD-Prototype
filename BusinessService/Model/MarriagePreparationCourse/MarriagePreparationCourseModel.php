@@ -35,6 +35,11 @@ class MarriagePreparationCourseModel {
         $query = "DELETE FROM pre_marriage_course WHERE pre_m_reg_ID = $courseID";
         return $this->db->execute($query);
     }
+    public function updatePreID($course,$appID) {
+        $query = "UPDATE applicant SET  pre_m_reg_ID = '$courseID' WHERE applicantID = $appID";
+        return $this->db->execute($query);
+    }
+
 
     //Manage Pre Marriage Application(Applicant)
     public function applyPreMarriage($appId, $courseID, $name, $IDnum, $age, $email, $address, $employment, $eduLevel, $gender, $phoneno) {
@@ -52,7 +57,7 @@ class MarriagePreparationCourseModel {
     }
 
     public function deletePreMarriage($appId) {
-        $query = $query = "UPDATE applicant SET applicantName = NULL, pre_m_reg_ID = NULL, applicantIC = NULL, applicantAge = NULL, applicantEmail = NULL, applicantAddress = NULL, applicantJob = NULL, applicantEducationalLevel = NULL, applicantGender = NULL, applicantPhoneNo = NULL WHERE applicantID = $appId";
+        $query = $query = "UPDATE applicant SET  pre_m_reg_ID = 0 WHERE applicantID = $appId";
         return $this->db->execute($query);
     }
 

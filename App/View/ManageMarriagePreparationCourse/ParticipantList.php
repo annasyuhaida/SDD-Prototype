@@ -105,13 +105,25 @@ class ParticipantList{
                         <span class="nav-text">Marriage Preparation Course</span>
                         </a>
                         <ul aria-expanded="false">
-                            <li><a href="./PreMarriageCourseList.php">Register Marriage Preparation Course</a></li>
+                            <li><a href="index.php?action=getMarriageCourseList">Register Marriage Preparation Course</a></li>
+                            <li><a href="index.php?action=PreMarriageList&Lid=2&appID=123&courseID=0">Apply Marriage Preparation Course</a></li>
+                            <li><a href="index.php?action=getParticipant">Participant</a></li>
+                            <li><a href="index.php?action=getApplicant&Lid=0">Attendance</a></li>
+                            <li><a href="index.php?action=getOnlineVerify">Online Verify</a></li>
+
                         </ul>
 
                     </li>
                     <li>
-                        <a class="has-arrow" href="#">
+                        <a class="has-arrow" href="javascript:void()" aria-expanded="false">
                         <span class="nav-text">Marriage Request</span>
+                        </a>
+                        <ul aria-expanded="false">
+                            <li><a href="index.php?action=requestMarriageList&appID=123">Marriage Application Request</a></li>
+                            <li><a href="index.php?action=requestMarriageListStaff">Marriage Application List</a></li>
+                            <li><a href="index.php?action=getOnlineVerify">Online Verify</a></li>
+
+                        </ul>   
                         </a>
                     </li>
                     <li>
@@ -194,8 +206,8 @@ class ParticipantList{
                                                 <td><?php echo $participant['pre_m_reg_approval']; ?></td>
                                                 <td>
                                                     <span>
-                                                        <a href="index.php?action=viewPayment?appID=<?php echo $participant['applicantID']; ?>?courseID=<?php echo $participant['pre_m_reg_ID']; ?>" title="payment"><i class="fa fa-edit color-muted m-r-5"></i></a>
-                                                        <a href="index.php?action=editPreMarriage?appID=<?php echo $participant['applicantID']; ?>?courseID=<?php echo $participant['pre_m_reg_ID']; ?>" title="print"><i class="fa fa-print color-muted m-r-5"></i></a>
+                                                        <a href="index.php?action=viewPayment&appID=<?php echo $participant['applicantID']; ?>&courseID=<?php echo $participant['pre_m_reg_ID']; ?>" title="payment"><i class="fa fa-edit color-muted m-r-5"></i></a>
+                                                        <a href="index.php?action=editPreMarriage&appID=<?php echo $participant['applicantID']; ?>&courseID=<?php echo $participant['pre_m_reg_ID']; ?>" title="print"><i class="fa fa-print color-muted m-r-5"></i></a>
                                                     </span>
                                                 </td>
                                             </tr>

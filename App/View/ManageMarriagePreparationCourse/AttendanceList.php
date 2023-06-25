@@ -104,13 +104,25 @@ class AttendanceList{
                         <span class="nav-text">Marriage Preparation Course</span>
                         </a>
                         <ul aria-expanded="false">
-                            <li><a href="./PreMarriageCourseList.php">Register Marriage Preparation Course</a></li>
+                            <li><a href="index.php?action=getMarriageCourseList">Register Marriage Preparation Course</a></li>
+                            <li><a href="index.php?action=PreMarriageList&Lid=2&appID=123&courseID=0">Apply Marriage Preparation Course</a></li>
+                            <li><a href="index.php?action=getParticipant">Participant</a></li>
+                            <li><a href="index.php?action=getApplicant&Lid=0">Attendance</a></li>
+                            <li><a href="index.php?action=getOnlineVerify">Online Verify</a></li>
+
                         </ul>
 
                     </li>
                     <li>
-                        <a class="has-arrow" href="#">
+                        <a class="has-arrow" href="javascript:void()" aria-expanded="false">
                         <span class="nav-text">Marriage Request</span>
+                        </a>
+                        <ul aria-expanded="false">
+                            <li><a href="index.php?action=requestMarriageList&appID=123">Marriage Application Request</a></li>
+                            <li><a href="index.php?action=requestMarriageListStaff">Marriage Application List</a></li>
+                            <li><a href="index.php?action=getOnlineVerify">Online Verify</a></li>
+
+                        </ul>   
                         </a>
                     </li>
                     <li>

@@ -10121,7 +10121,7 @@ input[type="checkbox"]:checked:after {
       .wizard > .steps li a .number {
         display: none; }
   .wizard .content {
-    min-height: 60.75rem;
+    min-height: 76.75rem;
     margin: 0; }
     @media only screen and (max-width: 991px) {
       .wizard .content {

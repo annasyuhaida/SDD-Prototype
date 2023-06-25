@@ -132,13 +132,25 @@ class PreMarriageCourseRegForm {
                         <span class="nav-text">Marriage Preparation Course</span>
                         </a>
                         <ul aria-expanded="false">
-                            <li><a href="./PreMarriageCourseList.php">Register Marriage Preparation Course</a></li>
+                            <li><a href="index.php?action=getMarriageCourseList">Register Marriage Preparation Course</a></li>
+                            <li><a href="index.php?action=PreMarriageList&Lid=2&appID=123&courseID=0">Apply Marriage Preparation Course</a></li>
+                            <li><a href="index.php?action=getParticipant">Participant</a></li>
+                            <li><a href="index.php?action=getApplicant&Lid=0">Attendance</a></li>
+                            <li><a href="index.php?action=getOnlineVerify">Online Verify</a></li>
+
                         </ul>
 
                     </li>
                     <li>
-                        <a class="has-arrow" href="#">
+                        <a class="has-arrow" href="javascript:void()" aria-expanded="false">
                         <span class="nav-text">Marriage Request</span>
+                        </a>
+                        <ul aria-expanded="false">
+                            <li><a href="index.php?action=requestMarriageList&appID=123">Marriage Application Request</a></li>
+                            <li><a href="index.php?action=requestMarriageListStaff">Marriage Application List</a></li>
+                            <li><a href="index.php?action=getOnlineVerify">Online Verify</a></li>
+
+                        </ul>   
                         </a>
                     </li>
                     <li>
@@ -191,7 +203,7 @@ class PreMarriageCourseRegForm {
                                 <p class="text-muted m-b-15 f-s-12">Organizer : <?php echo $course['pre_m_organiser']; ?></p>
                                 <p class="text-muted m-b-15 f-s-12">Location and Date : <?php echo $course['pre_m_venue']; ?> , <?php echo $course['pre_m_date']; ?></p>
                                 <h4 class="card-title">Applicant Information</h4>
-                                <form action="index.php?action=ApplyPreMarriage&appID=<?php echo $app['applicantID'] ?>&courseID=<?php echo $course['pre_m_reg_ID']; ?>" method="POST">
+                                <form action="index.php?action=applyPreMarriage&appID=<?php echo $app['applicantID'] ?>&courseID=<?php echo $course['pre_m_reg_ID']; ?>" method="POST">
                                         <div class="row form-material">
                                                 <div class="col-md-6">
                                                     <label class="m-t-20">Name:</label>

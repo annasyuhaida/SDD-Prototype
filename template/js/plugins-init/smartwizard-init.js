@@ -7,12 +7,12 @@
     $("#smartwizard1").on("showStep", function(e, anchorObject, stepNumber, stepDirection, stepPosition) {
         //alert("You are on step "+stepNumber+" now");
         if(stepPosition === 'first'){
-            $("#prev-btn").addClass('disabled');
+            //$("#prev-btn").addClass('disabled');
         }else if(stepPosition === 'final'){
-            $("#next-btn").addClass('disabled');
+            //$("#next-btn").addClass('disabled');
         }else{
-            $("#prev-btn").removeClass('disabled');
-            $("#next-btn").removeClass('disabled');
+            //$("#prev-btn").removeClass('disabled');
+            //$("#next-btn").removeClass('disabled');
         }
     });
 
@@ -44,6 +44,8 @@
     });
 
     $("#prev-btn").on("click", function() {
+        console.log("Next button clicked"); // Add this line
+
         // Navigate previous
         $('#smartwizard1').smartWizard("prev");
         return true;
