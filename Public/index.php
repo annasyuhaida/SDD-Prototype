@@ -203,7 +203,6 @@ switch ($action) {
          $controller->updateAttendance();
          break;
 
-<<<<<<< Updated upstream
          //Module 3//
     //persetujuan wali document fill up
     case 'getUsers':
@@ -215,66 +214,6 @@ switch ($action) {
         $controller->createDocAction();
         break;
 
-=======
-    //Manage Marriage Request
-    case 'requestMarriage':
-        $Lid = $_GET['Lid'];
-        $appID = $_GET['appID'];
-        $controller = new Request_Marriage_ctrl();
-        $controller->ApplyMarriageRequest($Lid,$appID);
-       break;
-    case 'requestMarriageList':
-        $appID = $_GET['appID'];
-        $controller = new Request_Marriage_ctrl();
-        $controller->MarriageRequestList($appID);
-       break;
-    case 'editRequestMarriage':
-        $Lid = $_GET['Lid'];
-        $reqID = $_GET['reqID'];
-        $appID = $_GET['appID'];
-        $controller = new Request_Marriage_ctrl();
-        $controller->EditMarriageRequest($Lid,$appID,$reqID);
-       break;
-    case 'viewRequestMarriage':
-        $appID = $_GET['appID'];
-        $controller = new Request_Marriage_ctrl();
-        $controller->ViewMarriageRequest($appID);
-       break;
-    case 'deleteRequestMarriage':
-        $appID = $_GET['appID'];
-        $controller = new Request_Marriage_ctrl();
-        $controller->DeleteMarriageRequest($appID);
-       break;
-    
-    //Manage Marriage Request(Staff)
-    case 'requestMarriageStaff':
-        $Lid = $_GET['Lid'];
-        $appID = $_GET['appID'];
-        $controller = new Requested_Marriage_ctrl();
-        $controller->getApplicant($Lid,$appID);
-       break;
-    case 'requestMarriageListStaff':
-        $controller = new Requested_Marriage_ctrl();
-        $controller->MarriageRequestList($appID);
-       break;
-    case 'editRequestMarriageStaff':
-        $Lid = $_GET['Lid'];
-        $reqID = $_GET['reqID'];
-        $appID = $_GET['appID'];
-        $controller = new Requested_Marriage_ctrl();
-        $controller->EditMarriageRequest($Lid,$appID,$reqID);
-       break;
-    case 'viewRequestMarriageStaffv':
-        $appID = $_GET['appID'];
-        $controller = new Requested_Marriage_ctrl();
-        $controller->ViewMarriageRequest($appID);
-       break;
-    case 'deleteRequestMarriageStaff':
-        $appID = $_GET['appID'];
-        $controller = new Requested_Marriage_ctrl();
-        $controller->DeleteMarriageRequest($appID);
-       break;
->>>>>>> Stashed changes
 
 
     //ManageRequestPayment
