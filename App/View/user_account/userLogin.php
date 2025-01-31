@@ -385,7 +385,7 @@
       </form>
 
       <div style="text-align:center">
-        <a href=" ">NEW REGISTRATION</a>
+        <a href="index.php?action=createAccount">NEW REGISTRATION</a>
         |
         <a href="../user_account/change_pass.php">CHANGE PASSWORD</a>
         |
@@ -399,18 +399,17 @@
   </div>
 
   <script>
-
-function login()   
-{
-    role = document.userlogin.role.value;
-    if((role == "admin"))
-    {window.location = "adminProfileList.php";}
-    else if((role == "staff"))
-    {window.location = "staffProfileList.php"}
-    else{window.location = "ApplicantProfileList.php";}
-}
-
-    </script>
+    function login() {
+      role = document.userlogin.role.value;
+      if ((role == "admin")) {
+        window.location = "adminProfileList.php";
+      } else if ((role == "staff")) {
+        window.location = "staffProfileList.php"
+      } else {
+        window.location = "ApplicantProfileList.php";
+      }
+    }
+  </script>
 </body>
 
 </html>
